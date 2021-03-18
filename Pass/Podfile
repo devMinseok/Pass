@@ -1,10 +1,66 @@
-# Uncomment the next line to define a global platform for your project
-# platform :ios, '9.0'
+platform :ios, '12.0'
+use_frameworks!
+inhibit_all_warnings!
+
+def all_pods
+  ui_pods
+  rx_pods
+  db_pods
+  network_pods
+  tool_pods
+  security_pods
+  tdd_pods
+  etc_pods
+end
+
+def ui_pods
+  pod 'SnapKit', '~> 5.0.0'
+end
+
+def rx_pods
+  pod 'RxSwift', '5.1.1'
+  pod 'RxCocoa', '5.1.1'
+  pod 'RxDataSources', '~> 4.0'
+end
+
+def db_pods
+  pod 'RealmSwift'
+end
+
+def network_pods
+  pod 'Moya/RxSwift', '~> 14.0'
+  pod 'Kingfisher', '~> 6.0'
+end
+
+def tool_pods
+  pod 'SwiftLint'
+  pod 'R.swift'
+  pod 'Swinject', '~> 1.1.4'
+  pod 'ReactorKit'
+end
+
+def security_pods
+  pod 'KeychainAccess'
+end
+
+def tdd_pods
+  pod 'Quick'
+  pod 'Nimble'
+  pod 'RxTest'
+end
+
+def etc_pods
+  
+end
 
 target 'Pass' do
-  # Comment the next line if you don't want to use dynamic frameworks
-  use_frameworks!
+  all_pods
+  
+  target 'PassTests' do
+    inherit! :search_paths
+  end
+end
 
-  # Pods for Pass
-
+target 'PassUITests' do
+  all_pods
 end
