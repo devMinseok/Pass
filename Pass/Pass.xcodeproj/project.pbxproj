@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -12,12 +12,15 @@
 		CB5E33C1BFF684794F234201 /* Pods_Pass.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7128CBC35D2FE2C9F379A5FB /* Pods_Pass.framework */; };
 		F22B238925FF2F3B003AAD9D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F22B238825FF2F3B003AAD9D /* AppDelegate.swift */; };
 		F22B238B25FF2F3B003AAD9D /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F22B238A25FF2F3B003AAD9D /* SceneDelegate.swift */; };
-		F22B238D25FF2F3B003AAD9D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F22B238C25FF2F3B003AAD9D /* ViewController.swift */; };
-		F22B239025FF2F3B003AAD9D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F22B238E25FF2F3B003AAD9D /* Main.storyboard */; };
 		F22B239225FF2F3D003AAD9D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F22B239125FF2F3D003AAD9D /* Assets.xcassets */; };
 		F22B239525FF2F3D003AAD9D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F22B239325FF2F3D003AAD9D /* LaunchScreen.storyboard */; };
 		F22B23B426021F33003AAD9D /* PassTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F22B23B326021F33003AAD9D /* PassTests.swift */; };
 		F22B23C426021F4C003AAD9D /* PassUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F22B23C326021F4C003AAD9D /* PassUITests.swift */; };
+		F25B015226042D6900EBF7F0 /* WindowManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F25B015126042D6900EBF7F0 /* WindowManager.swift */; };
+		F25B016126042E9000EBF7F0 /* Preview.swift in Sources */ = {isa = PBXBuildFile; fileRef = F25B016026042E9000EBF7F0 /* Preview.swift */; };
+		F25B016926042F9F00EBF7F0 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F25B016826042F9F00EBF7F0 /* BaseViewController.swift */; };
+		F25B0174260430AC00EBF7F0 /* SplashViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F25B0173260430AC00EBF7F0 /* SplashViewController.swift */; };
+		F25B0179260430C700EBF7F0 /* SplashViewReactor.swift in Sources */ = {isa = PBXBuildFile; fileRef = F25B0178260430C700EBF7F0 /* SplashViewReactor.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -50,8 +53,6 @@
 		F22B238525FF2F3B003AAD9D /* Pass.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Pass.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F22B238825FF2F3B003AAD9D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F22B238A25FF2F3B003AAD9D /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		F22B238C25FF2F3B003AAD9D /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		F22B238F25FF2F3B003AAD9D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		F22B239125FF2F3D003AAD9D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F22B239425FF2F3D003AAD9D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F22B239625FF2F3D003AAD9D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -61,6 +62,11 @@
 		F22B23C126021F4C003AAD9D /* PassUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PassUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		F22B23C326021F4C003AAD9D /* PassUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PassUITests.swift; sourceTree = "<group>"; };
 		F22B23C526021F4C003AAD9D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F25B015126042D6900EBF7F0 /* WindowManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WindowManager.swift; sourceTree = "<group>"; };
+		F25B016026042E9000EBF7F0 /* Preview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Preview.swift; sourceTree = "<group>"; };
+		F25B016826042F9F00EBF7F0 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
+		F25B0173260430AC00EBF7F0 /* SplashViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashViewController.swift; sourceTree = "<group>"; };
+		F25B0178260430C700EBF7F0 /* SplashViewReactor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashViewReactor.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,7 +107,6 @@
 				51152704926CEF4E336A0E38 /* Pods-PassUITests.debug.xcconfig */,
 				56D1F5121C88B1A1B28AEBC4 /* Pods-PassUITests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -140,13 +145,10 @@
 		F22B238725FF2F3B003AAD9D /* Pass */ = {
 			isa = PBXGroup;
 			children = (
-				F22B238825FF2F3B003AAD9D /* AppDelegate.swift */,
-				F22B238A25FF2F3B003AAD9D /* SceneDelegate.swift */,
-				F22B238C25FF2F3B003AAD9D /* ViewController.swift */,
-				F22B238E25FF2F3B003AAD9D /* Main.storyboard */,
-				F22B239125FF2F3D003AAD9D /* Assets.xcassets */,
-				F22B239325FF2F3D003AAD9D /* LaunchScreen.storyboard */,
-				F22B239625FF2F3D003AAD9D /* Info.plist */,
+				F25B016026042E9000EBF7F0 /* Preview.swift */,
+				F25E3B2D260429A0009E4FCD /* Source */,
+				F25B014D260429E700EBF7F0 /* Resource */,
+				F25B015926042DA300EBF7F0 /* Supporting File */,
 			);
 			path = Pass;
 			sourceTree = "<group>";
@@ -167,6 +169,108 @@
 				F22B23C526021F4C003AAD9D /* Info.plist */,
 			);
 			path = PassUITests;
+			sourceTree = "<group>";
+		};
+		F25B014D260429E700EBF7F0 /* Resource */ = {
+			isa = PBXGroup;
+			children = (
+				F22B239125FF2F3D003AAD9D /* Assets.xcassets */,
+				F22B239325FF2F3D003AAD9D /* LaunchScreen.storyboard */,
+			);
+			path = Resource;
+			sourceTree = "<group>";
+		};
+		F25B015926042DA300EBF7F0 /* Supporting File */ = {
+			isa = PBXGroup;
+			children = (
+				F22B239625FF2F3D003AAD9D /* Info.plist */,
+			);
+			path = "Supporting File";
+			sourceTree = "<group>";
+		};
+		F25B015A26042DFC00EBF7F0 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		F25B015B26042E0800EBF7F0 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				F25B016826042F9F00EBF7F0 /* BaseViewController.swift */,
+				F25B017D260430CB00EBF7F0 /* Splash */,
+				F25B0181260432C800EBF7F0 /* Login */,
+				F25B0182260432EA00EBF7F0 /* Main */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		F25B015C26042E1600EBF7F0 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		F25B015D26042E1E00EBF7F0 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		F25B015E26042E2700EBF7F0 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		F25B015F26042E3400EBF7F0 /* Service */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
+		F25B017D260430CB00EBF7F0 /* Splash */ = {
+			isa = PBXGroup;
+			children = (
+				F25B0173260430AC00EBF7F0 /* SplashViewController.swift */,
+				F25B0178260430C700EBF7F0 /* SplashViewReactor.swift */,
+			);
+			path = Splash;
+			sourceTree = "<group>";
+		};
+		F25B0181260432C800EBF7F0 /* Login */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
+		F25B0182260432EA00EBF7F0 /* Main */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
+		F25E3B2D260429A0009E4FCD /* Source */ = {
+			isa = PBXGroup;
+			children = (
+				F22B238825FF2F3B003AAD9D /* AppDelegate.swift */,
+				F22B238A25FF2F3B003AAD9D /* SceneDelegate.swift */,
+				F25B015126042D6900EBF7F0 /* WindowManager.swift */,
+				F25B015A26042DFC00EBF7F0 /* View */,
+				F25B015B26042E0800EBF7F0 /* ViewController */,
+				F25B015F26042E3400EBF7F0 /* Service */,
+				F25B015E26042E2700EBF7F0 /* Utils */,
+				F25B015D26042E1E00EBF7F0 /* Network */,
+				F25B015C26042E1600EBF7F0 /* Model */,
+			);
+			path = Source;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -199,6 +303,7 @@
 				F22B23AD26021F33003AAD9D /* Sources */,
 				F22B23AE26021F33003AAD9D /* Frameworks */,
 				F22B23AF26021F33003AAD9D /* Resources */,
+				8478D9FD3F1F7A44D8EA4992 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -218,7 +323,6 @@
 				F22B23BD26021F4C003AAD9D /* Sources */,
 				F22B23BE26021F4C003AAD9D /* Frameworks */,
 				F22B23BF26021F4C003AAD9D /* Resources */,
-				95D39638ACB149A4C8D79B6E /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -279,7 +383,6 @@
 			files = (
 				F22B239525FF2F3D003AAD9D /* LaunchScreen.storyboard in Resources */,
 				F22B239225FF2F3D003AAD9D /* Assets.xcassets in Resources */,
-				F22B239025FF2F3B003AAD9D /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -339,21 +442,21 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		95D39638ACB149A4C8D79B6E /* [CP] Embed Pods Frameworks */ = {
+		8478D9FD3F1F7A44D8EA4992 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-PassUITests/Pods-PassUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+				"${PODS_ROOT}/Target Support Files/Pods-PassTests/Pods-PassTests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-PassUITests/Pods-PassUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+				"${PODS_ROOT}/Target Support Files/Pods-PassTests/Pods-PassTests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-PassUITests/Pods-PassUITests-frameworks.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-PassTests/Pods-PassTests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		DC603DF01336A109F9FC74BB /* [CP] Check Pods Manifest.lock */ = {
@@ -407,9 +510,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F22B238D25FF2F3B003AAD9D /* ViewController.swift in Sources */,
+				F25B0179260430C700EBF7F0 /* SplashViewReactor.swift in Sources */,
+				F25B015226042D6900EBF7F0 /* WindowManager.swift in Sources */,
+				F25B016126042E9000EBF7F0 /* Preview.swift in Sources */,
 				F22B238925FF2F3B003AAD9D /* AppDelegate.swift in Sources */,
+				F25B0174260430AC00EBF7F0 /* SplashViewController.swift in Sources */,
 				F22B238B25FF2F3B003AAD9D /* SceneDelegate.swift in Sources */,
+				F25B016926042F9F00EBF7F0 /* BaseViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -445,14 +552,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		F22B238E25FF2F3B003AAD9D /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				F22B238F25FF2F3B003AAD9D /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		F22B239325FF2F3D003AAD9D /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -515,7 +614,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -570,7 +669,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
