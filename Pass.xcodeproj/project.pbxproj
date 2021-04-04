@@ -11,6 +11,7 @@
 		773D1BFAF4FA277E354A0915 /* Pods_PassTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4B36135EC33DE0562B1FFE63 /* Pods_PassTests.framework */; };
 		CB5E33C1BFF684794F234201 /* Pods_Pass.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7128CBC35D2FE2C9F379A5FB /* Pods_Pass.framework */; };
 		F2059A7E261968FE0016AE87 /* .swiftlint.yml in Resources */ = {isa = PBXBuildFile; fileRef = F2059A7D261968FE0016AE87 /* .swiftlint.yml */; };
+		F2059A9226198A690016AE87 /* R.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2059A9126198A690016AE87 /* R.generated.swift */; };
 		F22B238925FF2F3B003AAD9D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F22B238825FF2F3B003AAD9D /* AppDelegate.swift */; };
 		F22B238B25FF2F3B003AAD9D /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F22B238A25FF2F3B003AAD9D /* SceneDelegate.swift */; };
 		F22B239225FF2F3D003AAD9D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F22B239125FF2F3D003AAD9D /* Assets.xcassets */; };
@@ -52,6 +53,7 @@
 		BB94F703A44CECA3543A16E2 /* Pods-PassTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PassTests.release.xcconfig"; path = "Target Support Files/Pods-PassTests/Pods-PassTests.release.xcconfig"; sourceTree = "<group>"; };
 		C41DACDB08774A68478AC17E /* Pods-Pass.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Pass.debug.xcconfig"; path = "Target Support Files/Pods-Pass/Pods-Pass.debug.xcconfig"; sourceTree = "<group>"; };
 		F2059A7D261968FE0016AE87 /* .swiftlint.yml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; path = .swiftlint.yml; sourceTree = SOURCE_ROOT; };
+		F2059A9126198A690016AE87 /* R.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = R.generated.swift; sourceTree = SOURCE_ROOT; };
 		F22B238525FF2F3B003AAD9D /* Pass.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Pass.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F22B238825FF2F3B003AAD9D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F22B238A25FF2F3B003AAD9D /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -150,7 +152,7 @@
 				F25B016026042E9000EBF7F0 /* Preview.swift */,
 				F25E3B2D260429A0009E4FCD /* Source */,
 				F25B014D260429E700EBF7F0 /* Resource */,
-				F25B015926042DA300EBF7F0 /* Supporting File */,
+				F25B015926042DA300EBF7F0 /* SupportingFile */,
 			);
 			path = Pass;
 			sourceTree = "<group>";
@@ -183,12 +185,13 @@
 			path = Resource;
 			sourceTree = "<group>";
 		};
-		F25B015926042DA300EBF7F0 /* Supporting File */ = {
+		F25B015926042DA300EBF7F0 /* SupportingFile */ = {
 			isa = PBXGroup;
 			children = (
+				F2059A9126198A690016AE87 /* R.generated.swift */,
 				F22B239625FF2F3D003AAD9D /* Info.plist */,
 			);
-			path = "Supporting File";
+			path = SupportingFile;
 			sourceTree = "<group>";
 		};
 		F25B015A26042DFC00EBF7F0 /* View */ = {
@@ -284,6 +287,7 @@
 			buildConfigurationList = F22B239925FF2F3D003AAD9D /* Build configuration list for PBXNativeTarget "Pass" */;
 			buildPhases = (
 				DC603DF01336A109F9FC74BB /* [CP] Check Pods Manifest.lock */,
+				F2059A852619873C0016AE87 /* R.swift */,
 				F2059A5526173F6D0016AE87 /* SwiftLint */,
 				F22B238125FF2F3B003AAD9D /* Sources */,
 				F22B238225FF2F3B003AAD9D /* Frameworks */,
@@ -526,6 +530,26 @@
 			shellPath = /bin/sh;
 			shellScript = "${PODS_ROOT}/SwiftLint/swiftlint\n";
 		};
+		F2059A852619873C0016AE87 /* R.swift */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"$TEMP_DIR/rswift-lastrun",
+			);
+			name = R.swift;
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				$SRCROOT/R.generated.swift,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"$PODS_ROOT/R.swift/rswift\" generate \"$SRCROOT/R.generated.swift\"\n";
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -536,6 +560,7 @@
 				F25B0179260430C700EBF7F0 /* SplashViewReactor.swift in Sources */,
 				F25B015226042D6900EBF7F0 /* WindowManager.swift in Sources */,
 				F25B016126042E9000EBF7F0 /* Preview.swift in Sources */,
+				F2059A9226198A690016AE87 /* R.generated.swift in Sources */,
 				F22B238925FF2F3B003AAD9D /* AppDelegate.swift in Sources */,
 				F25B0174260430AC00EBF7F0 /* SplashViewController.swift in Sources */,
 				F22B238B25FF2F3B003AAD9D /* SceneDelegate.swift in Sources */,
@@ -710,7 +735,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 75FNRKTJ9S;
-				INFOPLIST_FILE = Pass/Info.plist;
+				INFOPLIST_FILE = Pass/SupportingFile/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -730,7 +755,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 75FNRKTJ9S;
-				INFOPLIST_FILE = Pass/Info.plist;
+				INFOPLIST_FILE = Pass/SupportingFile/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
