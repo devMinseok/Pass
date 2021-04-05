@@ -20,11 +20,13 @@ target 'Pass' do
   
   # Network
   pod 'Moya/RxSwift', '~> 14.0'
+  pod 'MoyaSugar/RxSwift'
   pod 'Kingfisher', '~> 6.0'
   
   # Tool
   pod 'SwiftLint'
   pod 'R.swift'
+  pod 'Then'
 #  pod 'Swinject', '~> 1.1.4'
   
   # Security
