@@ -33,7 +33,7 @@ class SplashViewReactor: Reactor {
     func mutate(action: Action) -> Observable<Mutation> {
         switch action {
         case .checkIfAuthenticated:
-            return self.userService.fetchMe()
+            return self.userService.fetchUser()
                 .asObservable()
                 .map { true }
                 .catchErrorJustReturn(false)

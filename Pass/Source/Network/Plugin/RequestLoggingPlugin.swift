@@ -5,7 +5,6 @@
 //  Created by 강민석 on 2021/04/05.
 //
 
-import Foundation
 import Moya
 
 /// 네트워크 호출 결과 로그 표시
@@ -13,14 +12,14 @@ final class RequestLoggingPlugin: PluginType {
     /// API를 보내기 직전에 호출
     func willSend(_ request: RequestType, target: TargetType) {
         guard let httpRequest = request.request else {
-            print("--> invalid request")
+            print("➡️ INVALID REQUEST")
             return
         }
 
         let url = httpRequest.description
         let method = httpRequest.httpMethod ?? "unknown method"
 
-        var log = "--> \(method) \(url)\n"
+        var log = "➡️ \(method) \(url)\n"
         log.append("API: \(target)\n")
 
         if let headers = httpRequest.allHTTPHeaderFields, !headers.isEmpty {
@@ -31,7 +30,7 @@ final class RequestLoggingPlugin: PluginType {
             log.append("\(bodyString)\n")
         }
 
-        log.append("--> END \(method)")
+        log.append("➡️ END \(method)")
         print(log)
     }
 
@@ -50,7 +49,7 @@ final class RequestLoggingPlugin: PluginType {
         let url = request?.url?.absoluteString ?? "nil"
         let statusCode = response.statusCode
 
-        var log = "<-- \(statusCode) \(url)\n"
+        var log = "⬅️ \(statusCode) \(url)\n"
         log.append("API: \(target)\n")
 
         response.response?.allHeaderFields.forEach {
@@ -61,7 +60,7 @@ final class RequestLoggingPlugin: PluginType {
             log.append("\(reString)\n")
         }
 
-        log.append("<-- END HTTP (\(response.data.count)-byte body)")
+        log.append("⬅️ END HTTP (\(response.data.count)-byte body)")
         print(log)
     }
 
@@ -71,9 +70,9 @@ final class RequestLoggingPlugin: PluginType {
             return
         }
 
-        var log = "<-- \(error.errorCode) \(target)\n"
+        var log = "⬅️ \(error.errorCode) \(target)\n"
         log.append("\(error.failureReason ?? error.errorDescription ?? "unknown error")\n")
-        log.append("<-- END HTTP")
+        log.append("⬅️ END HTTP")
         print(log)
     }
 }

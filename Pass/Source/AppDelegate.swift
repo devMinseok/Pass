@@ -6,17 +6,22 @@
 //
 
 import UIKit
+import Swinject
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
-
-    var windowManager: WindowManager?
     
+    var window: UIWindow?
+
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        if #available(iOS 13, *) { } else {
-            windowManager = WindowManager()
-            windowManager?.setRootViewController()
-        }
+        
+        DIContainer.shared.register()
+        
+        let window = UIWindow(frame: UIScreen.main.bounds)
+        window.makeKeyAndVisible()
+        self.window = window
+        
+        window.rootViewController = DIContainer.shared.container.resolve(SplashViewController.self)
         
         return true
     }

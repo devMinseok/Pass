@@ -11,21 +11,19 @@ struct User: ModelType {
     enum Event {}
     
     var id: Int
-    var username: String
-    var birthDate: Date
+    var name: String
+    var birth: Date
     var phone: String
     var email: String
     
     var createdAt: Date
-    var updatedAt: Date
     
     enum CodingKeys: String, CodingKey {
         case id
-        case username
-        case birthDate = "birth_date"
+        case name
+        case birth
         case phone
         case email
         case createdAt = "created_at"
-        case updatedAt = "updated_at"
     }
 }
