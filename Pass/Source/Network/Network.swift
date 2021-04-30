@@ -5,23 +5,31 @@
 //  Created by 강민석 on 2021/04/05.
 //
 
-import Moya
-import MoyaSugar
 import RxSwift
+import Moya
 
-final class Netwrok<Target: SugarTargetType>: MoyaSugarProvider<Target> {
-    
+class Network<API: TargetType>: MoyaProvider<API> {
     init(plugins: [PluginType] = []) {
-        let session = MoyaProvider<Target>.defaultAlamofireSession()
+        let session = MoyaProvider<API>.defaultAlamofireSession()
         session.sessionConfiguration.timeoutIntervalForRequest = 10
         
         super.init(session: session, plugins: plugins)
     }
     
-    private let provider = MoyaProvider<Target>(plugins: [RequestLoggingPlugin()])
-    
-    func reqeust(_ target: Target) -> Single<Response> {
-        return provider.rx.request(target)
+    func request(_ api: API) -> Single<Response> {
+        return self.rx.request(api)
             .filterSuccessfulStatusCodes()
+    }
+}
+
+extension Network {
+    func requestObject<T: Codable>(_ target: API, type: T.Type) -> Single<T> {
+        return request(target)
+            .map(T.self)
+    }
+    
+    func requestArray<T: Codable>(_ target: API, type: T.Type) -> Single<[T]> {
+        return request(target)
+            .map([T].self)
     }
 }

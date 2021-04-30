@@ -5,29 +5,25 @@
 //  Created by 강민석 on 2021/03/19.
 //
 
-import Foundation
-
-#if DEBUG
+#if canImport(SwiftUI) && DEBUG
 import SwiftUI
-struct ViewControllerRepresentable: UIViewControllerRepresentable {
-    func updateUIViewController(_ uiView: UIViewController, context: Context) {
-        // leave this empty
-    }
-    @available(iOS 13.0.0, *)
-    func makeUIViewController(context: Context) -> UIViewController {
-        // 해당 라인을 수정하여 원하는 ViewController를 확인하세요.
-        
+
+let deviceNames: [String] = [
+    "iPhone 12 Pro Max",
+    "iPhone 12 mini"
+]
+
+@available(iOS 13.0, *)
+struct ViewController_Preview: PreviewProvider {
+    static var previews: some View {
+        ForEach(deviceNames, id: \.self) { deviceName in
+            UIViewControllerPreview {
+                // MARK: -  Initalizing ViewController
+                IntroViewController(reactor: IntroViewReactor())
+                
+            }.previewDevice(PreviewDevice(rawValue: deviceName))
+            .previewDisplayName(deviceName)
+        }
     }
 }
-@available(iOS 13.0, *)
-struct ViewControllerRepresentable_PreviewProvider: PreviewProvider {
-    static var previews: some SwiftUI.View {
-        Group {
-            ViewControllerRepresentable()
-//                .ignoresSafeArea()
-                .previewDisplayName(/*@START_MENU_TOKEN@*/"Preview"/*@END_MENU_TOKEN@*/)
-                .previewDevice(PreviewDevice(rawValue: "iPhone 12 Pro"))
-        }
-
-    }
-} #endif
+#endif
