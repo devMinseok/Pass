@@ -1,5 +1,5 @@
 //
-//  HomeViewController.swift
+//  SettingsViewController.swift
 //  Pass
 //
 //  Created by 강민석 on 2021/04/26.
@@ -9,14 +9,13 @@ import UIKit
 
 import ReactorKit
 
-final class HomeViewController: BaseViewController, View {
+final class SettingsViewController: BaseViewController, View {
     
-    typealias Reactor = HomeViewReactor
+    typealias Reactor = SettingsViewReactor
     
     // MARK: - Properties
     
     // MARK: - UI
-    
     
     // MARK: - View Life Cycle
     override func viewDidLoad() {

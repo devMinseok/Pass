@@ -1,5 +1,5 @@
 //
-//  HomeViewController.swift
+//  MyConsumeViewController.swift
 //  Pass
 //
 //  Created by 강민석 on 2021/04/26.
@@ -9,9 +9,9 @@ import UIKit
 
 import ReactorKit
 
-final class HomeViewController: BaseViewController, View {
+final class MyConsumeViewController: BaseViewController, View {
     
-    typealias Reactor = HomeViewReactor
+    typealias Reactor = MyConsumeViewReactor
     
     // MARK: - Properties
     
