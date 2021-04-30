@@ -20,35 +20,31 @@ class DIContainer {
     
     fileprivate init() {
         self.container = Container()
-        
-        self.register()
     }
     
     func register() {
-        // Service 등록
-        self.container.register(AuthService.self) { _ in
-            return AuthService()
-        }
+        
+        // MARK: - Service
+        container.register(AuthServiceType.self) { _ in AuthService() }
         
         let network = Network<PassAPI>(
             plugins: [
                 RequestLoggingPlugin(),
-                AuthPlugin(authService: self.container.resolve(AuthService.self)!)
+                AuthPlugin(authService: self.container.resolve(AuthServiceType.self)!)
             ]
         )
         
-        self.container.register(UserService.self) { resolver in
-            return UserService(network: network)
+        container.register(UserServiceType.self) { _ in UserService(network: network) }
+        
+        // MARK: - Register Controller
+        self.container.register(SplashViewController.self) { resolver in
+            let reactor = SplashViewReactor()
+            return SplashViewController(reactor: reactor)
         }
         
-        // ViewController 등록
-//        self.container.register(SplashViewController.self) { resolver in
-//            let reactor = SplashViewReactor()
-//            let controller = SplashViewController(reactor: reactor)
-//
-//            return controller
-//        }
-        
-//        self.container.register(<#T##serviceType: Service.Type##Service.Type#>, factory: <#T##(Resolver) -> Service#>)
+        self.container.register(IntroViewController.self) { resolver in
+            let reactor = IntroViewReactor()
+            return IntroViewController(reactor: reactor)
+        }
     }
 }

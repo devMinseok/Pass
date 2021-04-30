@@ -18,19 +18,40 @@
 		F2350AAC26368BEC000C523B /* BaseAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2350AAB26368BEC000C523B /* BaseAPI.swift */; };
 		F2350AB426368BF8000C523B /* AuthAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2350AB326368BF8000C523B /* AuthAPI.swift */; };
 		F2350ABC26368C21000C523B /* AuthPlugin.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2350ABB26368C21000C523B /* AuthPlugin.swift */; };
+		F2350B092636D24B000C523B /* HomeViewReactor.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2350B072636D24B000C523B /* HomeViewReactor.swift */; };
+		F2350B0A2636D24B000C523B /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2350B082636D24B000C523B /* HomeViewController.swift */; };
+		F2350B132636D259000C523B /* SettingsViewReactor.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2350B112636D259000C523B /* SettingsViewReactor.swift */; };
+		F2350B142636D259000C523B /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2350B122636D259000C523B /* SettingsViewController.swift */; };
+		F2350B1A2636D263000C523B /* MyConsumeViewReactor.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2350B182636D263000C523B /* MyConsumeViewReactor.swift */; };
+		F2350B1B2636D263000C523B /* MyConsumeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2350B192636D263000C523B /* MyConsumeViewController.swift */; };
+		F2350B302636D4DA000C523B /* RegisterViewReactor.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2350B2E2636D4DA000C523B /* RegisterViewReactor.swift */; };
+		F2350B312636D4DA000C523B /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2350B2F2636D4DA000C523B /* RegisterViewController.swift */; };
+		F2350B482636E27D000C523B /* PassStep.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2350B472636E27D000C523B /* PassStep.swift */; };
+		F2350B502636E289000C523B /* AppFlow.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2350B4F2636E289000C523B /* AppFlow.swift */; };
+		F2350B5A263798F3000C523B /* IntroFlow.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2350B59263798F3000C523B /* IntroFlow.swift */; };
+		F2350B6B2637A1E7000C523B /* TabBarFlow.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2350B6A2637A1E7000C523B /* TabBarFlow.swift */; };
+		F2350B71263827F7000C523B /* HomeFlow.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2350B70263827F7000C523B /* HomeFlow.swift */; };
+		F2350B7926382803000C523B /* MyConsumeFlow.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2350B7826382803000C523B /* MyConsumeFlow.swift */; };
+		F2350B7E2638280D000C523B /* SettingsFlow.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2350B7D2638280D000C523B /* SettingsFlow.swift */; };
+		F2350B8326382CFB000C523B /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2350B8226382CFB000C523B /* TabBarViewController.swift */; };
+		F2350B8C26385F3D000C523B /* PasswordViewReactor.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2350B8A26385F3D000C523B /* PasswordViewReactor.swift */; };
+		F2350B8D26385F3D000C523B /* PasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2350B8B26385F3D000C523B /* PasswordViewController.swift */; };
 		F25B016126042E9000EBF7F0 /* Preview.swift in Sources */ = {isa = PBXBuildFile; fileRef = F25B016026042E9000EBF7F0 /* Preview.swift */; };
 		F25B016926042F9F00EBF7F0 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F25B016826042F9F00EBF7F0 /* BaseViewController.swift */; };
 		F25B0174260430AC00EBF7F0 /* SplashViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F25B0173260430AC00EBF7F0 /* SplashViewController.swift */; };
 		F25B0179260430C700EBF7F0 /* SplashViewReactor.swift in Sources */ = {isa = PBXBuildFile; fileRef = F25B0178260430C700EBF7F0 /* SplashViewReactor.swift */; };
-		F279645D261D6D0600B77241 /* StartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F279645C261D6D0600B77241 /* StartViewController.swift */; };
-		F2796469261D717100B77241 /* HomeViewReactor.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2796468261D717100B77241 /* HomeViewReactor.swift */; };
-		F279646E261D717800B77241 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F279646D261D717800B77241 /* HomeViewController.swift */; };
+		F2685033263BE3B50047A5B0 /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2685032263BE3B50047A5B0 /* String.swift */; };
+		F2685038263BF79F0047A5B0 /* UIButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2685037263BF79F0047A5B0 /* UIButton.swift */; };
 		F2796476261D780E00B77241 /* AuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2796475261D780E00B77241 /* AuthService.swift */; };
-		F279647C261D88E100B77241 /* PasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F279647B261D88E100B77241 /* PasswordViewController.swift */; };
-		F2796481261D8C0500B77241 /* PasswordViewReactor.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2796480261D8C0500B77241 /* PasswordViewReactor.swift */; };
+		F280ACA2263B98F400663BFB /* Color.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F280ACA1263B98F400663BFB /* Color.xcassets */; };
 		F28419DE2625694200A703DD /* Token.swift in Sources */ = {isa = PBXBuildFile; fileRef = F28419DD2625694200A703DD /* Token.swift */; };
 		F28419EC26257AD000A703DD /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F28419EB26257AD000A703DD /* LoginViewController.swift */; };
 		F28419F426257AE200A703DD /* LoginViewReactor.swift in Sources */ = {isa = PBXBuildFile; fileRef = F28419F326257AE200A703DD /* LoginViewReactor.swift */; };
+		F292C318263B844300E318EE /* UIViewControllerPreview.swift in Sources */ = {isa = PBXBuildFile; fileRef = F292C317263B844300E318EE /* UIViewControllerPreview.swift */; };
+		F292C31D263B84B600E318EE /* UIViewPreview.swift in Sources */ = {isa = PBXBuildFile; fileRef = F292C31C263B84B600E318EE /* UIViewPreview.swift */; };
+		F2E213472639404600B79C4E /* CGFloatLiteral.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2E213462639404600B79C4E /* CGFloatLiteral.swift */; };
+		F2E213502639420200B79C4E /* IntroViewReactor.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2E2134E2639420200B79C4E /* IntroViewReactor.swift */; };
+		F2E213512639420200B79C4E /* IntroViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2E2134F2639420200B79C4E /* IntroViewController.swift */; };
 		F2E4B9BF261AE12100632221 /* Network.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2E4B9BE261AE12100632221 /* Network.swift */; };
 		F2E4B9C5261AE2EA00632221 /* RequestLoggingPlugin.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2E4B9C4261AE2EA00632221 /* RequestLoggingPlugin.swift */; };
 		F2E4B9CD261AE5A800632221 /* PassAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2E4B9CC261AE5A800632221 /* PassAPI.swift */; };
@@ -39,8 +60,6 @@
 		F2E4B9FB261AE97F00632221 /* ModelStream.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2E4B9FA261AE97F00632221 /* ModelStream.swift */; };
 		F2E4BA15261B2AEC00632221 /* UserService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2E4BA14261B2AEC00632221 /* UserService.swift */; };
 		F2E4BA41261C2B3500632221 /* DIContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2E4BA40261C2B3500632221 /* DIContainer.swift */; };
-		F2E4BA71261C839800632221 /* SignupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2E4BA70261C839800632221 /* SignupViewController.swift */; };
-		F2E4BA79261C83AE00632221 /* SignupViewReactor.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2E4BA78261C83AE00632221 /* SignupViewReactor.swift */; };
 		F6990AF53FD20288CCAE2944 /* Pods_Pass_PassTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 316EB235B0A1F9CA73A36DE9 /* Pods_Pass_PassTests.framework */; };
 /* End PBXBuildFile section */
 
@@ -86,19 +105,40 @@
 		F2350AAB26368BEC000C523B /* BaseAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseAPI.swift; sourceTree = "<group>"; };
 		F2350AB326368BF8000C523B /* AuthAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthAPI.swift; sourceTree = "<group>"; };
 		F2350ABB26368C21000C523B /* AuthPlugin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthPlugin.swift; sourceTree = "<group>"; };
+		F2350B072636D24B000C523B /* HomeViewReactor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewReactor.swift; sourceTree = "<group>"; };
+		F2350B082636D24B000C523B /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		F2350B112636D259000C523B /* SettingsViewReactor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewReactor.swift; sourceTree = "<group>"; };
+		F2350B122636D259000C523B /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		F2350B182636D263000C523B /* MyConsumeViewReactor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyConsumeViewReactor.swift; sourceTree = "<group>"; };
+		F2350B192636D263000C523B /* MyConsumeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyConsumeViewController.swift; sourceTree = "<group>"; };
+		F2350B2E2636D4DA000C523B /* RegisterViewReactor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewReactor.swift; sourceTree = "<group>"; };
+		F2350B2F2636D4DA000C523B /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
+		F2350B472636E27D000C523B /* PassStep.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PassStep.swift; sourceTree = "<group>"; };
+		F2350B4F2636E289000C523B /* AppFlow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppFlow.swift; sourceTree = "<group>"; };
+		F2350B59263798F3000C523B /* IntroFlow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntroFlow.swift; sourceTree = "<group>"; };
+		F2350B6A2637A1E7000C523B /* TabBarFlow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarFlow.swift; sourceTree = "<group>"; };
+		F2350B70263827F7000C523B /* HomeFlow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeFlow.swift; sourceTree = "<group>"; };
+		F2350B7826382803000C523B /* MyConsumeFlow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyConsumeFlow.swift; sourceTree = "<group>"; };
+		F2350B7D2638280D000C523B /* SettingsFlow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsFlow.swift; sourceTree = "<group>"; };
+		F2350B8226382CFB000C523B /* TabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarViewController.swift; sourceTree = "<group>"; };
+		F2350B8A26385F3D000C523B /* PasswordViewReactor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordViewReactor.swift; sourceTree = "<group>"; };
+		F2350B8B26385F3D000C523B /* PasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordViewController.swift; sourceTree = "<group>"; };
 		F25B016026042E9000EBF7F0 /* Preview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Preview.swift; sourceTree = "<group>"; };
 		F25B016826042F9F00EBF7F0 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		F25B0173260430AC00EBF7F0 /* SplashViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashViewController.swift; sourceTree = "<group>"; };
 		F25B0178260430C700EBF7F0 /* SplashViewReactor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashViewReactor.swift; sourceTree = "<group>"; };
-		F279645C261D6D0600B77241 /* StartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartViewController.swift; sourceTree = "<group>"; };
-		F2796468261D717100B77241 /* HomeViewReactor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewReactor.swift; sourceTree = "<group>"; };
-		F279646D261D717800B77241 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		F2685032263BE3B50047A5B0 /* String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
+		F2685037263BF79F0047A5B0 /* UIButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIButton.swift; sourceTree = "<group>"; };
 		F2796475261D780E00B77241 /* AuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthService.swift; sourceTree = "<group>"; };
-		F279647B261D88E100B77241 /* PasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordViewController.swift; sourceTree = "<group>"; };
-		F2796480261D8C0500B77241 /* PasswordViewReactor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordViewReactor.swift; sourceTree = "<group>"; };
+		F280ACA1263B98F400663BFB /* Color.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Color.xcassets; sourceTree = "<group>"; };
 		F28419DD2625694200A703DD /* Token.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Token.swift; sourceTree = "<group>"; };
 		F28419EB26257AD000A703DD /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		F28419F326257AE200A703DD /* LoginViewReactor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewReactor.swift; sourceTree = "<group>"; };
+		F292C317263B844300E318EE /* UIViewControllerPreview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewControllerPreview.swift; sourceTree = "<group>"; };
+		F292C31C263B84B600E318EE /* UIViewPreview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewPreview.swift; sourceTree = "<group>"; };
+		F2E213462639404600B79C4E /* CGFloatLiteral.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CGFloatLiteral.swift; sourceTree = "<group>"; };
+		F2E2134E2639420200B79C4E /* IntroViewReactor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntroViewReactor.swift; sourceTree = "<group>"; };
+		F2E2134F2639420200B79C4E /* IntroViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntroViewController.swift; sourceTree = "<group>"; };
 		F2E4B9BE261AE12100632221 /* Network.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Network.swift; sourceTree = "<group>"; };
 		F2E4B9C4261AE2EA00632221 /* RequestLoggingPlugin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestLoggingPlugin.swift; sourceTree = "<group>"; };
 		F2E4B9CC261AE5A800632221 /* PassAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PassAPI.swift; sourceTree = "<group>"; };
@@ -107,8 +147,6 @@
 		F2E4B9FA261AE97F00632221 /* ModelStream.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelStream.swift; sourceTree = "<group>"; };
 		F2E4BA14261B2AEC00632221 /* UserService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserService.swift; sourceTree = "<group>"; };
 		F2E4BA40261C2B3500632221 /* DIContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DIContainer.swift; sourceTree = "<group>"; };
-		F2E4BA70261C839800632221 /* SignupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupViewController.swift; sourceTree = "<group>"; };
-		F2E4BA78261C83AE00632221 /* SignupViewReactor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupViewReactor.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -221,10 +259,78 @@
 			path = API;
 			sourceTree = "<group>";
 		};
+		F2350B052636D1FD000C523B /* MyConsume */ = {
+			isa = PBXGroup;
+			children = (
+				F2350B182636D263000C523B /* MyConsumeViewReactor.swift */,
+				F2350B192636D263000C523B /* MyConsumeViewController.swift */,
+			);
+			path = MyConsume;
+			sourceTree = "<group>";
+		};
+		F2350B062636D205000C523B /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				F2350B112636D259000C523B /* SettingsViewReactor.swift */,
+				F2350B122636D259000C523B /* SettingsViewController.swift */,
+			);
+			path = Settings;
+			sourceTree = "<group>";
+		};
+		F2350B222636D3E7000C523B /* Intro */ = {
+			isa = PBXGroup;
+			children = (
+				F2E2134E2639420200B79C4E /* IntroViewReactor.swift */,
+				F2E2134F2639420200B79C4E /* IntroViewController.swift */,
+			);
+			path = Intro;
+			sourceTree = "<group>";
+		};
+		F2350B2D2636D4C7000C523B /* Register */ = {
+			isa = PBXGroup;
+			children = (
+				F2350B2E2636D4DA000C523B /* RegisterViewReactor.swift */,
+				F2350B2F2636D4DA000C523B /* RegisterViewController.swift */,
+			);
+			path = Register;
+			sourceTree = "<group>";
+		};
+		F2350B462636E221000C523B /* Flow */ = {
+			isa = PBXGroup;
+			children = (
+				F2350B472636E27D000C523B /* PassStep.swift */,
+				F2350B4F2636E289000C523B /* AppFlow.swift */,
+				F2350B59263798F3000C523B /* IntroFlow.swift */,
+				F2350B5826379892000C523B /* TabBar */,
+			);
+			path = Flow;
+			sourceTree = "<group>";
+		};
+		F2350B5826379892000C523B /* TabBar */ = {
+			isa = PBXGroup;
+			children = (
+				F2350B8226382CFB000C523B /* TabBarViewController.swift */,
+				F2350B6A2637A1E7000C523B /* TabBarFlow.swift */,
+				F2350B6F263827D6000C523B /* Tabs */,
+			);
+			path = TabBar;
+			sourceTree = "<group>";
+		};
+		F2350B6F263827D6000C523B /* Tabs */ = {
+			isa = PBXGroup;
+			children = (
+				F2350B70263827F7000C523B /* HomeFlow.swift */,
+				F2350B7826382803000C523B /* MyConsumeFlow.swift */,
+				F2350B7D2638280D000C523B /* SettingsFlow.swift */,
+			);
+			path = Tabs;
+			sourceTree = "<group>";
+		};
 		F25B014D260429E700EBF7F0 /* Resource */ = {
 			isa = PBXGroup;
 			children = (
 				F22B239125FF2F3D003AAD9D /* Assets.xcassets */,
+				F280ACA1263B98F400663BFB /* Color.xcassets */,
 				F22B239325FF2F3D003AAD9D /* LaunchScreen.storyboard */,
 			);
 			path = Resource;
@@ -252,10 +358,13 @@
 			children = (
 				F25B016826042F9F00EBF7F0 /* BaseViewController.swift */,
 				F25B017D260430CB00EBF7F0 /* Splash */,
+				F2350B222636D3E7000C523B /* Intro */,
 				F28419EA26257AB400A703DD /* Login */,
-				F25B0181260432C800EBF7F0 /* Signup */,
+				F2350B2D2636D4C7000C523B /* Register */,
 				F279647A261D873800B77241 /* Password */,
 				F2796467261D70F400B77241 /* Home */,
+				F2350B052636D1FD000C523B /* MyConsume */,
+				F2350B062636D205000C523B /* Settings */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -284,6 +393,11 @@
 		F25B015E26042E2700EBF7F0 /* Util */ = {
 			isa = PBXGroup;
 			children = (
+				F2E213462639404600B79C4E /* CGFloatLiteral.swift */,
+				F292C317263B844300E318EE /* UIViewControllerPreview.swift */,
+				F292C31C263B84B600E318EE /* UIViewPreview.swift */,
+				F2685032263BE3B50047A5B0 /* String.swift */,
+				F2685037263BF79F0047A5B0 /* UIButton.swift */,
 			);
 			path = Util;
 			sourceTree = "<group>";
@@ -306,21 +420,12 @@
 			path = Splash;
 			sourceTree = "<group>";
 		};
-		F25B0181260432C800EBF7F0 /* Signup */ = {
-			isa = PBXGroup;
-			children = (
-				F279645C261D6D0600B77241 /* StartViewController.swift */,
-				F2E4BA70261C839800632221 /* SignupViewController.swift */,
-				F2E4BA78261C83AE00632221 /* SignupViewReactor.swift */,
-			);
-			path = Signup;
-			sourceTree = "<group>";
-		};
 		F25E3B2D260429A0009E4FCD /* Source */ = {
 			isa = PBXGroup;
 			children = (
 				F22B238825FF2F3B003AAD9D /* AppDelegate.swift */,
 				F2E4BA40261C2B3500632221 /* DIContainer.swift */,
+				F2350B462636E221000C523B /* Flow */,
 				F25B015A26042DFC00EBF7F0 /* View */,
 				F25B015B26042E0800EBF7F0 /* ViewController */,
 				F25B015C26042E1600EBF7F0 /* Model */,
@@ -334,8 +439,8 @@
 		F2796467261D70F400B77241 /* Home */ = {
 			isa = PBXGroup;
 			children = (
-				F279646D261D717800B77241 /* HomeViewController.swift */,
-				F2796468261D717100B77241 /* HomeViewReactor.swift */,
+				F2350B072636D24B000C523B /* HomeViewReactor.swift */,
+				F2350B082636D24B000C523B /* HomeViewController.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -343,8 +448,8 @@
 		F279647A261D873800B77241 /* Password */ = {
 			isa = PBXGroup;
 			children = (
-				F279647B261D88E100B77241 /* PasswordViewController.swift */,
-				F2796480261D8C0500B77241 /* PasswordViewReactor.swift */,
+				F2350B8A26385F3D000C523B /* PasswordViewReactor.swift */,
+				F2350B8B26385F3D000C523B /* PasswordViewController.swift */,
 			);
 			path = Password;
 			sourceTree = "<group>";
@@ -477,6 +582,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F2350AA026368AAB000C523B /* .swiftlint.yml in Resources */,
+				F280ACA2263B98F400663BFB /* Color.xcassets in Resources */,
 				F22B239525FF2F3D003AAD9D /* LaunchScreen.storyboard in Resources */,
 				F22B239225FF2F3D003AAD9D /* Assets.xcassets in Resources */,
 			);
@@ -622,31 +728,49 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F2350B132636D259000C523B /* SettingsViewReactor.swift in Sources */,
 				F2350ABC26368C21000C523B /* AuthPlugin.swift in Sources */,
 				F25B0179260430C700EBF7F0 /* SplashViewReactor.swift in Sources */,
 				F25B016126042E9000EBF7F0 /* Preview.swift in Sources */,
+				F2350B482636E27D000C523B /* PassStep.swift in Sources */,
+				F292C31D263B84B600E318EE /* UIViewPreview.swift in Sources */,
+				F2350B8D26385F3D000C523B /* PasswordViewController.swift in Sources */,
 				F2059A9226198A690016AE87 /* R.generated.swift in Sources */,
-				F279647C261D88E100B77241 /* PasswordViewController.swift in Sources */,
-				F2E4BA79261C83AE00632221 /* SignupViewReactor.swift in Sources */,
-				F2796469261D717100B77241 /* HomeViewReactor.swift in Sources */,
 				F2796476261D780E00B77241 /* AuthService.swift in Sources */,
 				F2E4B9C5261AE2EA00632221 /* RequestLoggingPlugin.swift in Sources */,
-				F2796481261D8C0500B77241 /* PasswordViewReactor.swift in Sources */,
+				F292C318263B844300E318EE /* UIViewControllerPreview.swift in Sources */,
+				F2E213512639420200B79C4E /* IntroViewController.swift in Sources */,
+				F2685033263BE3B50047A5B0 /* String.swift in Sources */,
+				F2E213472639404600B79C4E /* CGFloatLiteral.swift in Sources */,
 				F2E4B9CD261AE5A800632221 /* PassAPI.swift in Sources */,
+				F2685038263BF79F0047A5B0 /* UIButton.swift in Sources */,
+				F2350B8326382CFB000C523B /* TabBarViewController.swift in Sources */,
 				F22B238925FF2F3B003AAD9D /* AppDelegate.swift in Sources */,
+				F2350B1A2636D263000C523B /* MyConsumeViewReactor.swift in Sources */,
+				F2350B092636D24B000C523B /* HomeViewReactor.swift in Sources */,
 				F2E4B9FB261AE97F00632221 /* ModelStream.swift in Sources */,
 				F28419EC26257AD000A703DD /* LoginViewController.swift in Sources */,
 				F2E4BA41261C2B3500632221 /* DIContainer.swift in Sources */,
 				F2E4B9BF261AE12100632221 /* Network.swift in Sources */,
-				F279645D261D6D0600B77241 /* StartViewController.swift in Sources */,
 				F2350AB426368BF8000C523B /* AuthAPI.swift in Sources */,
 				F2E4B9D2261AE66400632221 /* User.swift in Sources */,
+				F2350B302636D4DA000C523B /* RegisterViewReactor.swift in Sources */,
+				F2350B0A2636D24B000C523B /* HomeViewController.swift in Sources */,
 				F25B0174260430AC00EBF7F0 /* SplashViewController.swift in Sources */,
-				F279646E261D717800B77241 /* HomeViewController.swift in Sources */,
+				F2350B71263827F7000C523B /* HomeFlow.swift in Sources */,
+				F2350B7926382803000C523B /* MyConsumeFlow.swift in Sources */,
+				F2350B1B2636D263000C523B /* MyConsumeViewController.swift in Sources */,
+				F2350B312636D4DA000C523B /* RegisterViewController.swift in Sources */,
 				F2E4BA15261B2AEC00632221 /* UserService.swift in Sources */,
+				F2350B502636E289000C523B /* AppFlow.swift in Sources */,
+				F2350B6B2637A1E7000C523B /* TabBarFlow.swift in Sources */,
+				F2E213502639420200B79C4E /* IntroViewReactor.swift in Sources */,
+				F2350B142636D259000C523B /* SettingsViewController.swift in Sources */,
+				F2350B5A263798F3000C523B /* IntroFlow.swift in Sources */,
 				F28419F426257AE200A703DD /* LoginViewReactor.swift in Sources */,
+				F2350B8C26385F3D000C523B /* PasswordViewReactor.swift in Sources */,
 				F28419DE2625694200A703DD /* Token.swift in Sources */,
-				F2E4BA71261C839800632221 /* SignupViewController.swift in Sources */,
+				F2350B7E2638280D000C523B /* SettingsFlow.swift in Sources */,
 				F2E4B9D7261AE76D00632221 /* ModelType.swift in Sources */,
 				F25B016926042F9F00EBF7F0 /* BaseViewController.swift in Sources */,
 				F2350AAC26368BEC000C523B /* BaseAPI.swift in Sources */,
