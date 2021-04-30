@@ -12,8 +12,6 @@ class SplashViewController: BaseViewController, View {
     
     // MARK: - Properties
     typealias Reactor = SplashViewReactor
-    let presentStartScreen: () -> Void
-    let presentMainScreen: () -> Void
     
     // MARK: - UI
     lazy var appLogo = UIImageView().then {
@@ -24,12 +22,11 @@ class SplashViewController: BaseViewController, View {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.view.addSubview(appLogo)
+        self.view.addSubview(self.appLogo)
     }
     
     override func setupConstraints() {
-        super.setupConstraints() // default indicator 설정
-        appLogo.snp.makeConstraints { (make) in
+        self.appLogo.snp.makeConstraints { make in
             make.centerX.equalToSuperview()
             make.centerY.equalToSuperview().offset(-100)
             make.height.width.equalTo(100)
@@ -38,13 +35,9 @@ class SplashViewController: BaseViewController, View {
     
     // MARK: - Initializing
     init(
-        reactor: Reactor,
-        presentStartScreen: @escaping () -> Void,
-        presentMainScreen: @escaping () -> Void
+        reactor: Reactor
     ) {
         defer { self.reactor = reactor }
-        self.presentStartScreen = presentStartScreen
-        self.presentMainScreen = presentMainScreen
         super.init()
     }
     
@@ -54,21 +47,6 @@ class SplashViewController: BaseViewController, View {
     
     // MARK: - Configuring
     func bind(reactor: Reactor) {
-        self.rx.viewDidAppear
-            .map { _ in Reactor.Action.checkIfAuthenticated }
-            .bind(to: reactor.action)
-            .disposed(by: disposeBag)
         
-        reactor.state.map { $0.isAuthenticated }
-            .filterNil()
-            .distinctUntilChanged()
-            .subscribe(onNext: { [weak self] isAuthenticated in
-                if isAuthenticated {
-                    self?.presentMainScreen()
-                } else {
-                    self?.presentStartScreen()
-                }
-            })
-            .disposed(by: disposeBag)
     }
 }

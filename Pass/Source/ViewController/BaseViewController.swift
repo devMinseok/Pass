@@ -7,11 +7,14 @@
 
 import UIKit
 import RxSwift
+import RxCocoa
+import RxFlow
 
-class BaseViewController: UIViewController {
+class BaseViewController: UIViewController, Stepper {
     
     // MARK: - Properties
     let activityIndicatorView = UIActivityIndicatorView(style: .large)
+    let steps = PublishRelay<Step>()
     
     // MARK: - Initializing
     init() {
@@ -35,6 +38,8 @@ class BaseViewController: UIViewController {
     
     override func viewDidLoad() {
         self.view.setNeedsUpdateConstraints()
+        
+        self.view.addSubview(self.activityIndicatorView)
     }
     
     override func updateViewConstraints() {
@@ -46,10 +51,8 @@ class BaseViewController: UIViewController {
     }
     
     func setupConstraints() {
-        // default
         activityIndicatorView.snp.makeConstraints { (make) in
             make.center.equalToSuperview()
         }
     }
-    
 }

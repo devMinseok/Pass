@@ -1,17 +1,17 @@
 //
-//  PasswordViewController.swift
+//  RegisterViewController.swift
 //  Pass
 //
-//  Created by 강민석 on 2021/04/28.
+//  Created by 강민석 on 2021/04/26.
 //
 
 import UIKit
 
 import ReactorKit
 
-final class PasswordViewController: BaseViewController, View {
+final class RegisterViewController: BaseViewController, View {
     
-    typealias Reactor = PasswordViewReactor
+    typealias Reactor = RegisterViewReactor
     
     // MARK: - Properties
     

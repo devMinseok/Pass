@@ -1,19 +1,20 @@
 //
-//  LoginViewReactor.swift
+//  RegisterViewReactor.swift
 //  Pass
 //
-//  Created by 강민석 on 2021/04/13.
+//  Created by 강민석 on 2021/04/26.
 //
 
 import ReactorKit
-import RxSwift
 import RxCocoa
+import RxSwift
 
-class LoginViewReactor: Reactor {
+final class RegisterViewReactor: Reactor {
     typealias Action = NoAction
     
     struct State {
     }
     
     let initialState: State = State()
+
 }

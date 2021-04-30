@@ -2,29 +2,21 @@
 //  PasswordViewReactor.swift
 //  Pass
 //
-//  Created by 강민석 on 2021/04/07.
+//  Created by 강민석 on 2021/04/28.
 //
 
 import ReactorKit
-import RxSwift
 import RxCocoa
+import RxSwift
 
-class PasswordViewReactor: Reactor {
-    enum Action {
-        
-    }
+final class PasswordViewReactor: Reactor {
     
-    enum Mutation {
-        
-    }
+    typealias Action = NoAction
     
     struct State {
         
     }
     
-    let initialState = State()
-    
-    
-    
-    
+    let initialState: State = State()
+
 }

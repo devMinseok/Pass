@@ -12,14 +12,10 @@ class LoginViewController: BaseViewController, View {
     
     typealias Reactor = LoginViewReactor
     
-    let presentMainScreen: () -> Void
-    
     init(
-        reactor: Reactor,
-        presentMainScreen: @escaping () -> Void
+        reactor: Reactor
     ) {
         defer { self.reactor = reactor }
-        self.presentMainScreen = presentMainScreen
         super.init()
     }
     
@@ -29,7 +25,6 @@ class LoginViewController: BaseViewController, View {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         
     }
     
