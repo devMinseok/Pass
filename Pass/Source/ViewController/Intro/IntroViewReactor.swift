@@ -8,52 +8,34 @@
 import ReactorKit
 import RxCocoa
 import RxSwift
+import RxFlow
 
-//final class IntroViewReactor: Reactor {
-//
-//    enum Action {
-//
-//    }
-//
-//    enum Mutation {
-//
-//    }
-//
-//    struct State {
-//
-//    }
-//
-//    let initialState: State
-//
-//    init() {
-//
-//    }
-//
-//    func mutate(action: Action) -> Observable<Mutation> {
-//        switch action {
-//        case <#pattern#>:
-//            <#code#>
-//        }
-//    }
-//
-//    func reduce(state: State, mutation: Mutation) -> State {
-//        var state = state
-//
-//        switch mutation {
-//        case <#pattern#>:
-//            <#code#>
-//        }
-//
-//        return state
-//    }
-//
-//}
-
-final class IntroViewReactor: Reactor {
-    typealias Action = NoAction
+final class IntroViewReactor: Reactor, Stepper {
     
-    struct State {
+    var steps = PublishRelay<Step>()
+    
+    enum Action {
+        case login
+        case register
     }
-    
-    let initialState: State = State()
+
+    enum Mutation {
+        case navigateToLogin
+        case navigateToRegister
+    }
+
+    struct State { }
+
+    let initialState = State()
+
+    func mutate(action: Action) -> Observable<Mutation> {
+        switch action {
+        case .login:
+            steps.accept(PassStep.loginIsRequired)
+            return .empty()
+        case .register:
+            steps.accept(PassStep.registerIsRequired)
+            return .empty()
+        }
+    }
 }
