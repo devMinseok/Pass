@@ -11,6 +11,7 @@ final class IntroFlow: Flow {
     
     // MARK: - Properties
     private let authService: AuthServiceType
+    private let userService: UserServiceType
     
     var root: Presentable {
         return self.rootViewController
@@ -28,6 +29,7 @@ final class IntroFlow: Flow {
     // MARK: - Init
     init() {
         self.authService = DIContainer.shared.container.resolve(AuthServiceType.self)!
+        self.userService = DIContainer.shared.container.resolve(UserServiceType.self)!
     }
     
     deinit {
@@ -55,6 +57,14 @@ final class IntroFlow: Flow {
         case .passwordIsRequired:
             return navigateToPassword()
             
+        // 메인화면
+        case .mainTabBarIsRequired:
+            return .end(forwardToParentFlowWithStep: PassStep.mainTabBarIsRequired)
+        
+        case .dismiss:
+            self.rootViewController.dismiss(animated: true, completion: nil)
+            return .none
+            
         default:
             return .none
         }
@@ -62,33 +72,37 @@ final class IntroFlow: Flow {
 }
 
 extension IntroFlow {
-    // MARK: - Navigate to SocialLogin
+    
+    /// Initial Navigate
     private func navigateToIntro() -> FlowContributors {
-        let viewController = IntroViewController(reactor: IntroViewReactor())
+        let reactor = IntroViewReactor()
+        let viewController = IntroViewController(reactor: reactor)
         
         self.rootViewController.pushViewController(viewController, animated: false)
-        return .one(flowContributor: .contribute(withNext: viewController))
+        return .one(flowContributor: .contribute(withNextPresentable: viewController, withNextStepper: reactor))
     }
     
     private func navigateToLogin() -> FlowContributors {
-        let viewController = LoginViewController(reactor: LoginViewReactor())
+        let reactor = LoginViewReactor(authService: self.authService, userService: self.userService)
+        let viewController = LoginViewController(reactor: reactor)
         
-        self.rootViewController.pushViewController(viewController, animated: false)
-        return .one(flowContributor: .contribute(withNext: viewController))
+        self.rootViewController.pushViewController(viewController, animated: true)
+        return .one(flowContributor: .contribute(withNextPresentable: viewController, withNextStepper: reactor))
     }
     
     private func navigateToRegister() -> FlowContributors {
-        let viewController = RegisterViewController(reactor: RegisterViewReactor())
+        let reactor = RegisterViewReactor(authService: self.authService, userService: self.userService)
+        let viewController = RegisterViewController(reactor: reactor)
         
-        self.rootViewController.pushViewController(viewController, animated: false)
-        return .one(flowContributor: .contribute(withNext: viewController))
+        self.rootViewController.pushViewController(viewController, animated: true)
+        return .one(flowContributor: .contribute(withNextPresentable: viewController, withNextStepper: reactor))
     }
     
     private func navigateToPassword() -> FlowContributors {
-        let viewController = PasswordViewController(reactor: PasswordViewReactor())
+        let reactor = PasswordViewReactor()
+        let viewController = PasswordViewController(reactor: reactor)
         
-        self.rootViewController.pushViewController(viewController, animated: false)
-        return .one(flowContributor: .contribute(withNext: viewController))
+        self.rootViewController.present(viewController, animated: true, completion: nil)
+        return .one(flowContributor: .contribute(withNextPresentable: viewController, withNextStepper: reactor))
     }
-    
 }

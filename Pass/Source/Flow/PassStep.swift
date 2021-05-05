@@ -7,7 +7,10 @@
 
 import RxFlow
 
-enum PassStep: Step {
+enum PassStep: Step, Equatable {
+    
+    case popViewController
+    case dismiss
     
     // MARK: - Splash
     case splashIsRequired

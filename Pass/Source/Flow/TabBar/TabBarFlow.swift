@@ -56,7 +56,7 @@ extension TabBarFlow {
             root3.tabBarItem = tabBarItem3
             root3.title = "설정"
             
-            self.rootViewController.setViewControllers([root1, root2, root3], animated: true)
+            self.rootViewController.setViewControllers([root1, root2, root3], animated: false)
         }
         
         return .multiple(flowContributors: [
