@@ -22,10 +22,9 @@ final class IntroViewController: BaseViewController, View {
         
         static let loginButtonBottom = 20.f
         
-        static let signupButtonLeftRight = 20.f
-        static let signupButtonBottom = 10.f
-        static let signupButtonHeight = 55.f
-        static let signupButtonCornerRadius = 12.f
+        static let registerButtonLeftRight = 20.f
+        static let registerButtonBottom = 10.f
+        static let registerButtonHeight = 55.f
     }
     
     struct Font {
@@ -33,7 +32,7 @@ final class IntroViewController: BaseViewController, View {
         static let subTitleLabel = UIFont.systemFont(ofSize: 15, weight: .bold)
         
         static let loginButtonTitle = UIFont.systemFont(ofSize: 15, weight: .bold)
-        static let signupButtonTitle = UIFont.systemFont(ofSize: 16, weight: .medium)
+        static let registerButtonTitle = UIFont.systemFont(ofSize: 16, weight: .medium)
     }
     
     // MARK: - Properties
@@ -62,12 +61,8 @@ final class IntroViewController: BaseViewController, View {
         $0.setTitleColor(R.color.textGray(), for: .normal)
     }
     
-    let signupButton = CustomButton().then {
+    let registerButton = PassPlainButton().then {
         $0.setTitle("시작하기", for: .normal)
-        $0.titleLabel?.font = Font.signupButtonTitle
-        $0.layer.cornerRadius = Metric.signupButtonCornerRadius
-        $0.backgroundColor = R.color.accentColor()
-//        $0.highlightedBackgroundColor = R.color.textGray()
     }
     
     // MARK: - Initializing
@@ -88,13 +83,11 @@ final class IntroViewController: BaseViewController, View {
         
         self.view.addSubview(self.titleLabel)
         self.view.addSubview(self.subTitleLabel)
-        self.view.addSubview(self.signupButton)
+        self.view.addSubview(self.registerButton)
         self.view.addSubview(self.loginButton)
     }
     
     override func setupConstraints() {
-        super.setupConstraints()
-        
         self.titleLabel.snp.makeConstraints { make in
             make.centerX.equalToSuperview()
             make.top.equalTo(self.view.safeAreaLayoutGuide).offset(Metric.titleLabelTop)
@@ -109,32 +102,30 @@ final class IntroViewController: BaseViewController, View {
             make.right.equalTo(self.titleLabel.snp.right)
         }
         
-        self.signupButton.snp.makeConstraints { make in
+        self.registerButton.snp.makeConstraints { make in
             make.centerX.equalToSuperview()
-            make.left.equalTo(Metric.signupButtonLeftRight)
-            make.right.equalTo(-Metric.signupButtonLeftRight)
-            make.bottom.equalTo(self.view.safeAreaLayoutGuide).offset(-Metric.signupButtonBottom)
-            make.height.equalTo(Metric.signupButtonHeight)
+            make.left.equalTo(Metric.registerButtonLeftRight)
+            make.right.equalTo(-Metric.registerButtonLeftRight)
+            make.bottom.equalTo(self.view.safeAreaLayoutGuide).offset(-Metric.registerButtonBottom)
+            make.height.equalTo(Metric.registerButtonHeight)
         }
         
         self.loginButton.snp.makeConstraints { make in
             make.centerX.equalToSuperview()
-            make.bottom.equalTo(self.signupButton.snp.top).offset(-Metric.loginButtonBottom)
+            make.bottom.equalTo(self.registerButton.snp.top).offset(-Metric.loginButtonBottom)
         }
     }
     
     // MARK: - Configuring
     func bind(reactor: Reactor) {
-        
-        self.signupButton.rx.tap
-            .subscribe(onNext: {
-                print("signup")
-            }).disposed(by: disposeBag)
-        
         self.loginButton.rx.tap
-            .subscribe(onNext: {
-                print("login")
-            }).disposed(by: disposeBag)
-
+            .map { Reactor.Action.login }
+            .bind(to: reactor.action)
+            .disposed(by: disposeBag)
+        
+        self.registerButton.rx.tap
+            .map { Reactor.Action.register }
+            .bind(to: reactor.action)
+            .disposed(by: disposeBag)
     }
 }

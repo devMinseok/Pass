@@ -11,8 +11,8 @@ import KeychainAccess
 protocol AuthServiceType {
     var currentToken: Token? { get }
     
-    func login(email: String, password: String) -> Observable<Void>
-    func register(password: String, name: String, email: String, phone: String, birth: Date) -> Observable<Void>
+    func login(_ email: String, _ password: String) -> Observable<Void>
+    func register(_ password: String, _ name: String, _ email: String, _ phone: String) -> Observable<Void>
     func logout()
 }
 
@@ -28,7 +28,7 @@ final class AuthService: AuthServiceType {
         self.currentToken = self.loadToken()
     }
     
-    func login(email: String, password: String) -> Observable<Void> {
+    func login(_ email: String, _ password: String) -> Observable<Void> {
         return network.requestObject(.login(email, password), type: Token.self)
             .asObservable()
             .do(onNext: { [weak self] response in
@@ -38,8 +38,8 @@ final class AuthService: AuthServiceType {
             .map { _ in }
     }
     
-    func register(password: String, name: String, email: String, phone: String, birth: Date) -> Observable<Void> {
-        return network.requestObject(.register(password, name, email, phone, birth), type: Token.self)
+    func register(_ password: String, _ name: String, _ email: String, _ phone: String) -> Observable<Void> {
+        return network.requestObject(.register(password, name, email, phone), type: Token.self)
             .asObservable()
             .do(onNext: { [weak self] response in
                 try self?.saveToken(response)

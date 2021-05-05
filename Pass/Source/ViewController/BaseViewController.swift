@@ -10,11 +10,10 @@ import RxSwift
 import RxCocoa
 import RxFlow
 
-class BaseViewController: UIViewController, Stepper {
+class BaseViewController: UIViewController {
     
     // MARK: - Properties
     let activityIndicatorView = UIActivityIndicatorView(style: .large)
-    let steps = PublishRelay<Step>()
     
     // MARK: - Initializing
     init() {
@@ -39,6 +38,7 @@ class BaseViewController: UIViewController, Stepper {
     override func viewDidLoad() {
         self.view.setNeedsUpdateConstraints()
         
+        self.setupStyle()
         self.view.addSubview(self.activityIndicatorView)
     }
     
@@ -54,5 +54,14 @@ class BaseViewController: UIViewController, Stepper {
         activityIndicatorView.snp.makeConstraints { (make) in
             make.center.equalToSuperview()
         }
+    }
+
+    func setupStyle() {
+        self.activityIndicatorView.color = .systemBackground
+        let backItem = UIBarButtonItem()
+        backItem.title = ""
+        backItem.tintColor = .systemGray
+        self.view.backgroundColor = .systemBackground
+        self.navigationItem.backBarButtonItem = backItem
     }
 }

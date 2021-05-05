@@ -34,21 +34,29 @@
 		F2350B7926382803000C523B /* MyConsumeFlow.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2350B7826382803000C523B /* MyConsumeFlow.swift */; };
 		F2350B7E2638280D000C523B /* SettingsFlow.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2350B7D2638280D000C523B /* SettingsFlow.swift */; };
 		F2350B8326382CFB000C523B /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2350B8226382CFB000C523B /* TabBarViewController.swift */; };
-		F2350B8C26385F3D000C523B /* PasswordViewReactor.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2350B8A26385F3D000C523B /* PasswordViewReactor.swift */; };
-		F2350B8D26385F3D000C523B /* PasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2350B8B26385F3D000C523B /* PasswordViewController.swift */; };
 		F25B016126042E9000EBF7F0 /* Preview.swift in Sources */ = {isa = PBXBuildFile; fileRef = F25B016026042E9000EBF7F0 /* Preview.swift */; };
 		F25B016926042F9F00EBF7F0 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F25B016826042F9F00EBF7F0 /* BaseViewController.swift */; };
 		F25B0174260430AC00EBF7F0 /* SplashViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F25B0173260430AC00EBF7F0 /* SplashViewController.swift */; };
 		F25B0179260430C700EBF7F0 /* SplashViewReactor.swift in Sources */ = {isa = PBXBuildFile; fileRef = F25B0178260430C700EBF7F0 /* SplashViewReactor.swift */; };
 		F2685033263BE3B50047A5B0 /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2685032263BE3B50047A5B0 /* String.swift */; };
-		F2685038263BF79F0047A5B0 /* UIButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2685037263BF79F0047A5B0 /* UIButton.swift */; };
+		F2685051263C23930047A5B0 /* LoginViewReactor.swift in Sources */ = {isa = PBXBuildFile; fileRef = F268504F263C23930047A5B0 /* LoginViewReactor.swift */; };
+		F2685052263C23930047A5B0 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2685050263C23930047A5B0 /* LoginViewController.swift */; };
 		F2796476261D780E00B77241 /* AuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2796475261D780E00B77241 /* AuthService.swift */; };
 		F280ACA2263B98F400663BFB /* Color.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F280ACA1263B98F400663BFB /* Color.xcassets */; };
 		F28419DE2625694200A703DD /* Token.swift in Sources */ = {isa = PBXBuildFile; fileRef = F28419DD2625694200A703DD /* Token.swift */; };
-		F28419EC26257AD000A703DD /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F28419EB26257AD000A703DD /* LoginViewController.swift */; };
-		F28419F426257AE200A703DD /* LoginViewReactor.swift in Sources */ = {isa = PBXBuildFile; fileRef = F28419F326257AE200A703DD /* LoginViewReactor.swift */; };
+		F2893D4E263D235600801067 /* PassTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2893D4C263D235600801067 /* PassTextField.swift */; };
+		F2893D51263D638E00801067 /* PasswordViewReactor.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2893D4F263D638E00801067 /* PasswordViewReactor.swift */; };
+		F2893D52263D638E00801067 /* PasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2893D50263D638E00801067 /* PasswordViewController.swift */; };
+		F2893D56263D68C600801067 /* PassNumberPad.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2893D55263D68C600801067 /* PassNumberPad.swift */; };
+		F2893D58263D69F500801067 /* NumberButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2893D57263D69F500801067 /* NumberButton.swift */; };
+		F2893D5A263D745400801067 /* PassPlainButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2893D59263D745400801067 /* PassPlainButton.swift */; };
 		F292C318263B844300E318EE /* UIViewControllerPreview.swift in Sources */ = {isa = PBXBuildFile; fileRef = F292C317263B844300E318EE /* UIViewControllerPreview.swift */; };
 		F292C31D263B84B600E318EE /* UIViewPreview.swift in Sources */ = {isa = PBXBuildFile; fileRef = F292C31C263B84B600E318EE /* UIViewPreview.swift */; };
+		F2B129ED263E8CF600C96453 /* SecureTextEntry.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2B129EC263E8CF600C96453 /* SecureTextEntry.swift */; };
+		F2B129EF263EE9F300C96453 /* HapticFeedback.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2B129EE263EE9F300C96453 /* HapticFeedback.swift */; };
+		F2B129F12640E4EB00C96453 /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2B129F02640E4EB00C96453 /* Message.swift */; };
+		F2B129F32641233F00C96453 /* ValidationResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2B129F22641233E00C96453 /* ValidationResult.swift */; };
+		F2B129F626412CA900C96453 /* UIButton+Rx.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2B129F526412CA900C96453 /* UIButton+Rx.swift */; };
 		F2E213472639404600B79C4E /* CGFloatLiteral.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2E213462639404600B79C4E /* CGFloatLiteral.swift */; };
 		F2E213502639420200B79C4E /* IntroViewReactor.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2E2134E2639420200B79C4E /* IntroViewReactor.swift */; };
 		F2E213512639420200B79C4E /* IntroViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2E2134F2639420200B79C4E /* IntroViewController.swift */; };
@@ -121,21 +129,29 @@
 		F2350B7826382803000C523B /* MyConsumeFlow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyConsumeFlow.swift; sourceTree = "<group>"; };
 		F2350B7D2638280D000C523B /* SettingsFlow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsFlow.swift; sourceTree = "<group>"; };
 		F2350B8226382CFB000C523B /* TabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarViewController.swift; sourceTree = "<group>"; };
-		F2350B8A26385F3D000C523B /* PasswordViewReactor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordViewReactor.swift; sourceTree = "<group>"; };
-		F2350B8B26385F3D000C523B /* PasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordViewController.swift; sourceTree = "<group>"; };
 		F25B016026042E9000EBF7F0 /* Preview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Preview.swift; sourceTree = "<group>"; };
 		F25B016826042F9F00EBF7F0 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		F25B0173260430AC00EBF7F0 /* SplashViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashViewController.swift; sourceTree = "<group>"; };
 		F25B0178260430C700EBF7F0 /* SplashViewReactor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashViewReactor.swift; sourceTree = "<group>"; };
 		F2685032263BE3B50047A5B0 /* String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
-		F2685037263BF79F0047A5B0 /* UIButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIButton.swift; sourceTree = "<group>"; };
+		F268504F263C23930047A5B0 /* LoginViewReactor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewReactor.swift; sourceTree = "<group>"; };
+		F2685050263C23930047A5B0 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		F2796475261D780E00B77241 /* AuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthService.swift; sourceTree = "<group>"; };
 		F280ACA1263B98F400663BFB /* Color.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Color.xcassets; sourceTree = "<group>"; };
 		F28419DD2625694200A703DD /* Token.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Token.swift; sourceTree = "<group>"; };
-		F28419EB26257AD000A703DD /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
-		F28419F326257AE200A703DD /* LoginViewReactor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewReactor.swift; sourceTree = "<group>"; };
+		F2893D4C263D235600801067 /* PassTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PassTextField.swift; sourceTree = "<group>"; };
+		F2893D4F263D638E00801067 /* PasswordViewReactor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordViewReactor.swift; sourceTree = "<group>"; };
+		F2893D50263D638E00801067 /* PasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordViewController.swift; sourceTree = "<group>"; };
+		F2893D55263D68C600801067 /* PassNumberPad.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PassNumberPad.swift; sourceTree = "<group>"; };
+		F2893D57263D69F500801067 /* NumberButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumberButton.swift; sourceTree = "<group>"; };
+		F2893D59263D745400801067 /* PassPlainButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PassPlainButton.swift; sourceTree = "<group>"; };
 		F292C317263B844300E318EE /* UIViewControllerPreview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewControllerPreview.swift; sourceTree = "<group>"; };
 		F292C31C263B84B600E318EE /* UIViewPreview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewPreview.swift; sourceTree = "<group>"; };
+		F2B129EC263E8CF600C96453 /* SecureTextEntry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecureTextEntry.swift; sourceTree = "<group>"; };
+		F2B129EE263EE9F300C96453 /* HapticFeedback.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HapticFeedback.swift; sourceTree = "<group>"; };
+		F2B129F02640E4EB00C96453 /* Message.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
+		F2B129F22641233E00C96453 /* ValidationResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValidationResult.swift; sourceTree = "<group>"; };
+		F2B129F526412CA900C96453 /* UIButton+Rx.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton+Rx.swift"; sourceTree = "<group>"; };
 		F2E213462639404600B79C4E /* CGFloatLiteral.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CGFloatLiteral.swift; sourceTree = "<group>"; };
 		F2E2134E2639420200B79C4E /* IntroViewReactor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntroViewReactor.swift; sourceTree = "<group>"; };
 		F2E2134F2639420200B79C4E /* IntroViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntroViewController.swift; sourceTree = "<group>"; };
@@ -349,6 +365,11 @@
 		F25B015A26042DFC00EBF7F0 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				F2893D4C263D235600801067 /* PassTextField.swift */,
+				F2893D55263D68C600801067 /* PassNumberPad.swift */,
+				F2893D57263D69F500801067 /* NumberButton.swift */,
+				F2893D59263D745400801067 /* PassPlainButton.swift */,
+				F2B129EC263E8CF600C96453 /* SecureTextEntry.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -396,8 +417,9 @@
 				F2E213462639404600B79C4E /* CGFloatLiteral.swift */,
 				F292C317263B844300E318EE /* UIViewControllerPreview.swift */,
 				F292C31C263B84B600E318EE /* UIViewPreview.swift */,
-				F2685032263BE3B50047A5B0 /* String.swift */,
-				F2685037263BF79F0047A5B0 /* UIButton.swift */,
+				F2B129EE263EE9F300C96453 /* HapticFeedback.swift */,
+				F2B129F02640E4EB00C96453 /* Message.swift */,
+				F2B129F22641233E00C96453 /* ValidationResult.swift */,
 			);
 			path = Util;
 			sourceTree = "<group>";
@@ -431,6 +453,7 @@
 				F25B015C26042E1600EBF7F0 /* Model */,
 				F25B015F26042E3400EBF7F0 /* Service */,
 				F25B015D26042E1E00EBF7F0 /* Network */,
+				F2B129F426412C4B00C96453 /* Extension */,
 				F25B015E26042E2700EBF7F0 /* Util */,
 			);
 			path = Source;
@@ -448,8 +471,8 @@
 		F279647A261D873800B77241 /* Password */ = {
 			isa = PBXGroup;
 			children = (
-				F2350B8A26385F3D000C523B /* PasswordViewReactor.swift */,
-				F2350B8B26385F3D000C523B /* PasswordViewController.swift */,
+				F2893D4F263D638E00801067 /* PasswordViewReactor.swift */,
+				F2893D50263D638E00801067 /* PasswordViewController.swift */,
 			);
 			path = Password;
 			sourceTree = "<group>";
@@ -457,10 +480,19 @@
 		F28419EA26257AB400A703DD /* Login */ = {
 			isa = PBXGroup;
 			children = (
-				F28419EB26257AD000A703DD /* LoginViewController.swift */,
-				F28419F326257AE200A703DD /* LoginViewReactor.swift */,
+				F268504F263C23930047A5B0 /* LoginViewReactor.swift */,
+				F2685050263C23930047A5B0 /* LoginViewController.swift */,
 			);
 			path = Login;
+			sourceTree = "<group>";
+		};
+		F2B129F426412C4B00C96453 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				F2685032263BE3B50047A5B0 /* String.swift */,
+				F2B129F526412CA900C96453 /* UIButton+Rx.swift */,
+			);
+			path = Extension;
 			sourceTree = "<group>";
 		};
 		F2E4B9C3261AE28700632221 /* Plugin */ = {
@@ -729,12 +761,18 @@
 			buildActionMask = 2147483647;
 			files = (
 				F2350B132636D259000C523B /* SettingsViewReactor.swift in Sources */,
+				F2893D4E263D235600801067 /* PassTextField.swift in Sources */,
 				F2350ABC26368C21000C523B /* AuthPlugin.swift in Sources */,
+				F2B129F626412CA900C96453 /* UIButton+Rx.swift in Sources */,
 				F25B0179260430C700EBF7F0 /* SplashViewReactor.swift in Sources */,
 				F25B016126042E9000EBF7F0 /* Preview.swift in Sources */,
+				F2893D5A263D745400801067 /* PassPlainButton.swift in Sources */,
+				F2B129ED263E8CF600C96453 /* SecureTextEntry.swift in Sources */,
 				F2350B482636E27D000C523B /* PassStep.swift in Sources */,
+				F2685051263C23930047A5B0 /* LoginViewReactor.swift in Sources */,
+				F2B129F12640E4EB00C96453 /* Message.swift in Sources */,
 				F292C31D263B84B600E318EE /* UIViewPreview.swift in Sources */,
-				F2350B8D26385F3D000C523B /* PasswordViewController.swift in Sources */,
+				F2893D58263D69F500801067 /* NumberButton.swift in Sources */,
 				F2059A9226198A690016AE87 /* R.generated.swift in Sources */,
 				F2796476261D780E00B77241 /* AuthService.swift in Sources */,
 				F2E4B9C5261AE2EA00632221 /* RequestLoggingPlugin.swift in Sources */,
@@ -743,22 +781,24 @@
 				F2685033263BE3B50047A5B0 /* String.swift in Sources */,
 				F2E213472639404600B79C4E /* CGFloatLiteral.swift in Sources */,
 				F2E4B9CD261AE5A800632221 /* PassAPI.swift in Sources */,
-				F2685038263BF79F0047A5B0 /* UIButton.swift in Sources */,
 				F2350B8326382CFB000C523B /* TabBarViewController.swift in Sources */,
 				F22B238925FF2F3B003AAD9D /* AppDelegate.swift in Sources */,
+				F2893D56263D68C600801067 /* PassNumberPad.swift in Sources */,
 				F2350B1A2636D263000C523B /* MyConsumeViewReactor.swift in Sources */,
+				F2893D52263D638E00801067 /* PasswordViewController.swift in Sources */,
 				F2350B092636D24B000C523B /* HomeViewReactor.swift in Sources */,
 				F2E4B9FB261AE97F00632221 /* ModelStream.swift in Sources */,
-				F28419EC26257AD000A703DD /* LoginViewController.swift in Sources */,
 				F2E4BA41261C2B3500632221 /* DIContainer.swift in Sources */,
 				F2E4B9BF261AE12100632221 /* Network.swift in Sources */,
 				F2350AB426368BF8000C523B /* AuthAPI.swift in Sources */,
 				F2E4B9D2261AE66400632221 /* User.swift in Sources */,
+				F2685052263C23930047A5B0 /* LoginViewController.swift in Sources */,
 				F2350B302636D4DA000C523B /* RegisterViewReactor.swift in Sources */,
 				F2350B0A2636D24B000C523B /* HomeViewController.swift in Sources */,
 				F25B0174260430AC00EBF7F0 /* SplashViewController.swift in Sources */,
 				F2350B71263827F7000C523B /* HomeFlow.swift in Sources */,
 				F2350B7926382803000C523B /* MyConsumeFlow.swift in Sources */,
+				F2893D51263D638E00801067 /* PasswordViewReactor.swift in Sources */,
 				F2350B1B2636D263000C523B /* MyConsumeViewController.swift in Sources */,
 				F2350B312636D4DA000C523B /* RegisterViewController.swift in Sources */,
 				F2E4BA15261B2AEC00632221 /* UserService.swift in Sources */,
@@ -767,13 +807,13 @@
 				F2E213502639420200B79C4E /* IntroViewReactor.swift in Sources */,
 				F2350B142636D259000C523B /* SettingsViewController.swift in Sources */,
 				F2350B5A263798F3000C523B /* IntroFlow.swift in Sources */,
-				F28419F426257AE200A703DD /* LoginViewReactor.swift in Sources */,
-				F2350B8C26385F3D000C523B /* PasswordViewReactor.swift in Sources */,
 				F28419DE2625694200A703DD /* Token.swift in Sources */,
 				F2350B7E2638280D000C523B /* SettingsFlow.swift in Sources */,
 				F2E4B9D7261AE76D00632221 /* ModelType.swift in Sources */,
+				F2B129F32641233F00C96453 /* ValidationResult.swift in Sources */,
 				F25B016926042F9F00EBF7F0 /* BaseViewController.swift in Sources */,
 				F2350AAC26368BEC000C523B /* BaseAPI.swift in Sources */,
+				F2B129EF263EE9F300C96453 /* HapticFeedback.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

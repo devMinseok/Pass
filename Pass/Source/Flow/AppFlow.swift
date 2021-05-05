@@ -50,6 +50,11 @@ extension AppFlow {
         let viewController = DIContainer.shared.container.resolve(SplashViewController.self)
         self.window.rootViewController = viewController
         
+        UIView.transition(with: self.window,
+                          duration: 0.3,
+                          options: [.transitionCrossDissolve],
+                          animations: nil,
+                          completion: nil)
         return .none
     }
     
@@ -91,23 +96,27 @@ extension AppFlow {
 /// User 정보 확인후 화면 결정
 class AppStepper: Stepper {
 
+    let userService: UserServiceType
+    
     let disposeBag = DisposeBag()
     let steps = PublishRelay<Step>()
 
     var initialStep: Step {
         return PassStep.splashIsRequired
     }
+    
+    init() {
+        self.userService = DIContainer.shared.container.resolve(UserServiceType.self)!
+    }
 
     // 사용자 정보 받아오기 성공시 실행되는 콜백 메서드
     func readyToEmitSteps() {
-        let userService = DIContainer.shared.container.resolve(UserServiceType.self)
-        
-        userService?.fetchUser()
+        self.userService.fetchUser()
             .asObservable()
             .map { true }
             .catchErrorJustReturn(false)
-            .map { $0 ? PassStep.mainTabBarIsRequired : PassStep.introIsRequired }
-//            .map { $0 ? PassStep.introIsRequired : PassStep.mainTabBarIsRequired }
+            .map { $0 ? PassStep.mainTabBarIsRequired : PassStep.introIsRequired } // 정상
+//            .map { $0 ? PassStep.introIsRequired : PassStep.mainTabBarIsRequired } // 메인 테스트용
             .bind(to: self.steps)
             .disposed(by: disposeBag)
     }

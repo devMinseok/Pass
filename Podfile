@@ -10,6 +10,7 @@ target 'Pass' do
   # UI
   pod 'SnapKit'
   pod 'RxFlow'
+  pod 'SwiftMessages'
   
   # Rx
   pod 'RxSwift', '5.1.1'

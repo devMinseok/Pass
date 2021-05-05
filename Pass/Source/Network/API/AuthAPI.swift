@@ -10,7 +10,7 @@ import Moya
 
 enum AuthAPI {
     case login(_ email: String, _ password: String)
-    case register(_ password: String, _ name: String, _ email: String, _ phone: String, _ birth: Date)
+    case register(_ password: String, _ name: String, _ email: String, _ phone: String)
 }
 
 extension AuthAPI: BaseAPI {
@@ -49,13 +49,12 @@ extension AuthAPI: BaseAPI {
                 "password": password
             ]
             
-        case let .register(password, name, email, phone, birth):
+        case let .register(password, name, email, phone):
             return [
                 "password": password,
                 "name": name,
                 "email": email,
-                "phone": phone,
-                "birth": birth
+                "phone": phone
             ]
         }
     }
