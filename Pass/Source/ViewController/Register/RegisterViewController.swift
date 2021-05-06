@@ -40,7 +40,7 @@ final class RegisterViewController: BaseViewController, View {
     }
     
     let phoneTextField = PassTextField().then {
-        $0.textField.keyboardType = .phonePad
+        $0.textField.keyboardType = .numberPad
         $0.titleLabel.text = "휴대폰 번호"
         $0.textField.placeholder = "휴대폰 번호"
     }
