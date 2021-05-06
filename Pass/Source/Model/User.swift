@@ -10,9 +10,8 @@ import Foundation
 struct User: ModelType {
     enum Event {}
     
-    var id: Int
+    var id: String
     var name: String
-    var birth: Date
     var phone: String
     var email: String
     
@@ -21,7 +20,6 @@ struct User: ModelType {
     enum CodingKeys: String, CodingKey {
         case id
         case name
-        case birth
         case phone
         case email
         case createdAt = "created_at"
