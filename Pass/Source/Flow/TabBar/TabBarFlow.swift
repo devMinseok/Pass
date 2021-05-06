@@ -21,7 +21,7 @@ final class TabBarFlow: Flow {
     }
     
     deinit {
-        print("\(type(of: self)): \(#function)")
+        print("❎ \(type(of: self)): \(#function)")
     }
     
     func navigate(to step: Step) -> FlowContributors {

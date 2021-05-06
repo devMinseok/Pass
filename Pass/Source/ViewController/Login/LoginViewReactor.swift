@@ -64,7 +64,6 @@ final class LoginViewReactor: Reactor, Stepper {
                 Observable.just(Mutation.setLoading(true)),
                 
                 self.authService.login(email, password)
-                    .asObservable()
                     .flatMap { self.userService.fetchUser() }
                     .map { true }.catchErrorJustReturn(false)
                     .do { isLoggedIn in

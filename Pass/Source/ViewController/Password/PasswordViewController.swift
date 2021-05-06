@@ -100,7 +100,5 @@ final class PasswordViewController: BaseViewController, View {
             .map { Reactor.Action.callBack($0) }
             .bind(to: reactor.action)
             .disposed(by: disposeBag)
-        
-        // MARK: - output
     }
 }

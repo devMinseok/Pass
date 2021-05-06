@@ -36,15 +36,5 @@ class DIContainer {
         
         container.register(UserServiceType.self) { _ in UserService(network: network) }
         
-        // MARK: - Register Controller
-        self.container.register(SplashViewController.self) { resolver in
-            let reactor = SplashViewReactor()
-            return SplashViewController(reactor: reactor)
-        }
-        
-        self.container.register(IntroViewController.self) { resolver in
-            let reactor = IntroViewReactor()
-            return IntroViewController(reactor: reactor)
-        }
     }
 }

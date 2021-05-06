@@ -33,7 +33,7 @@ final class IntroFlow: Flow {
     }
     
     deinit {
-        print("\(type(of: self)): \(#function)")
+        print("❎ \(type(of: self)): \(#function)")
     }
     
     // MARK: - Navigation Switch

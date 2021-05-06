@@ -23,7 +23,7 @@ final class AppFlow: Flow {
     }
     
     deinit {
-        print("\(type(of: self)): \(#function)")
+        print("❎ \(type(of: self)): \(#function)")
     }
     
     func navigate(to step: Step) -> FlowContributors {
@@ -47,7 +47,8 @@ final class AppFlow: Flow {
 
 extension AppFlow {
     private func navigateToSplash() -> FlowContributors {
-        let viewController = DIContainer.shared.container.resolve(SplashViewController.self)
+        let viewController = SplashViewController(reactor: SplashViewReactor())
+        
         self.window.rootViewController = viewController
         
         UIView.transition(with: self.window,

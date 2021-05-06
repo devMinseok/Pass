@@ -8,13 +8,18 @@
 import UIKit
 import ReactorKit
 
-class SplashViewController: BaseViewController, View {
+final class SplashViewController: BaseViewController, View {
     
-    // MARK: - Properties
     typealias Reactor = SplashViewReactor
     
+    // MARK: - Constants
+    struct Metric {
+        static let logoWidthHeight = 100.f
+        static let logoCenterY = 100.f
+    }
+    
     // MARK: - UI
-    lazy var appLogo = UIImageView().then {
+    let appLogo = UIImageView().then {
         $0.image = R.image.splashLogo()
     }
     
@@ -28,8 +33,8 @@ class SplashViewController: BaseViewController, View {
     override func setupConstraints() {
         self.appLogo.snp.makeConstraints { make in
             make.centerX.equalToSuperview()
-            make.centerY.equalToSuperview().offset(-100)
-            make.height.width.equalTo(100)
+            make.centerY.equalToSuperview().offset(-Metric.logoCenterY)
+            make.height.width.equalTo(Metric.logoWidthHeight)
         }
     }
     

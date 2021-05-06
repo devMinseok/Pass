@@ -436,8 +436,8 @@
 		F25B017D260430CB00EBF7F0 /* Splash */ = {
 			isa = PBXGroup;
 			children = (
-				F25B0173260430AC00EBF7F0 /* SplashViewController.swift */,
 				F25B0178260430C700EBF7F0 /* SplashViewReactor.swift */,
+				F25B0173260430AC00EBF7F0 /* SplashViewController.swift */,
 			);
 			path = Splash;
 			sourceTree = "<group>";
