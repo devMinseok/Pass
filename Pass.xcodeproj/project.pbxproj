@@ -18,8 +18,6 @@
 		F2350AAC26368BEC000C523B /* BaseAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2350AAB26368BEC000C523B /* BaseAPI.swift */; };
 		F2350AB426368BF8000C523B /* AuthAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2350AB326368BF8000C523B /* AuthAPI.swift */; };
 		F2350ABC26368C21000C523B /* AuthPlugin.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2350ABB26368C21000C523B /* AuthPlugin.swift */; };
-		F2350B092636D24B000C523B /* HomeViewReactor.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2350B072636D24B000C523B /* HomeViewReactor.swift */; };
-		F2350B0A2636D24B000C523B /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2350B082636D24B000C523B /* HomeViewController.swift */; };
 		F2350B132636D259000C523B /* SettingsViewReactor.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2350B112636D259000C523B /* SettingsViewReactor.swift */; };
 		F2350B142636D259000C523B /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2350B122636D259000C523B /* SettingsViewController.swift */; };
 		F2350B1A2636D263000C523B /* MyConsumeViewReactor.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2350B182636D263000C523B /* MyConsumeViewReactor.swift */; };
@@ -57,6 +55,8 @@
 		F2B129F12640E4EB00C96453 /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2B129F02640E4EB00C96453 /* Message.swift */; };
 		F2B129F32641233F00C96453 /* ValidationResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2B129F22641233E00C96453 /* ValidationResult.swift */; };
 		F2B129F626412CA900C96453 /* UIButton+Rx.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2B129F526412CA900C96453 /* UIButton+Rx.swift */; };
+		F2C6AD6A2643BE09008FCD69 /* HomeViewReactor.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2C6AD682643BE09008FCD69 /* HomeViewReactor.swift */; };
+		F2C6AD6B2643BE09008FCD69 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2C6AD692643BE09008FCD69 /* HomeViewController.swift */; };
 		F2E213472639404600B79C4E /* CGFloatLiteral.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2E213462639404600B79C4E /* CGFloatLiteral.swift */; };
 		F2E213502639420200B79C4E /* IntroViewReactor.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2E2134E2639420200B79C4E /* IntroViewReactor.swift */; };
 		F2E213512639420200B79C4E /* IntroViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2E2134F2639420200B79C4E /* IntroViewController.swift */; };
@@ -113,8 +113,6 @@
 		F2350AAB26368BEC000C523B /* BaseAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseAPI.swift; sourceTree = "<group>"; };
 		F2350AB326368BF8000C523B /* AuthAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthAPI.swift; sourceTree = "<group>"; };
 		F2350ABB26368C21000C523B /* AuthPlugin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthPlugin.swift; sourceTree = "<group>"; };
-		F2350B072636D24B000C523B /* HomeViewReactor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewReactor.swift; sourceTree = "<group>"; };
-		F2350B082636D24B000C523B /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		F2350B112636D259000C523B /* SettingsViewReactor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewReactor.swift; sourceTree = "<group>"; };
 		F2350B122636D259000C523B /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		F2350B182636D263000C523B /* MyConsumeViewReactor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyConsumeViewReactor.swift; sourceTree = "<group>"; };
@@ -152,6 +150,8 @@
 		F2B129F02640E4EB00C96453 /* Message.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
 		F2B129F22641233E00C96453 /* ValidationResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValidationResult.swift; sourceTree = "<group>"; };
 		F2B129F526412CA900C96453 /* UIButton+Rx.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton+Rx.swift"; sourceTree = "<group>"; };
+		F2C6AD682643BE09008FCD69 /* HomeViewReactor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewReactor.swift; sourceTree = "<group>"; };
+		F2C6AD692643BE09008FCD69 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		F2E213462639404600B79C4E /* CGFloatLiteral.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CGFloatLiteral.swift; sourceTree = "<group>"; };
 		F2E2134E2639420200B79C4E /* IntroViewReactor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntroViewReactor.swift; sourceTree = "<group>"; };
 		F2E2134F2639420200B79C4E /* IntroViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntroViewController.swift; sourceTree = "<group>"; };
@@ -462,8 +462,8 @@
 		F2796467261D70F400B77241 /* Home */ = {
 			isa = PBXGroup;
 			children = (
-				F2350B072636D24B000C523B /* HomeViewReactor.swift */,
-				F2350B082636D24B000C523B /* HomeViewController.swift */,
+				F2C6AD682643BE09008FCD69 /* HomeViewReactor.swift */,
+				F2C6AD692643BE09008FCD69 /* HomeViewController.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -786,7 +786,6 @@
 				F2893D56263D68C600801067 /* PassNumberPad.swift in Sources */,
 				F2350B1A2636D263000C523B /* MyConsumeViewReactor.swift in Sources */,
 				F2893D52263D638E00801067 /* PasswordViewController.swift in Sources */,
-				F2350B092636D24B000C523B /* HomeViewReactor.swift in Sources */,
 				F2E4B9FB261AE97F00632221 /* ModelStream.swift in Sources */,
 				F2E4BA41261C2B3500632221 /* DIContainer.swift in Sources */,
 				F2E4B9BF261AE12100632221 /* Network.swift in Sources */,
@@ -794,7 +793,6 @@
 				F2E4B9D2261AE66400632221 /* User.swift in Sources */,
 				F2685052263C23930047A5B0 /* LoginViewController.swift in Sources */,
 				F2350B302636D4DA000C523B /* RegisterViewReactor.swift in Sources */,
-				F2350B0A2636D24B000C523B /* HomeViewController.swift in Sources */,
 				F25B0174260430AC00EBF7F0 /* SplashViewController.swift in Sources */,
 				F2350B71263827F7000C523B /* HomeFlow.swift in Sources */,
 				F2350B7926382803000C523B /* MyConsumeFlow.swift in Sources */,
@@ -803,10 +801,12 @@
 				F2350B312636D4DA000C523B /* RegisterViewController.swift in Sources */,
 				F2E4BA15261B2AEC00632221 /* UserService.swift in Sources */,
 				F2350B502636E289000C523B /* AppFlow.swift in Sources */,
+				F2C6AD6B2643BE09008FCD69 /* HomeViewController.swift in Sources */,
 				F2350B6B2637A1E7000C523B /* TabBarFlow.swift in Sources */,
 				F2E213502639420200B79C4E /* IntroViewReactor.swift in Sources */,
 				F2350B142636D259000C523B /* SettingsViewController.swift in Sources */,
 				F2350B5A263798F3000C523B /* IntroFlow.swift in Sources */,
+				F2C6AD6A2643BE09008FCD69 /* HomeViewReactor.swift in Sources */,
 				F28419DE2625694200A703DD /* Token.swift in Sources */,
 				F2350B7E2638280D000C523B /* SettingsFlow.swift in Sources */,
 				F2E4B9D7261AE76D00632221 /* ModelType.swift in Sources */,

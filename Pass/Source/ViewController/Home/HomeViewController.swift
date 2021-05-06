@@ -2,7 +2,7 @@
 //  HomeViewController.swift
 //  Pass
 //
-//  Created by 강민석 on 2021/04/26.
+//  Created by 강민석 on 2021/05/06.
 //
 
 import UIKit
@@ -13,17 +13,19 @@ final class HomeViewController: BaseViewController, View {
     
     typealias Reactor = HomeViewReactor
     
-    // MARK: - Properties
-    
-    // MARK: - UI
-    
-    
-    // MARK: - View Life Cycle
-    override func viewDidLoad() {
-        super.viewDidLoad()
+    // MARK: Constants
+    struct Metric {
         
     }
     
+    struct Font {
+        
+    }
+
+    // MARK: - Properties
+
+    // MARK: - UI
+
     // MARK: - Initializing
     init(
         reactor: Reactor
@@ -31,14 +33,26 @@ final class HomeViewController: BaseViewController, View {
         defer { self.reactor = reactor }
         super.init()
     }
-    
+
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
 
-    // MARK: - Configuring
-    func bind(reactor: Reactor) {
+    // MARK: - View Life Cycle
+    override func viewDidLoad() {
+        super.viewDidLoad()
         
     }
-    
+
+    override func setupConstraints() {
+        
+    }
+
+    // MARK: - Configuring
+    func bind(reactor: Reactor) {
+        // MARK: - input
+        
+        // MARK: - output
+        
+    }
 }
