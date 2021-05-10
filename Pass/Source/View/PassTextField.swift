@@ -36,6 +36,7 @@ class PassTextField: UIView {
     let textField = UITextField().then {
         $0.font = Font.textField
         $0.clearButtonMode = .whileEditing
+        $0.autocapitalizationType = .none
     }
     
     let separator = UIView().then {
