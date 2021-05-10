@@ -104,7 +104,7 @@ final class LoginViewController: BaseViewController, View {
             .disposed(by: disposeBag)
         
         self.nextButton.rx.tap
-            .map { Reactor.Action.next(self.emailTextField.textField.text ?? "") }
+            .map { Reactor.Action.next }
             .bind(to: reactor.action)
             .disposed(by: disposeBag)
         

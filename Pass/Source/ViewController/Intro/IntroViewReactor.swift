@@ -19,10 +19,7 @@ final class IntroViewReactor: Reactor, Stepper {
         case register
     }
 
-    enum Mutation {
-        case navigateToLogin
-        case navigateToRegister
-    }
+    enum Mutation { }
 
     struct State { }
 
