@@ -10,51 +10,86 @@ import RxCocoa
 import RxSwift
 import RxFlow
 
-//final class HomeViewReactor: Reactor, Stepper {
-//
-//    enum Action {
-//
-//    }
-//
-//    enum Mutation {
-//
-//    }
-//
-//    struct State {
-//
-//    }
-//
-//    let initialState: State
-//
-//    init() {
-//
-//    }
-//
-//    func mutate(action: Action) -> Observable<Mutation> {
-//        switch action {
-//        case <#pattern#>:
-//            <#code#>
-//        }
-//    }
-//
-//    func reduce(state: State, mutation: Mutation) -> State {
-//        var state = state
-//
-//        switch mutation {
-//        case <#pattern#>:
-//            <#code#>
-//        }
-//
-//        return state
-//    }
-//
-//}
-
-final class HomeViewReactor: Reactor {
-    typealias Action = NoAction
+final class HomeViewReactor: Reactor, Stepper {
+    var steps = PublishRelay<Step>()
     
-    struct State {
+    enum Action {
+        case refresh
     }
-    
+
+    enum Mutation {
+        case setHomeCells([BankAccount])
+        case setRefreshing(Bool)
+    }
+
+    struct State {
+        var isRefreshing: Bool = false
+        var accountSectionItems: [HomeViewSectionItem] = []
+        var addSectionItems: [HomeViewSectionItem] = []
+        var sections: [HomeViewSection] {
+            let sections: [HomeViewSection] = [
+                .account(self.accountSectionItems),
+                .add(self.addSectionItems)
+            ]
+            return sections
+        }
+    }
+
     let initialState: State = State()
+    
+    fileprivate var userService: UserServiceType
+    fileprivate var accountService: AccountServiceType
+
+    init(
+        userService: UserServiceType,
+        accountService: AccountServiceType
+    ) {
+        self.userService = userService
+        self.accountService = accountService
+    }
+
+    func mutate(action: Action) -> Observable<Mutation> {
+        switch action {
+        case .refresh:
+            return Observable.concat([
+                Observable<Mutation>.just(.setRefreshing(true)),
+                
+                self.accountService.getAccounts().asObservable().map(Mutation.setHomeCells),
+                
+                Observable<Mutation>.just(.setRefreshing(false))
+            ])
+        }
+    }
+
+    func reduce(state: State, mutation: Mutation) -> State {
+        var state = state
+
+        switch mutation {
+        case let .setHomeCells(bankAccounts):
+            state.accountSectionItems.removeAll()
+            state.addSectionItems.removeAll()
+            
+            // 총계좌
+            state.accountSectionItems.append(
+                .totalAccount(TotalAccountCellReactor(bankAccounts: bankAccounts))
+            )
+            
+            // 계좌들
+            bankAccounts.forEach { bankAccount in
+                state.accountSectionItems.append(
+                    .account(AccountCellReactor(bankAccount: bankAccount, steps: self.steps))
+                )
+            }
+            
+            // 추가
+            state.addSectionItems.append(
+                .addAccount
+            )
+            
+        case let .setRefreshing(isRefreshing):
+            state.isRefreshing = isRefreshing
+        }
+
+        return state
+    }
 }
