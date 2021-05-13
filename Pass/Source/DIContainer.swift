@@ -35,6 +35,6 @@ class DIContainer {
         )
         
         container.register(UserServiceType.self) { _ in UserService(network: network) }
-        
+        container.register(AccountServiceType.self) { _ in AccountService(network: network)}
     }
 }
