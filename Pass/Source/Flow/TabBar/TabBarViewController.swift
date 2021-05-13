@@ -16,7 +16,24 @@ class TabBarViewController: UITabBarController {
         super.viewDidLoad()
 
         self.bind()
-        self.tabBarCustom()
+    }
+    
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        
+        self.tabBar.backgroundColor = R.color.signatureColor()
+        
+        self.tabBar.layer.masksToBounds = true
+        self.tabBar.isTranslucent = true
+        self.tabBar.barStyle = .default
+        self.tabBar.layer.cornerRadius = 23
+        self.tabBar.layer.maskedCorners = [.layerMinXMinYCorner, .layerMaxXMinYCorner]
+        
+        self.tabBar.layer.borderWidth = 0.3
+        self.tabBar.layer.borderColor = R.color.textGray()?.cgColor
+        
+        self.tabBar.frame.size.height = 95
+        self.tabBar.frame.origin.y = self.view.frame.height - 95
     }
     
     func bind() {
@@ -45,13 +62,5 @@ class TabBarViewController: UITabBarController {
         }
         guard let scrollView = viewController.view.subviews.first as? UIScrollView else { return }
         scrollView.setContentOffset(.zero, animated: true)
-    }
-    
-    func tabBarCustom() {
-        self.tabBar.layer.masksToBounds = true
-        self.tabBar.isTranslucent = true
-        self.tabBar.barStyle = .default
-        self.tabBar.layer.cornerRadius = 20
-        self.tabBar.layer.maskedCorners = [.layerMinXMinYCorner, .layerMaxXMinYCorner]
     }
 }
