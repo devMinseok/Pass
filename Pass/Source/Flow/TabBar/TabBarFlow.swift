@@ -44,17 +44,17 @@ extension TabBarFlow {
         let settingsFlow = SettingsFlow()
         
         Flows.use(homeFlow, myConsumeFlow, settingsFlow, when: .created) { [unowned self] (root1, root2, root3: UINavigationController) in
-            let tabBarItem1 = UITabBarItem(title: nil, image: R.image.home(), selectedImage: nil)
+            let tabBarItem1 = UITabBarItem(title: "홈", image: R.image.home(), selectedImage: nil)
             root1.tabBarItem = tabBarItem1
-            root1.title = "홈"
+//            root1.title = "홈"
             
-            let tabBarItem2 = UITabBarItem(title: nil, image: R.image.calendar(), selectedImage: nil)
+            let tabBarItem2 = UITabBarItem(title: "내 소비", image: R.image.calendar(), selectedImage: nil)
             root2.tabBarItem = tabBarItem2
-            root2.title = "내 소비"
+//            root2.title = "내 소비"
             
-            let tabBarItem3 = UITabBarItem(title: nil, image: R.image.bar(), selectedImage: nil)
+            let tabBarItem3 = UITabBarItem(title: "설정", image: R.image.bar(), selectedImage: nil)
             root3.tabBarItem = tabBarItem3
-            root3.title = "설정"
+//            root3.title = "설정"
             
             self.rootViewController.setViewControllers([root1, root2, root3], animated: false)
         }

@@ -17,14 +17,11 @@ final class IntroFlow: Flow {
         return self.rootViewController
     }
     
-    private lazy var rootViewController: UINavigationController = {
-        let viewController = UINavigationController()
-        // Navigation Bar를 transparent하게
-        viewController.navigationBar.setBackgroundImage(UIImage(), for: .default)
-        viewController.navigationBar.shadowImage = UIImage()
-        viewController.navigationBar.isTranslucent = true
-        return viewController
-    }()
+    private lazy var rootViewController = UINavigationController().then {
+        $0.navigationBar.setBackgroundImage(UIImage(), for: .default)
+        $0.navigationBar.shadowImage = UIImage()
+        $0.navigationBar.isTranslucent = true
+    }
     
     // MARK: - Init
     init() {
