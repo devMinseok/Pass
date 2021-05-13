@@ -67,6 +67,8 @@
 		F2887FD6264CEC7E0021BDB8 /* AddAccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2887FD4264CEC7E0021BDB8 /* AddAccountViewController.swift */; };
 		F2887FDA264D01130021BDB8 /* ProfileViewReactor.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2887FD8264D01130021BDB8 /* ProfileViewReactor.swift */; };
 		F2887FDB264D01130021BDB8 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2887FD9264D01130021BDB8 /* ProfileViewController.swift */; };
+		F2887FDE264D26750021BDB8 /* ProfileHeaderViewReactor.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2887FDC264D26750021BDB8 /* ProfileHeaderViewReactor.swift */; };
+		F2887FDF264D26750021BDB8 /* ProfileHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2887FDD264D26750021BDB8 /* ProfileHeaderView.swift */; };
 		F2893D4E263D235600801067 /* PassTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2893D4C263D235600801067 /* PassTextField.swift */; };
 		F2893D51263D638E00801067 /* PasswordViewReactor.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2893D4F263D638E00801067 /* PasswordViewReactor.swift */; };
 		F2893D52263D638E00801067 /* PasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2893D50263D638E00801067 /* PasswordViewController.swift */; };
@@ -187,6 +189,8 @@
 		F2887FD4264CEC7E0021BDB8 /* AddAccountViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddAccountViewController.swift; sourceTree = "<group>"; };
 		F2887FD8264D01130021BDB8 /* ProfileViewReactor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewReactor.swift; sourceTree = "<group>"; };
 		F2887FD9264D01130021BDB8 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		F2887FDC264D26750021BDB8 /* ProfileHeaderViewReactor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileHeaderViewReactor.swift; sourceTree = "<group>"; };
+		F2887FDD264D26750021BDB8 /* ProfileHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileHeaderView.swift; sourceTree = "<group>"; };
 		F2893D4C263D235600801067 /* PassTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PassTextField.swift; sourceTree = "<group>"; };
 		F2893D4F263D638E00801067 /* PasswordViewReactor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordViewReactor.swift; sourceTree = "<group>"; };
 		F2893D50263D638E00801067 /* PasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordViewController.swift; sourceTree = "<group>"; };
@@ -416,6 +420,8 @@
 			isa = PBXGroup;
 			children = (
 				F2887FBD264A58F80021BDB8 /* RefreshControl.swift */,
+				F2887FDC264D26750021BDB8 /* ProfileHeaderViewReactor.swift */,
+				F2887FDD264D26750021BDB8 /* ProfileHeaderView.swift */,
 				F2887F962648D64D0021BDB8 /* Base */,
 				F2887FA126490D0C0021BDB8 /* Cell */,
 			);
@@ -929,6 +935,7 @@
 				F2E213512639420200B79C4E /* IntroViewController.swift in Sources */,
 				F2685033263BE3B50047A5B0 /* String.swift in Sources */,
 				F2E213472639404600B79C4E /* CGFloatLiteral.swift in Sources */,
+				F2887FDE264D26750021BDB8 /* ProfileHeaderViewReactor.swift in Sources */,
 				F2E4B9CD261AE5A800632221 /* PassAPI.swift in Sources */,
 				F2350B8326382CFB000C523B /* TabBarViewController.swift in Sources */,
 				F2887FDA264D01130021BDB8 /* ProfileViewReactor.swift in Sources */,
@@ -949,6 +956,7 @@
 				F2887F9A2648FE8D0021BDB8 /* BankAccount.swift in Sources */,
 				F2887FBA2649579E0021BDB8 /* UIImageView+Kingfisher.swift in Sources */,
 				F25B0174260430AC00EBF7F0 /* SplashViewController.swift in Sources */,
+				F2887FDF264D26750021BDB8 /* ProfileHeaderView.swift in Sources */,
 				F2887FC2264CE5740021BDB8 /* UITableView+Rx.swift in Sources */,
 				F2887FB626494E320021BDB8 /* TotalAccountCellReactor.swift in Sources */,
 				F2350B71263827F7000C523B /* HomeFlow.swift in Sources */,
