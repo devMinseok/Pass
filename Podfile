@@ -18,6 +18,7 @@ target 'Pass' do
   pod 'RxDataSources'
   pod 'RxViewController'
   pod 'RxOptional'
+  pod 'RxGesture'
   
   # DB
   pod 'RealmSwift'
@@ -31,6 +32,7 @@ target 'Pass' do
   pod 'R.swift'
   pod 'Then'
   pod 'Swinject'
+  pod 'ReusableKit/RxSwift'
   
   # Security
   pod 'KeychainAccess'
