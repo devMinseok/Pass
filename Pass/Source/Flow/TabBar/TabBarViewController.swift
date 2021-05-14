@@ -21,10 +21,12 @@ class TabBarViewController: UITabBarController {
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
         
-        self.tabBar.backgroundColor = R.color.signatureColor()
+        let tabBarAppearance = UITabBarAppearance()
+        tabBarAppearance.backgroundColor = R.color.signatureColor()
+        tabBarAppearance.selectionIndicatorTintColor = R.color.accentColor()
+        self.tabBar.standardAppearance = tabBarAppearance
         
         self.tabBar.layer.masksToBounds = true
-        self.tabBar.isTranslucent = true
         self.tabBar.barStyle = .default
         self.tabBar.layer.cornerRadius = 23
         self.tabBar.layer.maskedCorners = [.layerMinXMinYCorner, .layerMaxXMinYCorner]

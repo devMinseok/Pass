@@ -18,6 +18,8 @@ final class HomeViewController: BaseViewController, ReactorKit.View {
     
     // MARK: Constants
     fileprivate struct Reusable {
+        static let sectionHeaderView = ReusableView<HomeSectionHeaderView>()
+        
         static let totalAccountCell = ReusableCell<TotalAccountCell>()
         static let accountCell = ReusableCell<AccountCell>()
         static let addAccountCdll = ReusableCell<AddAccountCell>()
@@ -27,13 +29,14 @@ final class HomeViewController: BaseViewController, ReactorKit.View {
     fileprivate let dataSource: RxTableViewSectionedReloadDataSource<HomeViewSection>
     
     // MARK: - UI
-    let refreshControl = UIRefreshControl()
+    let refreshControl = RefreshControl()
     fileprivate let tableView = UITableView(
         frame: .zero,
-        style: .plain
+        style: .grouped
     ).then {
         $0.backgroundColor = .clear
         $0.separatorStyle = .none
+        $0.register(Reusable.sectionHeaderView)
         $0.register(Reusable.totalAccountCell)
         $0.register(Reusable.accountCell)
         $0.register(Reusable.addAccountCdll)
@@ -80,11 +83,16 @@ final class HomeViewController: BaseViewController, ReactorKit.View {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.refreshControl.backgroundColor = R.color.signatureColor()
         self.view.backgroundColor = .systemGroupedBackground
+        
         self.tableView.refreshControl = refreshControl
         self.view.addSubview(self.tableView)
+        self.tableView.sectionFooterHeight = 0
         
+        self.setHeaderView()
+    }
+    
+    func setHeaderView() {
         self.profileHeaderView.frame = CGRect(x: 0, y: 0, width: self.tableView.bounds.width, height: 70)
         self.tableView.tableHeaderView = profileHeaderView
         
@@ -181,13 +189,10 @@ extension HomeViewController: UITableViewDelegate {
         }
     }
     
-    //    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-    //        let view = UIView()
-    //        view.backgroundColor = UIColor.red
-    //
-    //        return view
-    //    }
-
+    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        let view = tableView.dequeue(Reusable.sectionHeaderView)
+        return view
+    }
     
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         return 15

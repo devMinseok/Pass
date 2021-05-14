@@ -15,9 +15,10 @@ final class HomeFlow: Flow {
     }
     
     private lazy var rootViewController = UINavigationController().then {
-        $0.navigationBar.backgroundColor = R.color.signatureColor()
-        $0.navigationBar.shadowImage = UIImage()
-        $0.navigationBar.isTranslucent = true
+        let navigationBarAppearance = UINavigationBarAppearance()
+        navigationBarAppearance.backgroundColor = R.color.signatureColor()
+        navigationBarAppearance.shadowColor = nil
+        $0.navigationBar.standardAppearance = navigationBarAppearance
     }
     
     private let services: AppServices

@@ -9,9 +9,17 @@ import UIKit
 
 final class RefreshControl: UIRefreshControl {
     
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+        
+        self.backgroundColor = R.color.signatureColor()
+    }
     
+    override convenience init() {
+        self.init(frame: .zero)
+    }
     
-    
-    
-    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
 }

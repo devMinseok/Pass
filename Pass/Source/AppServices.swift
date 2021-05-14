@@ -8,7 +8,6 @@
 import Kingfisher
 import RxViewController
 import RxOptional
-import Swinject
 import SnapKit
 import Then
 

@@ -69,6 +69,7 @@
 		F2887FDB264D01130021BDB8 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2887FD9264D01130021BDB8 /* ProfileViewController.swift */; };
 		F2887FDE264D26750021BDB8 /* ProfileHeaderViewReactor.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2887FDC264D26750021BDB8 /* ProfileHeaderViewReactor.swift */; };
 		F2887FDF264D26750021BDB8 /* ProfileHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2887FDD264D26750021BDB8 /* ProfileHeaderView.swift */; };
+		F2887FE4264E53E60021BDB8 /* HomeSectionHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2887FE3264E53E60021BDB8 /* HomeSectionHeaderView.swift */; };
 		F2893D4E263D235600801067 /* PassTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2893D4C263D235600801067 /* PassTextField.swift */; };
 		F2893D51263D638E00801067 /* PasswordViewReactor.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2893D4F263D638E00801067 /* PasswordViewReactor.swift */; };
 		F2893D52263D638E00801067 /* PasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2893D50263D638E00801067 /* PasswordViewController.swift */; };
@@ -191,6 +192,7 @@
 		F2887FD9264D01130021BDB8 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		F2887FDC264D26750021BDB8 /* ProfileHeaderViewReactor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileHeaderViewReactor.swift; sourceTree = "<group>"; };
 		F2887FDD264D26750021BDB8 /* ProfileHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileHeaderView.swift; sourceTree = "<group>"; };
+		F2887FE3264E53E60021BDB8 /* HomeSectionHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeSectionHeaderView.swift; sourceTree = "<group>"; };
 		F2893D4C263D235600801067 /* PassTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PassTextField.swift; sourceTree = "<group>"; };
 		F2893D4F263D638E00801067 /* PasswordViewReactor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordViewReactor.swift; sourceTree = "<group>"; };
 		F2893D50263D638E00801067 /* PasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordViewController.swift; sourceTree = "<group>"; };
@@ -423,6 +425,7 @@
 				F2887FDC264D26750021BDB8 /* ProfileHeaderViewReactor.swift */,
 				F2887FDD264D26750021BDB8 /* ProfileHeaderView.swift */,
 				F2887F962648D64D0021BDB8 /* Base */,
+				F2887FE2264E53B10021BDB8 /* HeaderFooter */,
 				F2887FA126490D0C0021BDB8 /* Cell */,
 			);
 			path = View;
@@ -627,6 +630,14 @@
 				F2887FD9264D01130021BDB8 /* ProfileViewController.swift */,
 			);
 			path = Profile;
+			sourceTree = "<group>";
+		};
+		F2887FE2264E53B10021BDB8 /* HeaderFooter */ = {
+			isa = PBXGroup;
+			children = (
+				F2887FE3264E53E60021BDB8 /* HomeSectionHeaderView.swift */,
+			);
+			path = HeaderFooter;
 			sourceTree = "<group>";
 		};
 		F2B129F426412C4B00C96453 /* Extension */ = {
@@ -946,6 +957,7 @@
 				F2350B1A2636D263000C523B /* MyConsumeViewReactor.swift in Sources */,
 				F2893D52263D638E00801067 /* PasswordViewController.swift in Sources */,
 				F2E4B9FB261AE97F00632221 /* ModelStream.swift in Sources */,
+				F2887FE4264E53E60021BDB8 /* HomeSectionHeaderView.swift in Sources */,
 				F2E4BA41261C2B3500632221 /* AppServices.swift in Sources */,
 				F2887F9E2649017B0021BDB8 /* AccountService.swift in Sources */,
 				F2E4B9BF261AE12100632221 /* Network.swift in Sources */,
