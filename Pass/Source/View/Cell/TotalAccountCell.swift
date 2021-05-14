@@ -14,7 +14,7 @@ final class TotalAccountCell: BaseTableViewCell, View {
     
     // MARK: - Constants
     struct Font {
-        static let textLabel = UIFont.systemFont(ofSize: 19, weight: .bold)
+        static let textLabel = UIFont.systemFont(ofSize: 20, weight: .bold)
         static let detailTextLabel = UIFont.systemFont(ofSize: 16, weight: .medium)
     }
     

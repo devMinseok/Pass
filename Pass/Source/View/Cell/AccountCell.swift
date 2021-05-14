@@ -15,8 +15,8 @@ final class AccountCell: BaseTableViewCell, View {
     
     // MARK: Constants
     struct Font {
-        static let textLabel = UIFont.systemFont(ofSize: 12, weight: .light)
-        static let detailTextLabel = UIFont.systemFont(ofSize: 16, weight: .bold)
+        static let textLabel = UIFont.systemFont(ofSize: 13, weight: .regular)
+        static let detailTextLabel = UIFont.systemFont(ofSize: 17, weight: .semibold)
         static let buttonTitleLabel = UIFont.systemFont(ofSize: 12, weight: .semibold)
     }
 
@@ -37,6 +37,7 @@ final class AccountCell: BaseTableViewCell, View {
         self.contentView.addSubview(self.transferButton)
         
         self.textLabel?.font = Font.textLabel
+        self.textLabel?.textColor = .darkGray
         self.detailTextLabel?.font = Font.detailTextLabel
     }
     
@@ -51,7 +52,7 @@ final class AccountCell: BaseTableViewCell, View {
         self.imageView?.clipsToBounds = true
         self.imageView?.frame = CGRect(x: 0, y: 0, width: 33, height: 33)
         self.imageView?.layer.cornerRadius = 33 * 0.5
-        self.imageView?.center = CGPoint(x: 35, y: self.contentView.bounds.size.height / 2)
+        self.imageView?.center = CGPoint(x: 36, y: self.contentView.bounds.size.height / 2)
     }
 
     // MARK: - Configuring
