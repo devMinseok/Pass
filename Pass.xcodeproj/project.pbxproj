@@ -94,7 +94,7 @@
 		F2E4B9D7261AE76D00632221 /* ModelType.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2E4B9D6261AE76D00632221 /* ModelType.swift */; };
 		F2E4B9FB261AE97F00632221 /* ModelStream.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2E4B9FA261AE97F00632221 /* ModelStream.swift */; };
 		F2E4BA15261B2AEC00632221 /* UserService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2E4BA14261B2AEC00632221 /* UserService.swift */; };
-		F2E4BA41261C2B3500632221 /* DIContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2E4BA40261C2B3500632221 /* DIContainer.swift */; };
+		F2E4BA41261C2B3500632221 /* AppServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2E4BA40261C2B3500632221 /* AppServices.swift */; };
 		F6990AF53FD20288CCAE2944 /* Pods_Pass_PassTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 316EB235B0A1F9CA73A36DE9 /* Pods_Pass_PassTests.framework */; };
 /* End PBXBuildFile section */
 
@@ -216,7 +216,7 @@
 		F2E4B9D6261AE76D00632221 /* ModelType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelType.swift; sourceTree = "<group>"; };
 		F2E4B9FA261AE97F00632221 /* ModelStream.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelStream.swift; sourceTree = "<group>"; };
 		F2E4BA14261B2AEC00632221 /* UserService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserService.swift; sourceTree = "<group>"; };
-		F2E4BA40261C2B3500632221 /* DIContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DIContainer.swift; sourceTree = "<group>"; };
+		F2E4BA40261C2B3500632221 /* AppServices.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppServices.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -510,7 +510,7 @@
 			isa = PBXGroup;
 			children = (
 				F22B238825FF2F3B003AAD9D /* AppDelegate.swift */,
-				F2E4BA40261C2B3500632221 /* DIContainer.swift */,
+				F2E4BA40261C2B3500632221 /* AppServices.swift */,
 				F2350B462636E221000C523B /* Flow */,
 				F2887FB02649232A0021BDB8 /* Section */,
 				F25B015B26042E0800EBF7F0 /* ViewController */,
@@ -946,7 +946,7 @@
 				F2350B1A2636D263000C523B /* MyConsumeViewReactor.swift in Sources */,
 				F2893D52263D638E00801067 /* PasswordViewController.swift in Sources */,
 				F2E4B9FB261AE97F00632221 /* ModelStream.swift in Sources */,
-				F2E4BA41261C2B3500632221 /* DIContainer.swift in Sources */,
+				F2E4BA41261C2B3500632221 /* AppServices.swift in Sources */,
 				F2887F9E2649017B0021BDB8 /* AccountService.swift in Sources */,
 				F2E4B9BF261AE12100632221 /* Network.swift in Sources */,
 				F2350AB426368BF8000C523B /* AuthAPI.swift in Sources */,
