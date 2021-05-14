@@ -31,7 +31,6 @@ target 'Pass' do
   pod 'SwiftLint'
   pod 'R.swift'
   pod 'Then'
-  pod 'Swinject'
   pod 'ReusableKit/RxSwift'
   
   # Security
