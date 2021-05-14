@@ -14,16 +14,16 @@ final class HomeFlow: Flow {
         return self.rootViewController
     }
     
-    private lazy var rootViewController = UINavigationController()
+    private lazy var rootViewController = UINavigationController().then {
+        $0.navigationBar.backgroundColor = R.color.signatureColor()
+        $0.navigationBar.shadowImage = UIImage()
+        $0.navigationBar.isTranslucent = true
+    }
     
-    private let authService: AuthServiceType
-    private let userService: UserServiceType
-    private let accountService: AccountServiceType
+    private let services: AppServices
     
-    init() {
-        self.authService = DIContainer.shared.container.resolve(AuthServiceType.self)!
-        self.userService = DIContainer.shared.container.resolve(UserServiceType.self)!
-        self.accountService = DIContainer.shared.container.resolve(AccountServiceType.self)!
+    init(_ services: AppServices) {
+        self.services = services
     }
     
     deinit {
@@ -50,6 +50,9 @@ final class HomeFlow: Flow {
         case let .transferIsRequired(withdrawal):
             return self.navigateToTransfer(withdrawal)
             
+        case .profileIsRequried:
+            return self.navigateToProfile()
+            
         default:
             return .none
         }
@@ -59,7 +62,9 @@ final class HomeFlow: Flow {
 extension HomeFlow {
     // Initial Navigate
     private func navigateToHome() -> FlowContributors {
-        let reactor = HomeViewReactor(userService: userService, accountService: accountService)
+        let profileHeaderViewReactor = ProfileHeaderViewReactor(userService: services.userService)
+        
+        let reactor = HomeViewReactor(userService: services.userService, accountService: services.accountService, profileHeaderViewReactor: profileHeaderViewReactor)
         let viewController = HomeViewController(reactor: reactor)
         
         self.rootViewController.pushViewController(viewController, animated: false)
@@ -80,6 +85,14 @@ extension HomeFlow {
         
         self.rootViewController.pushViewController(viewController, animated: true)
         return .one(flowContributor: .contribute(withNextPresentable: viewController, withNextStepper: reactor))
+    }
+    
+    private func navigateToProfile() -> FlowContributors {
+        let reactor = ProfileViewReactor()
+        let viewController = ProfileViewController(reactor: reactor)
+        
+        self.rootViewController.pushViewController(viewController, animated: true)
+        return .none
     }
     
     private func navigateToAddAccount() -> FlowContributors {

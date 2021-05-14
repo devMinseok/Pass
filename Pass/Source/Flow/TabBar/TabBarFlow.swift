@@ -11,13 +11,15 @@ import RxFlow
 final class TabBarFlow: Flow {
     
     private var rootViewController: UITabBarController
+    private let services: AppServices
     
     var root: Presentable {
         return rootViewController
     }
     
-    init() {
+    init(_ services: AppServices) {
         self.rootViewController = TabBarViewController()
+        self.services = services
     }
     
     deinit {
@@ -39,9 +41,9 @@ final class TabBarFlow: Flow {
 
 extension TabBarFlow {
     private func navigateToTabBar() -> FlowContributors {
-        let homeFlow = HomeFlow()
-        let myConsumeFlow = MyConsumeFlow()
-        let settingsFlow = SettingsFlow()
+        let homeFlow = HomeFlow(services)
+        let myConsumeFlow = MyConsumeFlow(services)
+        let settingsFlow = SettingsFlow(services)
         
         Flows.use(homeFlow, myConsumeFlow, settingsFlow, when: .created) { [unowned self] (root1, root2, root3: UINavigationController) in
             let tabBarItem1 = UITabBarItem(title: "홈", image: R.image.home(), selectedImage: nil)

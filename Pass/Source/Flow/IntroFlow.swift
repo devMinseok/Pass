@@ -10,8 +10,7 @@ import RxFlow
 final class IntroFlow: Flow {
     
     // MARK: - Properties
-    private let authService: AuthServiceType
-    private let userService: UserServiceType
+    private let services: AppServices
     
     var root: Presentable {
         return self.rootViewController
@@ -24,9 +23,8 @@ final class IntroFlow: Flow {
     }
     
     // MARK: - Init
-    init() {
-        self.authService = DIContainer.shared.container.resolve(AuthServiceType.self)!
-        self.userService = DIContainer.shared.container.resolve(UserServiceType.self)!
+    init(_ services: AppServices) {
+        self.services = services
     }
     
     deinit {
@@ -80,7 +78,7 @@ extension IntroFlow {
     }
     
     private func navigateToLogin() -> FlowContributors {
-        let reactor = LoginViewReactor(authService: self.authService, userService: self.userService)
+        let reactor = LoginViewReactor(authService: services.authService, userService: services.userService)
         let viewController = LoginViewController(reactor: reactor)
         
         self.rootViewController.pushViewController(viewController, animated: true)
@@ -88,7 +86,7 @@ extension IntroFlow {
     }
     
     private func navigateToRegister() -> FlowContributors {
-        let reactor = RegisterViewReactor(authService: self.authService, userService: self.userService)
+        let reactor = RegisterViewReactor(authService: services.authService, userService: services.userService)
         let viewController = RegisterViewController(reactor: reactor)
         
         self.rootViewController.pushViewController(viewController, animated: true)

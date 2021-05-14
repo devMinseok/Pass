@@ -38,6 +38,6 @@ enum PassStep: Step {
     
     // MARK: - 송금
     case selectTransferDestinationIsRequired
-    case transferIsRequired(BankAccount?) // 출금계좌 번호
+    case transferIsRequired(BankAccount? = nil) // 출금계좌 번호
     
 }

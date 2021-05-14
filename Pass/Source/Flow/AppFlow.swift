@@ -13,13 +13,15 @@ import RxCocoa
 final class AppFlow: Flow {
     
     private let window: UIWindow
+    private let services: AppServices
     
     var root: Presentable {
         return self.window
     }
     
-    init(window: UIWindow) {
+    init(window: UIWindow, services: AppServices) {
         self.window = window
+        self.services = services
     }
     
     deinit {
@@ -60,7 +62,7 @@ extension AppFlow {
     }
     
     private func navigateToIntro() -> FlowContributors {
-        let introFlow = IntroFlow()
+        let introFlow = IntroFlow(services)
         
         Flows.use(introFlow, when: .created) { [unowned self] root in
             self.window.rootViewController = root
@@ -77,7 +79,7 @@ extension AppFlow {
     }
     
     private func navigateToTabBar() -> FlowContributors {
-        let tabBarFlow = TabBarFlow()
+        let tabBarFlow = TabBarFlow(services)
         
         Flows.use(tabBarFlow, when: .created) { [unowned self] root in
             self.window.rootViewController = root
@@ -106,8 +108,8 @@ class AppStepper: Stepper {
         return PassStep.splashIsRequired
     }
     
-    init() {
-        self.userService = DIContainer.shared.container.resolve(UserServiceType.self)!
+    init(_ userService: UserServiceType) {
+        self.userService = userService
     }
 
     // 사용자 정보 받아오기 성공시 실행되는 콜백 메서드

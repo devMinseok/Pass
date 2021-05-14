@@ -15,7 +15,7 @@ final class MyConsumeFlow: Flow {
     
     let rootViewController: UINavigationController
     
-    init() {
+    init(_ services: AppServices) {
         self.rootViewController = UINavigationController()
     }
     
