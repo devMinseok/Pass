@@ -10,51 +10,56 @@ import RxCocoa
 import RxSwift
 import RxFlow
 
-final class ProfileHeaderViewReactor: Reactor, Stepper {
-    var steps = PublishRelay<Step>()
-    typealias Action = NoAction
-    struct State {}
+final class ProfileHeaderViewReactor: Reactor {
+    
+    var steps: PublishRelay<Step>?
+    
+    enum Action {
+        case refresh
+        case transfer
+    }
+    
+    enum Mutation {
+        case userData(User?)
+    }
+    
+    struct State {
+        var name: String = ""
+        var profileImage: URL?
+    }
+    
     let initialState: State = State()
+    
+    fileprivate let userService: UserServiceType
+    
+    init(
+        userService: UserServiceType
+    ) {
+        self.userService = userService
+    }
+    
+    func mutate(action: Action) -> Observable<Mutation> {
+        switch action {
+        case .refresh:
+            return self.userService.currentUser
+                .map(Mutation.userData)
+            
+        case .transfer:
+            self.steps?.accept(PassStep.transferIsRequired())
+            return .empty()
+        }
+    }
+    
+    func reduce(state: State, mutation: Mutation) -> State {
+        var state = state
+        
+        switch mutation {
+        case let .userData(user):
+            guard let user = user else { return state }
+            state.name = user.name
+            state.profileImage = user.avatar
+        }
+        
+        return state
+    }
 }
-
-//final class ProfileHeaderViewReactor: Reactor, Stepper {
-//
-//    var steps = PublishRelay<Step>()
-//
-//    enum Action {
-//
-//    }
-//
-//    enum Mutation {
-//
-//    }
-//
-//    struct State {
-//
-//    }
-//
-//    let initialState: State
-//
-//    init() {
-//
-//    }
-//
-//    func mutate(action: Action) -> Observable<Mutation> {
-//        switch action {
-//        case <#pattern#>:
-//            <#code#>
-//        }
-//    }
-//
-//    func reduce(state: State, mutation: Mutation) -> State {
-//        var state = state
-//
-//        switch mutation {
-//        case <#pattern#>:
-//            <#code#>
-//        }
-//
-//        return state
-//    }
-//
-//}

@@ -37,15 +37,20 @@ final class HomeViewReactor: Reactor, Stepper {
 
     let initialState: State = State()
     
-    fileprivate var userService: UserServiceType
-    fileprivate var accountService: AccountServiceType
+    fileprivate let userService: UserServiceType
+    fileprivate let accountService: AccountServiceType
+    
+    let profileHeaderViewReactor: ProfileHeaderViewReactor
 
     init(
         userService: UserServiceType,
-        accountService: AccountServiceType
+        accountService: AccountServiceType,
+        profileHeaderViewReactor: ProfileHeaderViewReactor
     ) {
         self.userService = userService
         self.accountService = accountService
+        self.profileHeaderViewReactor = profileHeaderViewReactor
+        profileHeaderViewReactor.steps = steps
     }
 
     func mutate(action: Action) -> Observable<Mutation> {

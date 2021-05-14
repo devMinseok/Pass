@@ -12,7 +12,7 @@ import ReusableKit
 import RxDataSources
 import RxGesture
 
-final class HomeViewController: BaseViewController, View {
+final class HomeViewController: BaseViewController, ReactorKit.View {
     
     typealias Reactor = HomeViewReactor
     
@@ -38,6 +38,8 @@ final class HomeViewController: BaseViewController, View {
         $0.register(Reusable.accountCell)
         $0.register(Reusable.addAccountCdll)
     }
+    
+    fileprivate let profileHeaderView = ProfileHeaderView()
     
     // MARK: - Initializing
     init(
@@ -78,22 +80,21 @@ final class HomeViewController: BaseViewController, View {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        self.refreshControl.backgroundColor = R.color.signatureColor()
         self.view.backgroundColor = .systemGroupedBackground
-        self.view.addSubview(self.tableView)
         self.tableView.refreshControl = refreshControl
-        refreshControl.backgroundColor = R.color.signatureColor()
+        self.view.addSubview(self.tableView)
         
-//        let headerView = UIView(frame: CGRect(x: 0, y: 0, width: self.view.bounds.width, height: 100))
-//        headerView.backgroundColor = .white
-//        self.tableView.tableHeaderView = headerView
+        self.profileHeaderView.frame = CGRect(x: 0, y: 0, width: self.tableView.bounds.width, height: 70)
+        self.tableView.tableHeaderView = profileHeaderView
         
-//        headerView.rx
-//            .tapGesture()
-//            .when(.recognized)
-//            .subscribe(onNext: { [weak self] in
-//                self?.reactor?.steps.accept(PassStep.profileIsRequired)
-//            })
-//            .disposed(by: disposeBag)
+        profileHeaderView.rx
+            .tapGesture()
+            .when(.recognized)
+            .subscribe(onNext: { [weak self] _ in
+                self?.reactor?.steps.accept(PassStep.profileIsRequried)
+            })
+            .disposed(by: disposeBag)
     }
     
     override func setupConstraints() {
@@ -112,6 +113,8 @@ final class HomeViewController: BaseViewController, View {
     
     // MARK: - Configuring
     func bind(reactor: Reactor) {
+        self.profileHeaderView.reactor = reactor.profileHeaderViewReactor
+        
         // MARK: - input
         self.rx.viewDidLoad
             .map { Reactor.Action.refresh }
@@ -184,6 +187,7 @@ extension HomeViewController: UITableViewDelegate {
     //
     //        return view
     //    }
+
     
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         return 15
