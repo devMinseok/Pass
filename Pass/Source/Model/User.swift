@@ -14,6 +14,7 @@ struct User: ModelType {
     var name: String
     var phone: String
     var email: String
+    var avatar: URL
     
     var createdAt: Date
     
@@ -23,5 +24,6 @@ struct User: ModelType {
         case phone
         case email
         case createdAt = "created_at"
+        case avatar
     }
 }
