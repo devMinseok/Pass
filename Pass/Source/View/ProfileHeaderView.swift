@@ -70,7 +70,7 @@ final class ProfileHeaderView: UIView, View {
     
     // MARK: - Initializing
     override init(frame: CGRect) {
-        super.init(frame: frame)
+        super.init(frame: CGRect(x: 0, y: 0, width: .zero, height: 70))
         
         self.backgroundColor = R.color.signatureColor()
         

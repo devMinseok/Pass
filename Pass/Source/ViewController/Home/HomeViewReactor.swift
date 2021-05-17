@@ -37,20 +37,17 @@ final class HomeViewReactor: Reactor, Stepper {
 
     let initialState: State = State()
     
-    fileprivate let userService: UserServiceType
     fileprivate let accountService: AccountServiceType
     
     let profileHeaderViewReactor: ProfileHeaderViewReactor
 
     init(
-        userService: UserServiceType,
         accountService: AccountServiceType,
         profileHeaderViewReactor: ProfileHeaderViewReactor
     ) {
-        self.userService = userService
         self.accountService = accountService
         self.profileHeaderViewReactor = profileHeaderViewReactor
-        profileHeaderViewReactor.steps = steps
+        self.profileHeaderViewReactor.steps = steps
     }
 
     func mutate(action: Action) -> Observable<Mutation> {
@@ -58,9 +55,7 @@ final class HomeViewReactor: Reactor, Stepper {
         case .refresh:
             return Observable.concat([
                 Observable<Mutation>.just(.setRefreshing(true)),
-                
                 self.accountService.getAccounts().asObservable().map(Mutation.setHomeCells),
-                
                 Observable<Mutation>.just(.setRefreshing(false))
             ])
         }

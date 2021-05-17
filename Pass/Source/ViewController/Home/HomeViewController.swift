@@ -85,15 +85,18 @@ final class HomeViewController: BaseViewController, ReactorKit.View {
         
         self.view.backgroundColor = .systemGroupedBackground
         
-        self.tableView.refreshControl = refreshControl
-        self.view.addSubview(self.tableView)
-        self.tableView.sectionFooterHeight = 0
-        
+        self.setTableView()
         self.setHeaderView()
     }
     
+    func setTableView() {
+        self.tableView.showsVerticalScrollIndicator = false
+        self.tableView.refreshControl = refreshControl
+        self.view.addSubview(self.tableView)
+        self.tableView.sectionFooterHeight = 0
+    }
+    
     func setHeaderView() {
-        self.profileHeaderView.frame = CGRect(x: 0, y: 0, width: self.tableView.bounds.width, height: 70)
         self.tableView.tableHeaderView = profileHeaderView
         
         profileHeaderView.rx
