@@ -11,18 +11,16 @@ struct Bank: ModelType {
     enum Event {}
     
     var idx: Int
-    var name: String
-    var thumbnail: URL
+    
+    /// 은행명
+    var bankName: String
+    
+    /// 은행 로고
+    var logoURL: URL
     
     enum CodingKeys: String, CodingKey {
         case idx
-        case name = "bank_name"
-        case thumbnail
+        case bankName = "bank_name"
+        case logoURL = "logo_url"
     }
 }
-
-//"bank": {
-//    "idx": 1,
-//    "bank_name": "",
-//    "thumbnail": ""
-//}

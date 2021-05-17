@@ -11,13 +11,21 @@ struct BankAccount: ModelType {
     enum Event {}
     
     var idx: Int
+    
+    /// 계좌 소유자
     var ownerIdx: Int
+    
+    /// 은행
     var bank: Bank
+    
+    /// 잔액
     var balance: Int
+    
+    /// 계좌번호
     var accountNumber: String
+    
+    /// 계좌 별칭
     var accountNickname: String
-    var isFrequent: Bool
-    var isTotalSpendingIncluded: Bool
     
     enum CodingKeys: String, CodingKey {
         case idx
@@ -26,23 +34,5 @@ struct BankAccount: ModelType {
         case balance
         case accountNumber = "account_number"
         case accountNickname = "account_nickname"
-        case isFrequent = "is_frequent"
-        case isTotalSpendingIncluded = "is_total_spending_included"
     }
 }
-
-
-//{
-//    "idx": 1, // 계좌 고유번호
-//    "owner_idx": 1, // 계좌 소유자 고유번호
-//    "bank": {
-//        "idx": 1,
-//        "bank_name": "",
-//        "thumbnail": ""
-//    }, // 은행 정보
-//    "balance": 123, // 잔여 금액
-//    "account_number": "123456789", // 계좌번호
-//    "account_nickname": "NH", // 계좌 별칭
-//    "is_frequent": true, // 자주 사용하는 계좌인지?
-//    "is_total_spending_included": false // 총 소비 금액에 포함 시킬지?
-//}
