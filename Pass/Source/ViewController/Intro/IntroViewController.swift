@@ -35,8 +35,6 @@ final class IntroViewController: BaseViewController, View {
         static let registerButtonTitle = UIFont.systemFont(ofSize: 16, weight: .medium)
     }
     
-    // MARK: - Properties
-    
     // MARK: - UI
     let titleLabel = UILabel().then {
         $0.text = "금융의 모든 것\n패스에서 간편하게"
@@ -118,6 +116,7 @@ final class IntroViewController: BaseViewController, View {
     
     // MARK: - Configuring
     func bind(reactor: Reactor) {
+        // MARK: - input
         self.loginButton.rx.tap
             .map { Reactor.Action.login }
             .bind(to: reactor.action)

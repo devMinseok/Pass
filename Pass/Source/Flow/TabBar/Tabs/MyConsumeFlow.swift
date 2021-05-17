@@ -15,12 +15,12 @@ final class MyConsumeFlow: Flow {
     
     let rootViewController: UINavigationController
     
-    init() {
+    init(_ services: AppServices) {
         self.rootViewController = UINavigationController()
     }
     
     deinit {
-        print("\(type(of: self)): \(#function)")
+        print("❎ \(type(of: self)): \(#function)")
     }
     
     func navigate(to step: Step) -> FlowContributors {

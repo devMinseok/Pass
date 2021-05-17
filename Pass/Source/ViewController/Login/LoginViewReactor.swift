@@ -13,11 +13,10 @@ import SwiftMessages
 
 final class LoginViewReactor: Reactor, Stepper {
     var steps = PublishRelay<Step>()
-    var email: String?
     
     enum Action {
         case setEmail(String)
-        case next(String)
+        case next
         
         case login(String)
     }
@@ -28,6 +27,8 @@ final class LoginViewReactor: Reactor, Stepper {
     }
     
     struct State {
+        var email: String = ""
+        
         var validationResult: ValidationResult?
         var isLoading: Bool = false
     }
@@ -52,19 +53,17 @@ final class LoginViewReactor: Reactor, Stepper {
         case let .setEmail(email):
             return Observable.just(Mutation.checkEmail(email))
             
-        case let .next(email):
-            self.email = email
+        case .next:
             self.steps.accept(PassStep.passwordIsRequired)
             return .empty()
             
         case let .login(password):
-            guard let email = email else { return .empty() }
+            let email = self.currentState.email
             
             return Observable.concat([
                 Observable.just(Mutation.setLoading(true)),
                 
                 self.authService.login(email, password)
-                    .asObservable()
                     .flatMap { self.userService.fetchUser() }
                     .map { true }.catchErrorJustReturn(false)
                     .do { isLoggedIn in
@@ -86,6 +85,7 @@ final class LoginViewReactor: Reactor, Stepper {
         
         switch mutation {
         case let .checkEmail(email):
+            state.email = email
             state.validationResult = email.validEmail
             
         case let .setLoading(isLoading):

@@ -40,7 +40,7 @@ final class RegisterViewController: BaseViewController, View {
     }
     
     let phoneTextField = PassTextField().then {
-        $0.textField.keyboardType = .phonePad
+        $0.textField.keyboardType = .numberPad
         $0.titleLabel.text = "휴대폰 번호"
         $0.textField.placeholder = "휴대폰 번호"
     }
@@ -124,11 +124,6 @@ final class RegisterViewController: BaseViewController, View {
     // MARK: - Configuring
     func bind(reactor: Reactor) {
         // MARK: - input
-        self.nextButton.rx.tap
-            .map { Reactor.Action.next }
-            .bind(to: reactor.action)
-            .disposed(by: disposeBag)
-        
         Observable.combineLatest(
             phoneTextField.textField.rx.text.orEmpty,
             emailTextField.textField.rx.text.orEmpty,
@@ -138,25 +133,34 @@ final class RegisterViewController: BaseViewController, View {
         .bind(to: reactor.action)
         .disposed(by: disposeBag)
         
+        self.nextButton.rx.tap
+            .map { Reactor.Action.next }
+            .bind(to: reactor.action)
+            .disposed(by: disposeBag)
+        
         // MARK: - output
-        reactor.state.map { $0.phoneValidationResult }
-            .distinctUntilChanged()
+        let phoneValidation = reactor.state.map { $0.phoneValidationResult }.distinctUntilChanged()
+        let emailValidation = reactor.state.map { $0.emailValidationResult }.distinctUntilChanged()
+        let nameValidation = reactor.state.map { $0.nameValidationResult }.distinctUntilChanged()
+        
+        phoneValidation
             .bind(to: phoneTextField.rx.error)
             .disposed(by: disposeBag)
         
-        reactor.state.map { $0.emailValidationResult }
-            .distinctUntilChanged()
+        emailValidation
             .bind(to: emailTextField.rx.error)
             .disposed(by: disposeBag)
         
-        reactor.state.map { $0.nameValidationResult }
-            .distinctUntilChanged()
+        nameValidation
             .bind(to: nameTextField.rx.error)
             .disposed(by: disposeBag)
         
-        reactor.state.map { $0.isButtonEnabled }
-            .distinctUntilChanged()
-            .bind(to: nextButton.rx.isEnabled)
-            .disposed(by: disposeBag)
+        Observable.combineLatest(
+            phoneValidation.map { $0 == .ok },
+            emailValidation.map { $0 == .ok },
+            nameValidation.map { $0 == .ok }
+        ) { $0 && $1 && $2 }
+        .bind(to: nextButton.rx.isEnabled)
+        .disposed(by: disposeBag)
     }
 }

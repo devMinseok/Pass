@@ -10,30 +10,25 @@ import RxFlow
 final class IntroFlow: Flow {
     
     // MARK: - Properties
-    private let authService: AuthServiceType
-    private let userService: UserServiceType
+    private let services: AppServices
     
     var root: Presentable {
         return self.rootViewController
     }
     
-    private lazy var rootViewController: UINavigationController = {
-        let viewController = UINavigationController()
-        // Navigation Bar를 transparent하게
-        viewController.navigationBar.setBackgroundImage(UIImage(), for: .default)
-        viewController.navigationBar.shadowImage = UIImage()
-        viewController.navigationBar.isTranslucent = true
-        return viewController
-    }()
+    private lazy var rootViewController = UINavigationController().then {
+        $0.navigationBar.setBackgroundImage(UIImage(), for: .default)
+        $0.navigationBar.shadowImage = UIImage()
+        $0.navigationBar.isTranslucent = true
+    }
     
     // MARK: - Init
-    init() {
-        self.authService = DIContainer.shared.container.resolve(AuthServiceType.self)!
-        self.userService = DIContainer.shared.container.resolve(UserServiceType.self)!
+    init(_ services: AppServices) {
+        self.services = services
     }
     
     deinit {
-        print("\(type(of: self)): \(#function)")
+        print("❎ \(type(of: self)): \(#function)")
     }
     
     // MARK: - Navigation Switch
@@ -83,7 +78,7 @@ extension IntroFlow {
     }
     
     private func navigateToLogin() -> FlowContributors {
-        let reactor = LoginViewReactor(authService: self.authService, userService: self.userService)
+        let reactor = LoginViewReactor(authService: services.authService, userService: services.userService)
         let viewController = LoginViewController(reactor: reactor)
         
         self.rootViewController.pushViewController(viewController, animated: true)
@@ -91,7 +86,7 @@ extension IntroFlow {
     }
     
     private func navigateToRegister() -> FlowContributors {
-        let reactor = RegisterViewReactor(authService: self.authService, userService: self.userService)
+        let reactor = RegisterViewReactor(authService: services.authService, userService: services.userService)
         let viewController = RegisterViewController(reactor: reactor)
         
         self.rootViewController.pushViewController(viewController, animated: true)

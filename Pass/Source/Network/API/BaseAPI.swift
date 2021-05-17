@@ -10,7 +10,7 @@ import Moya
 protocol BaseAPI: TargetType {}
 
 extension BaseAPI {
-    var baseURL: URL { URL(string: "https://4978f607-03b5-4521-987a-2b93bc2af13a.mock.pstmn.io")! }
+    var baseURL: URL { URL(string: "")! }
     
     var method: Method { .get }
     

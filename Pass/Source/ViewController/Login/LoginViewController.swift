@@ -31,8 +31,6 @@ final class LoginViewController: BaseViewController, View {
         static let titleLabel = UIFont.systemFont(ofSize: 24, weight: .bold)
     }
     
-    // MARK: - Properties
-    
     // MARK: - UI
     let titleLabel = UILabel().then {
         $0.text = "이메일을 입력해주세요."
@@ -106,7 +104,7 @@ final class LoginViewController: BaseViewController, View {
             .disposed(by: disposeBag)
         
         self.nextButton.rx.tap
-            .map { Reactor.Action.next(self.emailTextField.textField.text ?? "") }
+            .map { Reactor.Action.next }
             .bind(to: reactor.action)
             .disposed(by: disposeBag)
         

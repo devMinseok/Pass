@@ -14,8 +14,6 @@ import SwiftMessages
 final class RegisterViewReactor: Reactor, Stepper {
     var steps = PublishRelay<Step>()
     
-    var phone, email, name: String?
-    
     enum Action {
         case setFields([String])
         case next
@@ -29,8 +27,12 @@ final class RegisterViewReactor: Reactor, Stepper {
     }
     
     struct State {
+        var phone: String = ""
+        var email: String = ""
+        var name: String = ""
+        
         var isLoading: Bool = false
-        var isButtonEnabled: Bool = false
+        
         var phoneValidationResult: ValidationResult?
         var emailValidationResult: ValidationResult?
         var nameValidationResult: ValidationResult?
@@ -53,10 +55,7 @@ final class RegisterViewReactor: Reactor, Stepper {
     
     func mutate(action: Action) -> Observable<Mutation> {
         switch action {
-        case let .setFields(fields): // phone, email, name
-            self.phone = fields[0]
-            self.email = fields[1]
-            self.name = fields[2]
+        case let .setFields(fields):
             return Observable.just(Mutation.checkFields(fields))
             
         case .next:
@@ -64,10 +63,9 @@ final class RegisterViewReactor: Reactor, Stepper {
             return .empty()
             
         case let .register(password):
-            guard let phone = phone,
-                  let email = email,
-                  let name = name
-            else { return .empty() }
+            let phone = self.currentState.phone
+            let email = self.currentState.email
+            let name = self.currentState.name
             
             return Observable.concat([
                 Observable.just(Mutation.setLoading(true)),
@@ -95,33 +93,13 @@ final class RegisterViewReactor: Reactor, Stepper {
         
         switch mutation {
         case let .checkFields(fields):
-            let isValidPhone = fields[0].validPhone
-            let isValidEmail = fields[1].validEmail
-            let isValidName = fields[2].validName
+            state.phone = fields[0]
+            state.email = fields[1]
+            state.name = fields[2]
             
-            var isPhone = false
-            var isEmail = false
-            var isName = false
-            
-            switch isValidPhone {
-            case .ok: isPhone = true
-            case .no: isPhone = false
-            }
-            
-            switch isValidEmail {
-            case .ok: isEmail = true
-            case .no: isEmail = false
-            }
-            
-            switch isValidName {
-            case .ok: isName = true
-            case .no: isName = false
-            }
-            
-            state.phoneValidationResult = isValidPhone
-            state.emailValidationResult = isValidEmail
-            state.nameValidationResult = isValidName
-            state.isButtonEnabled = isPhone && isEmail && isName
+            state.phoneValidationResult = state.phone.validPhone
+            state.emailValidationResult = state.email.validEmail
+            state.nameValidationResult = state.name.validName
             
         case let .setLoading(isLoading):
             state.isLoading = isLoading

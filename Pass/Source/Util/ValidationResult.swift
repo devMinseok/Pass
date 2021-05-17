@@ -40,7 +40,7 @@ extension String {
     }
     
     var isName: Bool {
-        let NAME_REGEX = "^[a-zA-Z가-힣ㄱ-ㅎㅏ-ㅣ\\s]$"
+        let NAME_REGEX = "[가-힣A-Za-z0-9]{2,7}"
         return NSPredicate(format: "SELF MATCHES %@", NAME_REGEX).evaluate(with: self)
     }
 }

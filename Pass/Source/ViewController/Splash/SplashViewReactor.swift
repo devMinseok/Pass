@@ -9,7 +9,7 @@ import ReactorKit
 import RxSwift
 import RxCocoa
 
-class SplashViewReactor: Reactor {
+final class SplashViewReactor: Reactor {
     typealias Action = NoAction
     
     struct State { }

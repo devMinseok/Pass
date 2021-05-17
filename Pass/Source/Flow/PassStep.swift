@@ -7,7 +7,7 @@
 
 import RxFlow
 
-enum PassStep: Step, Equatable {
+enum PassStep: Step {
     
     case popViewController
     case dismiss
@@ -23,7 +23,21 @@ enum PassStep: Step, Equatable {
     
     case passwordIsRequired
     
+    // MARK: - 홈
     case homeIsRequired
+    case totalAccountsIsRequired([BankAccount]) // 계좌들
+    case accountIsRequired(BankAccount) // 계좌
+    case addAccountIsRequired
+    case profileIsRequried
+    
+    // MARK: - 내 소비
     case myConsumeIsRequired
+    
+    // MARK: - 설정
     case settingsIsRequired
+    
+    // MARK: - 송금
+    case selectTransferDestinationIsRequired
+    case transferIsRequired(BankAccount? = nil) // 출금계좌 번호
+    
 }

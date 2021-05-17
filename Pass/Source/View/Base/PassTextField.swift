@@ -36,10 +36,11 @@ class PassTextField: UIView {
     let textField = UITextField().then {
         $0.font = Font.textField
         $0.clearButtonMode = .whileEditing
+        $0.autocapitalizationType = .none
     }
     
     let separator = UIView().then {
-        $0.backgroundColor = .opaqueSeparator
+        $0.backgroundColor = R.color.separator()
     }
 
     // MARK: - Initializing
@@ -84,7 +85,7 @@ class PassTextField: UIView {
         self.textField.rx.text.orEmpty
             .subscribe(onNext: { [weak self] text in
                 UIView.animate(withDuration: 0.3) {
-                    self?.separator.backgroundColor = text == "" ? R.color.textGray() : R.color.accentColor()
+                    self?.separator.backgroundColor = text == "" ? R.color.separator() : R.color.accentColor()
                 }
             }).disposed(by: disposeBag)
     }
