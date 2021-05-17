@@ -60,7 +60,8 @@ class TabBarViewController: UITabBarController {
             }
             return
         }
-        guard let scrollView = viewController.view.subviews.first as? UIScrollView else { return }
-        scrollView.setContentOffset(.zero, animated: true)
+        guard let scrollView = viewController.view.subviews[1] as? UIScrollView else { return }
+        
+        scrollView.scrollRectToVisible(CGRect(x: 0, y: 0, width: 1, height: 1), animated: true)
     }
 }
