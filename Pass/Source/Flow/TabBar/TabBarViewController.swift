@@ -11,21 +11,19 @@ import RxSwift
 class TabBarViewController: UITabBarController {
     
     let disposeBag = DisposeBag()
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         self.bind()
     }
     
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
         
-        let tabBarAppearance = UITabBarAppearance()
-        tabBarAppearance.backgroundColor = R.color.signatureColor()
-        tabBarAppearance.selectionIndicatorTintColor = R.color.accentColor()
-        self.tabBar.standardAppearance = tabBarAppearance
-        
+        self.tabBar.barTintColor = R.color.signatureColor()
+        self.tabBar.tintColor = R.color.textAccent()
+                
         self.tabBar.layer.masksToBounds = true
         self.tabBar.barStyle = .default
         self.tabBar.layer.cornerRadius = 23
