@@ -65,7 +65,7 @@ extension HomeFlow {
     private func navigateToHome() -> FlowContributors {
         let profileHeaderViewReactor = ProfileHeaderViewReactor(userService: services.userService)
         
-        let reactor = HomeViewReactor(userService: services.userService, accountService: services.accountService, profileHeaderViewReactor: profileHeaderViewReactor)
+        let reactor = HomeViewReactor(accountService: services.accountService, profileHeaderViewReactor: profileHeaderViewReactor)
         let viewController = HomeViewController(reactor: reactor)
         
         self.rootViewController.pushViewController(viewController, animated: false)
@@ -75,14 +75,16 @@ extension HomeFlow {
     private func navigateToAccount(_ bankAccount: BankAccount) -> FlowContributors {
         let reactor = AccountViewReactor()
         let viewController = AccountViewController(reactor: reactor)
+        viewController.hidesBottomBarWhenPushed = true
         
         self.rootViewController.pushViewController(viewController, animated: true)
         return .one(flowContributor: .contribute(withNextPresentable: viewController, withNextStepper: reactor))
     }
     
     private func navigateToTotalAccount(_ bankAccounts: [BankAccount]) -> FlowContributors {
-        let reactor = TotalAccountViewReactor()
+        let reactor = TotalAccountViewReactor(accountService: services.accountService, bankAccounts: bankAccounts)
         let viewController = TotalAccountViewController(reactor: reactor)
+        viewController.hidesBottomBarWhenPushed = true
         
         self.rootViewController.pushViewController(viewController, animated: true)
         return .one(flowContributor: .contribute(withNextPresentable: viewController, withNextStepper: reactor))
@@ -91,6 +93,7 @@ extension HomeFlow {
     private func navigateToProfile() -> FlowContributors {
         let reactor = ProfileViewReactor()
         let viewController = ProfileViewController(reactor: reactor)
+        viewController.hidesBottomBarWhenPushed = true
         
         self.rootViewController.pushViewController(viewController, animated: true)
         return .none
