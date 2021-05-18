@@ -73,7 +73,7 @@ extension HomeFlow {
     }
     
     private func navigateToAccount(_ bankAccount: BankAccount) -> FlowContributors {
-        let reactor = AccountViewReactor()
+        let reactor = AccountViewReactor(accountService: services.accountService, bankAccount: bankAccount)
         let viewController = AccountViewController(reactor: reactor)
         viewController.hidesBottomBarWhenPushed = true
         
