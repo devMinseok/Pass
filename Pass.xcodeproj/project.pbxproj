@@ -427,10 +427,7 @@
 		F25B015A26042DFC00EBF7F0 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				F2887FBD264A58F80021BDB8 /* RefreshControl.swift */,
-				F2887FDC264D26750021BDB8 /* ProfileHeaderViewReactor.swift */,
-				F2887FDD264D26750021BDB8 /* ProfileHeaderView.swift */,
-				F2887FE92651EC710021BDB8 /* TotalAccountBalanceHeaderView.swift */,
+				F2887FF62653754A0021BDB8 /* HeaderView */,
 				F2887F962648D64D0021BDB8 /* Base */,
 				F2887FE2264E53B10021BDB8 /* HeaderFooter */,
 				F2887FA126490D0C0021BDB8 /* Cell */,
@@ -565,6 +562,7 @@
 		F2887F962648D64D0021BDB8 /* Base */ = {
 			isa = PBXGroup;
 			children = (
+				F2887FBD264A58F80021BDB8 /* RefreshControl.swift */,
 				F2893D4C263D235600801067 /* PassTextField.swift */,
 				F2893D55263D68C600801067 /* PassNumberPad.swift */,
 				F2893D57263D69F500801067 /* NumberButton.swift */,
@@ -647,6 +645,16 @@
 				F2887FE3264E53E60021BDB8 /* HomeSectionHeaderView.swift */,
 			);
 			path = HeaderFooter;
+			sourceTree = "<group>";
+		};
+		F2887FF62653754A0021BDB8 /* HeaderView */ = {
+			isa = PBXGroup;
+			children = (
+				F2887FDC264D26750021BDB8 /* ProfileHeaderViewReactor.swift */,
+				F2887FDD264D26750021BDB8 /* ProfileHeaderView.swift */,
+				F2887FE92651EC710021BDB8 /* TotalAccountBalanceHeaderView.swift */,
+			);
+			path = HeaderView;
 			sourceTree = "<group>";
 		};
 		F2B129F426412C4B00C96453 /* Extension */ = {
