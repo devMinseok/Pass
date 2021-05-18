@@ -73,6 +73,8 @@
 		F2887FE6264E96400021BDB8 /* TotalAccountViewSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2887FE5264E96400021BDB8 /* TotalAccountViewSection.swift */; };
 		F2887FEA2651EC710021BDB8 /* TotalAccountBalanceHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2887FE92651EC710021BDB8 /* TotalAccountBalanceHeaderView.swift */; };
 		F2887FF026524D120021BDB8 /* AccountHistory.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2887FEF26524D120021BDB8 /* AccountHistory.swift */; };
+		F2887FF226527FBE0021BDB8 /* AccountHistoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2887FF126527FBE0021BDB8 /* AccountHistoryCell.swift */; };
+		F2887FF52653523D0021BDB8 /* AccountHistoryCellReactor.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2887FF42653523D0021BDB8 /* AccountHistoryCellReactor.swift */; };
 		F2893D4E263D235600801067 /* PassTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2893D4C263D235600801067 /* PassTextField.swift */; };
 		F2893D51263D638E00801067 /* PasswordViewReactor.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2893D4F263D638E00801067 /* PasswordViewReactor.swift */; };
 		F2893D52263D638E00801067 /* PasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2893D50263D638E00801067 /* PasswordViewController.swift */; };
@@ -199,6 +201,8 @@
 		F2887FE5264E96400021BDB8 /* TotalAccountViewSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TotalAccountViewSection.swift; sourceTree = "<group>"; };
 		F2887FE92651EC710021BDB8 /* TotalAccountBalanceHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TotalAccountBalanceHeaderView.swift; sourceTree = "<group>"; };
 		F2887FEF26524D120021BDB8 /* AccountHistory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountHistory.swift; sourceTree = "<group>"; };
+		F2887FF126527FBE0021BDB8 /* AccountHistoryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountHistoryCell.swift; sourceTree = "<group>"; };
+		F2887FF42653523D0021BDB8 /* AccountHistoryCellReactor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountHistoryCellReactor.swift; sourceTree = "<group>"; };
 		F2893D4C263D235600801067 /* PassTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PassTextField.swift; sourceTree = "<group>"; };
 		F2893D4F263D638E00801067 /* PasswordViewReactor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordViewReactor.swift; sourceTree = "<group>"; };
 		F2893D50263D638E00801067 /* PasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordViewController.swift; sourceTree = "<group>"; };
@@ -581,6 +585,8 @@
 				F2887FA826490E1B0021BDB8 /* AccountCell.swift */,
 				F2887FB7264954910021BDB8 /* AccountCellReactor.swift */,
 				F2887FAC26490E8F0021BDB8 /* AddAccountCell.swift */,
+				F2887FF126527FBE0021BDB8 /* AccountHistoryCell.swift */,
+				F2887FF42653523D0021BDB8 /* AccountHistoryCellReactor.swift */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -974,6 +980,7 @@
 				F22B238925FF2F3B003AAD9D /* AppDelegate.swift in Sources */,
 				F2893D56263D68C600801067 /* PassNumberPad.swift in Sources */,
 				F2350B1A2636D263000C523B /* MyConsumeViewReactor.swift in Sources */,
+				F2887FF52653523D0021BDB8 /* AccountHistoryCellReactor.swift in Sources */,
 				F2893D52263D638E00801067 /* PasswordViewController.swift in Sources */,
 				F2E4B9FB261AE97F00632221 /* ModelStream.swift in Sources */,
 				F2887FE4264E53E60021BDB8 /* HomeSectionHeaderView.swift in Sources */,
@@ -1013,6 +1020,7 @@
 				F2887FC9264CEC080021BDB8 /* TransferViewController.swift in Sources */,
 				F2350B7E2638280D000C523B /* SettingsFlow.swift in Sources */,
 				F2E4B9D7261AE76D00632221 /* ModelType.swift in Sources */,
+				F2887FF226527FBE0021BDB8 /* AccountHistoryCell.swift in Sources */,
 				F2B129F32641233F00C96453 /* ValidationResult.swift in Sources */,
 				F25B016926042F9F00EBF7F0 /* BaseViewController.swift in Sources */,
 				F2350AAC26368BEC000C523B /* BaseAPI.swift in Sources */,
