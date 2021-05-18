@@ -9,6 +9,7 @@ import RxSwift
 
 protocol AccountServiceType {
     func getAccounts() -> Single<[BankAccount]>
+    func getAccountHistory(_ accountIdx: Int) -> Single<[AccountHistory]>
 }
 
 final class AccountService: AccountServiceType {
@@ -22,8 +23,7 @@ final class AccountService: AccountServiceType {
         return self.network.requestArray(.getMyAccounts, type: BankAccount.self)
     }
     
-//    func getTransactionDetail() -> Single<[]> {
-//
-//    }
-    
+    func getAccountHistory(_ accountIdx: Int) -> Single<[AccountHistory]> {
+        return self.network.requestArray(.getAccountHistory(accountIdx), type: AccountHistory.self)
+    }
 }

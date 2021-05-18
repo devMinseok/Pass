@@ -31,7 +31,9 @@ extension Network {
     }
     
     func requestArray<T: Codable>(_ target: API, type: T.Type) -> Single<[T]> {
+        let decoder = JSONDecoder()
+        decoder.dateDecodingStrategy = .iso8601
         return request(target)
-            .map([T].self)
+            .map([T].self, using: decoder)
     }
 }
