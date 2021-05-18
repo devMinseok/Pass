@@ -28,7 +28,7 @@ final class AccountCellReactor: Reactor {
     init(bankAccount: BankAccount, steps: PublishRelay<Step>) {
         self.initialState = State(
             bankAccount: bankAccount,
-            bankLogoUrl: bankAccount.bank.thumbnail,
+            bankLogoUrl: bankAccount.bank.logoURL,
             bankName: bankAccount.accountNickname,
             balance: bankAccount.balance.decimalWon()
         )

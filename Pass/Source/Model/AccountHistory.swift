@@ -30,9 +30,9 @@ struct AccountHistory: ModelType {
     enum CodingKeys: String, CodingKey {
         case idx
         case targetName = "target_name"
-        case amount = "amount"
-        case date = "date"
-        case balance = "balance"
+        case amount
+        case date
+        case balance
         case platformName = "platform_name"
     }
 }
