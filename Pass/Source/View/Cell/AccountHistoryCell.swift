@@ -14,7 +14,7 @@ final class AccountHistoryCell: BaseTableViewCell, View {
     typealias Reactor = AccountHistoryCellReactor
     
     // MARK: - Constants
-    struct Metric  {
+    struct Metric {
         static let leftRightPadding = 20.f
         static let topBottomPadding = 10.f
     }
@@ -72,7 +72,7 @@ final class AccountHistoryCell: BaseTableViewCell, View {
     ).then {
         $0.axis = .horizontal
         $0.alignment = .center
-        $0.distribution = .fillProportionally
+        $0.distribution = .equalSpacing
         $0.spacing = 0
     }
     
@@ -96,6 +96,18 @@ final class AccountHistoryCell: BaseTableViewCell, View {
             make.right.equalToSuperview().offset(-Metric.leftRightPadding)
             make.top.equalToSuperview().offset(Metric.topBottomPadding)
             make.bottom.equalToSuperview().offset(-Metric.topBottomPadding)
+        }
+        
+        self.verticalStackView1.snp.makeConstraints { make in
+            make.width.equalTo(200)
+        }
+        
+        self.verticalStackView2.snp.makeConstraints { make in
+            make.width.equalTo(100)
+        }
+        
+        self.verticalStackView3.snp.makeConstraints { make in
+            make.width.equalTo(50)
         }
     }
     
