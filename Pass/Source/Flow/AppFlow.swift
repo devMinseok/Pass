@@ -81,7 +81,7 @@ extension AppFlow {
     private func navigateToTabBar() -> FlowContributors {
         let tabBarFlow = TabBarFlow(services)
         
-        Flows.use(tabBarFlow, when: .created) { [unowned self] root in
+        Flows.use(tabBarFlow, when: .ready) { [unowned self] root in
             self.window.rootViewController = root
             
             UIView.transition(with: self.window,

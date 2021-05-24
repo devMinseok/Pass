@@ -108,10 +108,14 @@ extension HomeFlow {
     }
     
     private func navigateToTransfer(_ withdrawal: BankAccount?) -> FlowContributors {
-        // 송금 Flow를 만들어야함
-        let reactor = TransferViewReactor()
-        let viewController = TransferViewController(reactor: reactor)
+        // 송금 Flow
+        let transferFlow = TransferFlow(self.services)
         
-        return .none
+        Flows.use(transferFlow, when: .created) { root in
+            self.rootViewController.pushViewController(root, animated: true)
+        }
+        
+        let nextStep = OneStepper(withSingleStep: PassStep.transferDestinationIsRequired)
+        return .one(flowContributor: .contribute(withNextPresentable: transferFlow, withNextStepper: nextStep))
     }
 }

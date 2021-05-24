@@ -1,17 +1,17 @@
 //
-//  TransferViewController.swift
+//  TransferDestinationViewController.swift
 //  Pass
 //
-//  Created by 강민석 on 2021/05/13.
+//  Created by 강민석 on 2021/05/24.
 //
 
 import UIKit
 
 import ReactorKit
 
-final class TransferViewController: BaseViewController, View {
+final class TransferDestinationViewController: BaseViewController, View {
     
-    typealias Reactor = TransferViewReactor
+    typealias Reactor = TransferDestinationViewReactor
     
     // MARK: Constants
     struct Metric {
