@@ -31,6 +31,8 @@ final class AccountViewController: BaseViewController, View {
         $0.separatorStyle = .none
         $0.register(Reusable.historyCell)
     }
+    
+    fileprivate let accountViewHeader = AccountViewHeader()
 
     // MARK: - Initializing
     init(
@@ -48,26 +50,22 @@ final class AccountViewController: BaseViewController, View {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.title = "계좌"
+        self.title = reactor?.currentState.bankAccount.accountNickname
         
         self.view.backgroundColor = .systemGroupedBackground
         
         self.tableView.refreshControl = refreshControl
         self.view.addSubview(self.tableView)
         
-//        self.setHeaderView()
+        self.setHeaderView()
     }
     
-//    func setHeaderView() {
-//        let headerView = AccountHeaderView()
-//
-//        if let accounts = self.reactor?.currentState.bankAccounts {
-//            let totalBalance = accounts.reduce(0) { $0 + $1.balance }
-//            headerView.totalBalanceLabel.text = totalBalance.decimalWon()
-//        }
-//
-//        self.tableView.tableHeaderView = headerView
-//    }
+    func setHeaderView() {
+        let headerView = AccountViewHeader()
+        headerView.reactor = reactor?.accountViewHeaderReactor
+        
+        self.tableView.tableHeaderView = headerView
+    }
 
     override func setupConstraints() {
         self.tableView.snp.makeConstraints { make in
@@ -87,7 +85,7 @@ final class AccountViewController: BaseViewController, View {
             .map { Reactor.Action.refresh }
             .bind(to: reactor.action)
             .disposed(by: disposeBag)
-        
+
         // MARK: - output
         reactor.state.map { $0.items }
             .bind(to: tableView.rx.items) { tableView, index, element in
@@ -111,5 +109,14 @@ final class AccountViewController: BaseViewController, View {
 extension AccountViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 70
+    }
+    
+    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        let view = UIView()
+        return view
+    }
+
+    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return 15
     }
 }

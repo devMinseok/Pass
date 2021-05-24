@@ -33,12 +33,17 @@ final class AccountViewReactor: Reactor, Stepper {
     let initialState: State
     fileprivate let accountService: AccountServiceType
     
+    let accountViewHeaderReactor: AccountViewHeaderReactor
+    
     init(
         accountService: AccountServiceType,
         bankAccount: BankAccount
     ) {
         self.accountService = accountService
         self.initialState = State(bankAccount: bankAccount)
+        
+        self.accountViewHeaderReactor = .init(bankAccount: bankAccount)
+        self.accountViewHeaderReactor.steps = self.steps
     }
 
     func mutate(action: Action) -> Observable<Mutation> {
