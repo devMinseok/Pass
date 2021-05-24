@@ -85,7 +85,7 @@ final class TotalAccountViewController: BaseViewController, View {
     }
     
     func setHeaderView() {
-        let headerView = TotalAccountBalanceHeaderView()
+        let headerView = TotalAccountViewHeader()
         
         if let accounts = self.reactor?.currentState.bankAccounts {
             let totalBalance = accounts.reduce(0) { $0 + $1.balance }
