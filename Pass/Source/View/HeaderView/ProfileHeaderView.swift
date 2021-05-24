@@ -135,9 +135,7 @@ final class ProfileHeaderView: UIView, View {
             .disposed(by: disposeBag)
         
         reactor.state.map { $0.profileImage }
-            .subscribe(onNext: { [weak self] url in
-                self?.profileView.kf.setImage(with: url)
-            })
+            .bind(to: self.profileView.rx.image())
             .disposed(by: disposeBag)
     }
 }

@@ -91,7 +91,7 @@ extension HomeFlow {
     }
     
     private func navigateToProfile() -> FlowContributors {
-        let reactor = ProfileViewReactor()
+        let reactor = ProfileViewReactor(userService: services.userService)
         let viewController = ProfileViewController(reactor: reactor)
         viewController.hidesBottomBarWhenPushed = true
         
