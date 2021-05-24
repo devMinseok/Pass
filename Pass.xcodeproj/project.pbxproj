@@ -77,6 +77,11 @@
 		F2887FF52653523D0021BDB8 /* AccountHistoryCellReactor.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2887FF42653523D0021BDB8 /* AccountHistoryCellReactor.swift */; };
 		F2887FF8265378140021BDB8 /* AccountViewHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2887FF7265378140021BDB8 /* AccountViewHeader.swift */; };
 		F2887FFA265378D60021BDB8 /* AccountViewHeaderReactor.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2887FF9265378D60021BDB8 /* AccountViewHeaderReactor.swift */; };
+		F2887FFC265B2F3D0021BDB8 /* ProfileViewSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2887FFB265B2F3D0021BDB8 /* ProfileViewSection.swift */; };
+		F2887FFE265B36DB0021BDB8 /* ProfileItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2887FFD265B36DB0021BDB8 /* ProfileItemCell.swift */; };
+		F2888000265B37010021BDB8 /* ProfileItemCellReactor.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2887FFF265B37010021BDB8 /* ProfileItemCellReactor.swift */; };
+		F2888002265B41B80021BDB8 /* ProfileAvatarItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2888001265B41B80021BDB8 /* ProfileAvatarItemCell.swift */; };
+		F2888004265B42FD0021BDB8 /* ProfileAvatarItemCellReactor.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2888003265B42FD0021BDB8 /* ProfileAvatarItemCellReactor.swift */; };
 		F2893D4E263D235600801067 /* PassTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2893D4C263D235600801067 /* PassTextField.swift */; };
 		F2893D51263D638E00801067 /* PasswordViewReactor.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2893D4F263D638E00801067 /* PasswordViewReactor.swift */; };
 		F2893D52263D638E00801067 /* PasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2893D50263D638E00801067 /* PasswordViewController.swift */; };
@@ -207,6 +212,11 @@
 		F2887FF42653523D0021BDB8 /* AccountHistoryCellReactor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountHistoryCellReactor.swift; sourceTree = "<group>"; };
 		F2887FF7265378140021BDB8 /* AccountViewHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountViewHeader.swift; sourceTree = "<group>"; };
 		F2887FF9265378D60021BDB8 /* AccountViewHeaderReactor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountViewHeaderReactor.swift; sourceTree = "<group>"; };
+		F2887FFB265B2F3D0021BDB8 /* ProfileViewSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewSection.swift; sourceTree = "<group>"; };
+		F2887FFD265B36DB0021BDB8 /* ProfileItemCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileItemCell.swift; sourceTree = "<group>"; };
+		F2887FFF265B37010021BDB8 /* ProfileItemCellReactor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileItemCellReactor.swift; sourceTree = "<group>"; };
+		F2888001265B41B80021BDB8 /* ProfileAvatarItemCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileAvatarItemCell.swift; sourceTree = "<group>"; };
+		F2888003265B42FD0021BDB8 /* ProfileAvatarItemCellReactor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileAvatarItemCellReactor.swift; sourceTree = "<group>"; };
 		F2893D4C263D235600801067 /* PassTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PassTextField.swift; sourceTree = "<group>"; };
 		F2893D4F263D638E00801067 /* PasswordViewReactor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordViewReactor.swift; sourceTree = "<group>"; };
 		F2893D50263D638E00801067 /* PasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordViewController.swift; sourceTree = "<group>"; };
@@ -591,6 +601,10 @@
 				F2887FAC26490E8F0021BDB8 /* AddAccountCell.swift */,
 				F2887FF126527FBE0021BDB8 /* AccountHistoryCell.swift */,
 				F2887FF42653523D0021BDB8 /* AccountHistoryCellReactor.swift */,
+				F2887FFD265B36DB0021BDB8 /* ProfileItemCell.swift */,
+				F2887FFF265B37010021BDB8 /* ProfileItemCellReactor.swift */,
+				F2888001265B41B80021BDB8 /* ProfileAvatarItemCell.swift */,
+				F2888003265B42FD0021BDB8 /* ProfileAvatarItemCellReactor.swift */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -600,6 +614,7 @@
 			children = (
 				F2887FB1264923710021BDB8 /* HomeViewSection.swift */,
 				F2887FE5264E96400021BDB8 /* TotalAccountViewSection.swift */,
+				F2887FFB265B2F3D0021BDB8 /* ProfileViewSection.swift */,
 			);
 			path = Section;
 			sourceTree = "<group>";
@@ -968,6 +983,7 @@
 				F2B129F12640E4EB00C96453 /* Message.swift in Sources */,
 				F292C31D263B84B600E318EE /* UIViewPreview.swift in Sources */,
 				F2893D58263D69F500801067 /* NumberButton.swift in Sources */,
+				F2888000265B37010021BDB8 /* ProfileItemCellReactor.swift in Sources */,
 				F2059A9226198A690016AE87 /* R.generated.swift in Sources */,
 				F2796476261D780E00B77241 /* AuthService.swift in Sources */,
 				F2E4B9C5261AE2EA00632221 /* RequestLoggingPlugin.swift in Sources */,
@@ -1017,10 +1033,13 @@
 				F2350B502636E289000C523B /* AppFlow.swift in Sources */,
 				F2C6AD6B2643BE09008FCD69 /* HomeViewController.swift in Sources */,
 				F2350B6B2637A1E7000C523B /* TabBarFlow.swift in Sources */,
+				F2888002265B41B80021BDB8 /* ProfileAvatarItemCell.swift in Sources */,
 				F2887FA926490E1B0021BDB8 /* AccountCell.swift in Sources */,
 				F2E213502639420200B79C4E /* IntroViewReactor.swift in Sources */,
 				F2350B142636D259000C523B /* SettingsViewController.swift in Sources */,
 				F2887FD1264CEC1B0021BDB8 /* AccountViewController.swift in Sources */,
+				F2888004265B42FD0021BDB8 /* ProfileAvatarItemCellReactor.swift in Sources */,
+				F2887FFC265B2F3D0021BDB8 /* ProfileViewSection.swift in Sources */,
 				F2350B5A263798F3000C523B /* IntroFlow.swift in Sources */,
 				F2887FEA2651EC710021BDB8 /* TotalAccountViewHeader.swift in Sources */,
 				F2C6AD6A2643BE09008FCD69 /* HomeViewReactor.swift in Sources */,
@@ -1031,6 +1050,7 @@
 				F2887FF226527FBE0021BDB8 /* AccountHistoryCell.swift in Sources */,
 				F2B129F32641233F00C96453 /* ValidationResult.swift in Sources */,
 				F25B016926042F9F00EBF7F0 /* BaseViewController.swift in Sources */,
+				F2887FFE265B36DB0021BDB8 /* ProfileItemCell.swift in Sources */,
 				F2350AAC26368BEC000C523B /* BaseAPI.swift in Sources */,
 				F2B129EF263EE9F300C96453 /* HapticFeedback.swift in Sources */,
 				F2887FA0264906520021BDB8 /* TransactionDetail.swift in Sources */,
