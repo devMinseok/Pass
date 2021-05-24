@@ -1,5 +1,5 @@
 //
-//  TotalAccountBalanceHeaderView.swift
+//  TotalAccountViewHeader.swift
 //  Pass
 //
 //  Created by 강민석 on 2021/05/17.
@@ -7,7 +7,7 @@
 
 import UIKit
 
-class TotalAccountBalanceHeaderView: UIView {
+class TotalAccountViewHeader: UIView {
     
     // MARK: - Constants
     struct Metric {

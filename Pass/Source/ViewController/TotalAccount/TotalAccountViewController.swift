@@ -85,14 +85,7 @@ final class TotalAccountViewController: BaseViewController, View {
     }
     
     func setHeaderView() {
-        let totalAccountBalance = UITableViewCell(frame: CGRect(x: 0, y: 0, width: self.tableView.bounds.width, height: 130))
-        
-        totalAccountBalance.textLabel?.text = "총 계좌 잔액"
-        totalAccountBalance.detailTextLabel?.text = "1,000 원"
-        totalAccountBalance.textLabel?.font = UIFont.systemFont(ofSize: 10)
-        totalAccountBalance.detailTextLabel?.font = UIFont.systemFont(ofSize: 15)
-        
-        let headerView = TotalAccountBalanceHeaderView()
+        let headerView = TotalAccountViewHeader()
         
         if let accounts = self.reactor?.currentState.bankAccounts {
             let totalBalance = accounts.reduce(0) { $0 + $1.balance }
@@ -122,10 +115,10 @@ final class TotalAccountViewController: BaseViewController, View {
             .disposed(by: disposeBag)
         
         self.tableView.rx.itemSelected(dataSource: self.dataSource)
-            .subscribe(onNext: { [weak self] sectoinItem in
+            .subscribe(onNext: { [weak self] sectionItem in
                 guard let self = self else { return }
                 
-                switch sectoinItem {
+                switch sectionItem {
                 case let .account(reactor):
                     let bankAccount = reactor.currentState.bankAccount
                     self.reactor?.steps.accept(PassStep.accountIsRequired(bankAccount))

@@ -12,6 +12,7 @@ enum PassAPI {
     case getMyInfo
     case editMyInfo(_ name: String, _ phone: String, _ email: String)
     case getMyAccounts
+    case getAccountHistory(_ idx: Int)
 }
 
 extension PassAPI: BaseAPI {
@@ -23,6 +24,8 @@ extension PassAPI: BaseAPI {
             return "/user/editMyInfo"
         case .getMyAccounts:
             return "/account/getMyAccounts"
+        case let .getAccountHistory(idx):
+            return "/account/getAccountHistory/\(idx)"
         }
     }
     
@@ -31,7 +34,7 @@ extension PassAPI: BaseAPI {
 //        case :
 //            return .post
             
-        case .getMyInfo, .getMyAccounts:
+        case .getMyInfo, .getMyAccounts, .getAccountHistory:
             return .get
             
         case .editMyInfo:
