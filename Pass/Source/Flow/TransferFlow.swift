@@ -14,17 +14,17 @@ final class TransferFlow: Flow {
         return self.rootViewController
     }
     
-    private lazy var rootViewController = UINavigationController().then {
-        let navigationBarAppearance = UINavigationBarAppearance()
-        navigationBarAppearance.backgroundColor = R.color.signatureColor()
-        navigationBarAppearance.shadowColor = nil
-        $0.navigationBar.standardAppearance = navigationBarAppearance
-    }
+    private let rootViewController: TransferDestinationViewController
     
     private let services: AppServices
+    private let bankAccount: BankAccount?
     
-    init(_ services: AppServices) {
+    init(_ services: AppServices, bankAccount: BankAccount?) {
         self.services = services
+        self.bankAccount = bankAccount
+        
+        let reactor = TransferDestinationViewReactor()
+        self.rootViewController = TransferDestinationViewController(reactor: reactor)
     }
     
     deinit {
@@ -36,7 +36,10 @@ final class TransferFlow: Flow {
         
         switch step {
         case .transferDestinationIsRequired:
-            return navigateToSelectTransferDestination()
+            return navigateToTransferDestination()
+            
+        case .bankListIsRequired:
+            return navigateToBankList()
             
         case .transferAmountIsRequired:
             return navigateToTransferAmount()
@@ -48,12 +51,16 @@ final class TransferFlow: Flow {
 }
 
 extension TransferFlow {
-    // Initial Navigate
-    private func navigateToSelectTransferDestination() -> FlowContributors {
-        let reactor = TransferDestinationViewReactor()
-        let viewController = TransferDestinationViewController(reactor: reactor)
-        
-        self.rootViewController.pushViewController(viewController, animated: false)
+    
+    private func navigateToTransferDestination() -> FlowContributors {
+        return .one(flowContributor: .contribute(withNextPresentable: rootViewController, withNextStepper: rootViewController.reactor as! Stepper))
+    }
+    
+    private func navigateToBankList() -> FlowContributors {
+        let reactor = BankListViewReactor()
+        let viewController = BankListViewController(reactor: reactor)
+
+        self.rootViewController.present(viewController, animated: true)
         return .one(flowContributor: .contribute(withNextPresentable: viewController, withNextStepper: reactor))
     }
     

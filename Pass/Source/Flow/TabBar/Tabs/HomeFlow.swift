@@ -109,9 +109,9 @@ extension HomeFlow {
     
     private func navigateToTransfer(_ withdrawal: BankAccount?) -> FlowContributors {
         // 송금 Flow
-        let transferFlow = TransferFlow(self.services)
+        let transferFlow = TransferFlow(self.services, bankAccount: withdrawal)
         
-        Flows.use(transferFlow, when: .created) { root in
+        Flows.use(transferFlow, when: .created) { [unowned self] root in
             self.rootViewController.pushViewController(root, animated: true)
         }
         

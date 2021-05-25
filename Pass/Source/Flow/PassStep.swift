@@ -36,8 +36,12 @@ enum PassStep: Step {
     // MARK: - 설정
     case settingsIsRequired
     
+    // MARK: - 은행 리스트
+    case bankListIsRequired
+    
     // MARK: - 송금
-    case transferIsRequired(BankAccount? = nil) // 출금계좌 번호
+    case transferIsRequired(BankAccount?) // 출금계좌
     case transferDestinationIsRequired
-    case transferAmountIsRequired
+    case transferAmountIsRequired(Bank, String) // 받는 사람 은행, 계좌번호
+    case transferCheckIsRequired(Bank, String, Int) // 받는 사람 은행, 계좌번호, 금액
 }
