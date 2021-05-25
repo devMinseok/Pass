@@ -101,6 +101,7 @@
 		F2D2FB97265B96500010731F /* KeyboardTopButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2D2FB96265B96500010731F /* KeyboardTopButton.swift */; };
 		F2D2FBA0265BC88F0010731F /* BankListViewReactor.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2D2FB9E265BC88F0010731F /* BankListViewReactor.swift */; };
 		F2D2FBA1265BC88F0010731F /* BankListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2D2FB9F265BC88F0010731F /* BankListViewController.swift */; };
+		F2D2FBA6265C81880010731F /* BaseCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2D2FBA5265C81880010731F /* BaseCollectionViewCell.swift */; };
 		F2E213472639404600B79C4E /* CGFloatLiteral.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2E213462639404600B79C4E /* CGFloatLiteral.swift */; };
 		F2E213502639420200B79C4E /* IntroViewReactor.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2E2134E2639420200B79C4E /* IntroViewReactor.swift */; };
 		F2E213512639420200B79C4E /* IntroViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2E2134F2639420200B79C4E /* IntroViewController.swift */; };
@@ -240,6 +241,7 @@
 		F2D2FB96265B96500010731F /* KeyboardTopButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardTopButton.swift; sourceTree = "<group>"; };
 		F2D2FB9E265BC88F0010731F /* BankListViewReactor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BankListViewReactor.swift; sourceTree = "<group>"; };
 		F2D2FB9F265BC88F0010731F /* BankListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BankListViewController.swift; sourceTree = "<group>"; };
+		F2D2FBA5265C81880010731F /* BaseCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseCollectionViewCell.swift; sourceTree = "<group>"; };
 		F2E213462639404600B79C4E /* CGFloatLiteral.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CGFloatLiteral.swift; sourceTree = "<group>"; };
 		F2E2134E2639420200B79C4E /* IntroViewReactor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntroViewReactor.swift; sourceTree = "<group>"; };
 		F2E2134F2639420200B79C4E /* IntroViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntroViewController.swift; sourceTree = "<group>"; };
@@ -455,9 +457,10 @@
 			isa = PBXGroup;
 			children = (
 				F2887F962648D64D0021BDB8 /* Base */,
+				F2D2FBA3265C81320010731F /* TableView */,
+				F2D2FBA2265C81270010731F /* CollectionView */,
 				F2887FF62653754A0021BDB8 /* HeaderView */,
 				F2887FE2264E53B10021BDB8 /* HeaderFooter */,
-				F2887FA126490D0C0021BDB8 /* Cell */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -601,25 +604,6 @@
 			path = Base;
 			sourceTree = "<group>";
 		};
-		F2887FA126490D0C0021BDB8 /* Cell */ = {
-			isa = PBXGroup;
-			children = (
-				F2887FAE264910340021BDB8 /* BaseTableViewCell.swift */,
-				F2887FB326494D6C0021BDB8 /* TotalAccountCell.swift */,
-				F2887FB526494E320021BDB8 /* TotalAccountCellReactor.swift */,
-				F2887FA826490E1B0021BDB8 /* AccountCell.swift */,
-				F2887FB7264954910021BDB8 /* AccountCellReactor.swift */,
-				F2887FAC26490E8F0021BDB8 /* AddAccountCell.swift */,
-				F2887FF126527FBE0021BDB8 /* AccountHistoryCell.swift */,
-				F2887FF42653523D0021BDB8 /* AccountHistoryCellReactor.swift */,
-				F2887FFD265B36DB0021BDB8 /* ProfileItemCell.swift */,
-				F2887FFF265B37010021BDB8 /* ProfileItemCellReactor.swift */,
-				F2888001265B41B80021BDB8 /* ProfileAvatarItemCell.swift */,
-				F2888003265B42FD0021BDB8 /* ProfileAvatarItemCellReactor.swift */,
-			);
-			path = Cell;
-			sourceTree = "<group>";
-		};
 		F2887FB02649232A0021BDB8 /* Section */ = {
 			isa = PBXGroup;
 			children = (
@@ -713,6 +697,33 @@
 				F2D2FB9F265BC88F0010731F /* BankListViewController.swift */,
 			);
 			path = BankList;
+			sourceTree = "<group>";
+		};
+		F2D2FBA2265C81270010731F /* CollectionView */ = {
+			isa = PBXGroup;
+			children = (
+				F2D2FBA5265C81880010731F /* BaseCollectionViewCell.swift */,
+			);
+			path = CollectionView;
+			sourceTree = "<group>";
+		};
+		F2D2FBA3265C81320010731F /* TableView */ = {
+			isa = PBXGroup;
+			children = (
+				F2887FAE264910340021BDB8 /* BaseTableViewCell.swift */,
+				F2887FB326494D6C0021BDB8 /* TotalAccountCell.swift */,
+				F2887FB526494E320021BDB8 /* TotalAccountCellReactor.swift */,
+				F2887FA826490E1B0021BDB8 /* AccountCell.swift */,
+				F2887FB7264954910021BDB8 /* AccountCellReactor.swift */,
+				F2887FAC26490E8F0021BDB8 /* AddAccountCell.swift */,
+				F2887FF126527FBE0021BDB8 /* AccountHistoryCell.swift */,
+				F2887FF42653523D0021BDB8 /* AccountHistoryCellReactor.swift */,
+				F2887FFD265B36DB0021BDB8 /* ProfileItemCell.swift */,
+				F2887FFF265B37010021BDB8 /* ProfileItemCellReactor.swift */,
+				F2888001265B41B80021BDB8 /* ProfileAvatarItemCell.swift */,
+				F2888003265B42FD0021BDB8 /* ProfileAvatarItemCellReactor.swift */,
+			);
+			path = TableView;
 			sourceTree = "<group>";
 		};
 		F2E4B9C3261AE28700632221 /* Plugin */ = {
@@ -1072,6 +1083,7 @@
 				F2350B7E2638280D000C523B /* SettingsFlow.swift in Sources */,
 				F2E4B9D7261AE76D00632221 /* ModelType.swift in Sources */,
 				F2887FF226527FBE0021BDB8 /* AccountHistoryCell.swift in Sources */,
+				F2D2FBA6265C81880010731F /* BaseCollectionViewCell.swift in Sources */,
 				F2B129F32641233F00C96453 /* ValidationResult.swift in Sources */,
 				F25B016926042F9F00EBF7F0 /* BaseViewController.swift in Sources */,
 				F2887FFE265B36DB0021BDB8 /* ProfileItemCell.swift in Sources */,
