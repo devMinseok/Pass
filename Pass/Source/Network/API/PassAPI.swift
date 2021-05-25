@@ -11,8 +11,10 @@ import Moya
 enum PassAPI {
     case getMyInfo
     case editMyInfo(_ name: String, _ phone: String, _ email: String)
+    
     case getMyAccounts
     case getAccountHistory(_ idx: Int)
+    case getBankList
 }
 
 extension PassAPI: BaseAPI {
@@ -20,12 +22,18 @@ extension PassAPI: BaseAPI {
         switch self {
         case .getMyInfo:
             return "/user/getMyInfo"
+            
         case .editMyInfo:
             return "/user/editMyInfo"
+            
         case .getMyAccounts:
             return "/account/getMyAccounts"
+            
         case let .getAccountHistory(idx):
             return "/account/getAccountHistory/\(idx)"
+            
+        case .getBankList:
+            return "/account/bankList"
         }
     }
     
@@ -34,7 +42,7 @@ extension PassAPI: BaseAPI {
 //        case :
 //            return .post
             
-        case .getMyInfo, .getMyAccounts, .getAccountHistory:
+        case .getMyInfo, .getMyAccounts, .getAccountHistory, .getBankList:
             return .get
             
         case .editMyInfo:
