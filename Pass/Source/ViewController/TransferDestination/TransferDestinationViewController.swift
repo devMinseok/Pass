@@ -28,6 +28,7 @@ final class TransferDestinationViewController: BaseViewController, View {
     
     fileprivate let bankSelectField = PassTextField().then {
         $0.textField.placeholder = "은행 선택"
+        $0.textField.isUserInteractionEnabled = false
     }
     
     fileprivate lazy var accountNumberField = PassTextField().then {
@@ -76,21 +77,20 @@ final class TransferDestinationViewController: BaseViewController, View {
     // MARK: - Configuring
     func bind(reactor: Reactor) {
         // MARK: - input
-        let textFieldTap = self.bankSelectField.textField.rx.tapGesture().when(.recognized).share()
         
-        textFieldTap
+        self.bankSelectField.rx.tapGesture()
+            .when(.recognized)
             .map { _ in Reactor.Action.showBankList }
             .bind(to: reactor.action)
             .disposed(by: disposeBag)
         
-//        textFieldTap
-//            .subscribe(onNext: { [weak self] _ in
-//                self?.bankSelectField.textField.endEditing(true)
-//            })
-//            .disposed(by: disposeBag)
-        
         self.doneButton.rx.tap
             .map { Reactor.Action.next }
+            .bind(to: reactor.action)
+            .disposed(by: disposeBag)
+        
+        self.accountNumberField.textField.rx.text.orEmpty
+            .map(Reactor.Action.setAccountNumber)
             .bind(to: reactor.action)
             .disposed(by: disposeBag)
         

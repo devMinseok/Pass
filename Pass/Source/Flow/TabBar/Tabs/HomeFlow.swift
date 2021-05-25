@@ -112,6 +112,7 @@ extension HomeFlow {
         let transferFlow = TransferFlow(self.services, bankAccount: withdrawal)
         
         Flows.use(transferFlow, when: .created) { [unowned self] root in
+            root.hidesBottomBarWhenPushed = true
             self.rootViewController.pushViewController(root, animated: true)
         }
         

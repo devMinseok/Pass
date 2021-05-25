@@ -10,9 +10,7 @@ import UIKit
 import RxSwift
 
 class BaseCollectionViewCell: UICollectionViewCell {
-    
     var disposeBag = DisposeBag()
-    
     
     // MARK: Initializing
     override init(frame: CGRect) {
@@ -22,5 +20,4 @@ class BaseCollectionViewCell: UICollectionViewCell {
     required convenience init?(coder aDecoder: NSCoder) {
         self.init(frame: .zero)
     }
-    
 }

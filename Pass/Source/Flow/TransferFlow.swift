@@ -41,8 +41,12 @@ final class TransferFlow: Flow {
         case .bankListIsRequired:
             return navigateToBankList()
             
-        case .transferAmountIsRequired:
+        case let .transferAmountIsRequired(bank, accountNumber):
             return navigateToTransferAmount()
+            
+        case .dismiss:
+            self.rootViewController.dismiss(animated: true, completion: nil)
+            return .none
             
         default:
             return .none
@@ -57,7 +61,7 @@ extension TransferFlow {
     }
     
     private func navigateToBankList() -> FlowContributors {
-        let reactor = BankListViewReactor()
+        let reactor = BankListViewReactor(accountService: services.accountService)
         let viewController = BankListViewController(reactor: reactor)
 
         self.rootViewController.present(viewController, animated: true)

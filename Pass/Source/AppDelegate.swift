@@ -41,8 +41,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         let appFlow = AppFlow(window: window, services: appServices)
         
-        self.coordinator.coordinate(flow: appFlow, with: AppStepper(appServices.userService))
-//        self.coordinator.coordinate(flow: appFlow, with: OneStepper.init(withSingleStep: PassStep.mainTabBarIsRequired))
+//        self.coordinator.coordinate(flow: appFlow, with: AppStepper(appServices.userService))
+        self.coordinator.coordinate(flow: appFlow, with: OneStepper.init(withSingleStep: PassStep.mainTabBarIsRequired))
         
         return true
     }

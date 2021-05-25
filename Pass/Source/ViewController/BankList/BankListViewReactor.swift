@@ -11,50 +11,52 @@ import RxSwift
 import RxFlow
 
 final class BankListViewReactor: Reactor, Stepper {
-    var steps = PublishRelay<Step>()
-    typealias Action = NoAction
-    struct State {}
-    let initialState: State = State()
-}
 
-//final class BankListViewReactor: Reactor, Stepper {
-//
-//    var steps = PublishRelay<Step>()
-//
-//    enum Action {
-//
-//    }
-//
-//    enum Mutation {
-//
-//    }
-//
-//    struct State {
-//
-//    }
-//
-//    let initialState: State
-//
-//    init() {
-//
-//    }
-//
-//    func mutate(action: Action) -> Observable<Mutation> {
-//        switch action {
-//        case <#pattern#>:
-//            <#code#>
-//        }
-//    }
-//
-//    func reduce(state: State, mutation: Mutation) -> State {
-//        var state = state
-//
-//        switch mutation {
-//        case <#pattern#>:
-//            <#code#>
-//        }
-//
-//        return state
-//    }
-//
-//}
+    var steps = PublishRelay<Step>()
+
+    enum Action {
+        case refresh
+    }
+
+    enum Mutation {
+        case setBankList([Bank])
+    }
+
+    struct State {
+        var sections: [BankListViewSection] = [.bankCell([])]
+    }
+
+    let initialState: State = State()
+    fileprivate let accountService: AccountServiceType
+
+    init(
+        accountService: AccountServiceType
+    ) {
+        self.accountService = accountService
+    }
+
+    func mutate(action: Action) -> Observable<Mutation> {
+        switch action {
+        case .refresh:
+            return self.accountService.getBankList().asObservable().map(Mutation.setBankList)
+        }
+    }
+
+    func reduce(state: State, mutation: Mutation) -> State {
+        var state = state
+
+        switch mutation {
+        case let .setBankList(bankList):
+            var sectionItems = [BankListViewSectionItem]()
+            bankList.forEach { bank in
+                sectionItems.append(BankListViewSectionItem.bankCell(BankListCellReactor(bank: bank)))
+            }
+            
+            state.sections = [
+                .bankCell(sectionItems)
+            ]
+        }
+
+        return state
+    }
+}

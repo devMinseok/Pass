@@ -102,6 +102,9 @@
 		F2D2FBA0265BC88F0010731F /* BankListViewReactor.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2D2FB9E265BC88F0010731F /* BankListViewReactor.swift */; };
 		F2D2FBA1265BC88F0010731F /* BankListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2D2FB9F265BC88F0010731F /* BankListViewController.swift */; };
 		F2D2FBA6265C81880010731F /* BaseCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2D2FBA5265C81880010731F /* BaseCollectionViewCell.swift */; };
+		F2D2FBA8265C82770010731F /* BankListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2D2FBA7265C82770010731F /* BankListCell.swift */; };
+		F2D2FBAA265C82940010731F /* BankListCellReactor.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2D2FBA9265C82940010731F /* BankListCellReactor.swift */; };
+		F2D2FBAC265C88910010731F /* BankListViewSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2D2FBAB265C88910010731F /* BankListViewSection.swift */; };
 		F2E213472639404600B79C4E /* CGFloatLiteral.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2E213462639404600B79C4E /* CGFloatLiteral.swift */; };
 		F2E213502639420200B79C4E /* IntroViewReactor.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2E2134E2639420200B79C4E /* IntroViewReactor.swift */; };
 		F2E213512639420200B79C4E /* IntroViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2E2134F2639420200B79C4E /* IntroViewController.swift */; };
@@ -242,6 +245,9 @@
 		F2D2FB9E265BC88F0010731F /* BankListViewReactor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BankListViewReactor.swift; sourceTree = "<group>"; };
 		F2D2FB9F265BC88F0010731F /* BankListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BankListViewController.swift; sourceTree = "<group>"; };
 		F2D2FBA5265C81880010731F /* BaseCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseCollectionViewCell.swift; sourceTree = "<group>"; };
+		F2D2FBA7265C82770010731F /* BankListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BankListCell.swift; sourceTree = "<group>"; };
+		F2D2FBA9265C82940010731F /* BankListCellReactor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BankListCellReactor.swift; sourceTree = "<group>"; };
+		F2D2FBAB265C88910010731F /* BankListViewSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BankListViewSection.swift; sourceTree = "<group>"; };
 		F2E213462639404600B79C4E /* CGFloatLiteral.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CGFloatLiteral.swift; sourceTree = "<group>"; };
 		F2E2134E2639420200B79C4E /* IntroViewReactor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntroViewReactor.swift; sourceTree = "<group>"; };
 		F2E2134F2639420200B79C4E /* IntroViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntroViewController.swift; sourceTree = "<group>"; };
@@ -610,6 +616,7 @@
 				F2887FB1264923710021BDB8 /* HomeViewSection.swift */,
 				F2887FE5264E96400021BDB8 /* TotalAccountViewSection.swift */,
 				F2887FFB265B2F3D0021BDB8 /* ProfileViewSection.swift */,
+				F2D2FBAB265C88910010731F /* BankListViewSection.swift */,
 			);
 			path = Section;
 			sourceTree = "<group>";
@@ -703,6 +710,8 @@
 			isa = PBXGroup;
 			children = (
 				F2D2FBA5265C81880010731F /* BaseCollectionViewCell.swift */,
+				F2D2FBA7265C82770010731F /* BankListCell.swift */,
+				F2D2FBA9265C82940010731F /* BankListCellReactor.swift */,
 			);
 			path = CollectionView;
 			sourceTree = "<group>";
@@ -1010,6 +1019,7 @@
 				F2B129ED263E8CF600C96453 /* SecureTextEntry.swift in Sources */,
 				F2D2FB88265B552D0010731F /* TransferDestinationViewReactor.swift in Sources */,
 				F2887FD0264CEC1B0021BDB8 /* AccountViewReactor.swift in Sources */,
+				F2D2FBAA265C82940010731F /* BankListCellReactor.swift in Sources */,
 				F2350B482636E27D000C523B /* PassStep.swift in Sources */,
 				F2685051263C23930047A5B0 /* LoginViewReactor.swift in Sources */,
 				F2B129F12640E4EB00C96453 /* Message.swift in Sources */,
@@ -1052,6 +1062,7 @@
 				F2887F9A2648FE8D0021BDB8 /* BankAccount.swift in Sources */,
 				F2887FBA2649579E0021BDB8 /* UIImageView+Kingfisher.swift in Sources */,
 				F25B0174260430AC00EBF7F0 /* SplashViewController.swift in Sources */,
+				F2D2FBA8265C82770010731F /* BankListCell.swift in Sources */,
 				F2887FDF264D26750021BDB8 /* ProfileHeaderView.swift in Sources */,
 				F2887FC2264CE5740021BDB8 /* UITableView+Rx.swift in Sources */,
 				F2887FB626494E320021BDB8 /* TotalAccountCellReactor.swift in Sources */,
@@ -1080,6 +1091,7 @@
 				F2887FEA2651EC710021BDB8 /* TotalAccountViewHeader.swift in Sources */,
 				F2C6AD6A2643BE09008FCD69 /* HomeViewReactor.swift in Sources */,
 				F28419DE2625694200A703DD /* Token.swift in Sources */,
+				F2D2FBAC265C88910010731F /* BankListViewSection.swift in Sources */,
 				F2350B7E2638280D000C523B /* SettingsFlow.swift in Sources */,
 				F2E4B9D7261AE76D00632221 /* ModelType.swift in Sources */,
 				F2887FF226527FBE0021BDB8 /* AccountHistoryCell.swift in Sources */,
