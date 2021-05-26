@@ -23,7 +23,7 @@ class NumberButton: UIButton {
     
     // MARK: Constants
     fileprivate struct Font {
-        static let buttonTitle = UIFont.systemFont(ofSize: 35)
+        static let buttonTitle = UIFont.systemFont(ofSize: 30)
         static let cancelTitle = UIFont.systemFont(ofSize: 20)
     }
     
@@ -33,6 +33,8 @@ class NumberButton: UIButton {
         
         self.subject = subject
         self.type = type
+        
+        self.setTitleColor(R.color.textAccent(), for: .normal)
         
         self.setupUI()
         self.bind()
@@ -50,6 +52,7 @@ class NumberButton: UIButton {
             self.titleLabel?.font = Font.buttonTitle
         case .backspace:
             self.setImage(R.image.leftArrow(), for: .normal)
+            self.tintColor = R.color.textAccent()
         case .clear:
             self.setTitle("취소", for: .normal)
             self.titleLabel?.font = Font.cancelTitle

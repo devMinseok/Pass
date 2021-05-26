@@ -55,7 +55,7 @@
 		F2887FB8264954910021BDB8 /* AccountCellReactor.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2887FB7264954910021BDB8 /* AccountCellReactor.swift */; };
 		F2887FBA2649579E0021BDB8 /* UIImageView+Kingfisher.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2887FB92649579E0021BDB8 /* UIImageView+Kingfisher.swift */; };
 		F2887FBE264A58F80021BDB8 /* RefreshControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2887FBD264A58F80021BDB8 /* RefreshControl.swift */; };
-		F2887FC0264BF0910021BDB8 /* Int.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2887FBF264BF0910021BDB8 /* Int.swift */; };
+		F2887FC0264BF0910021BDB8 /* UIInt.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2887FBF264BF0910021BDB8 /* UIInt.swift */; };
 		F2887FC2264CE5740021BDB8 /* UITableView+Rx.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2887FC1264CE5730021BDB8 /* UITableView+Rx.swift */; };
 		F2887FCC264CEC130021BDB8 /* TotalAccountViewReactor.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2887FCA264CEC130021BDB8 /* TotalAccountViewReactor.swift */; };
 		F2887FCD264CEC130021BDB8 /* TotalAccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2887FCB264CEC130021BDB8 /* TotalAccountViewController.swift */; };
@@ -105,6 +105,10 @@
 		F2D2FBA8265C82770010731F /* BankListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2D2FBA7265C82770010731F /* BankListCell.swift */; };
 		F2D2FBAA265C82940010731F /* BankListCellReactor.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2D2FBA9265C82940010731F /* BankListCellReactor.swift */; };
 		F2D2FBAC265C88910010731F /* BankListViewSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2D2FBAB265C88910010731F /* BankListViewSection.swift */; };
+		F2D2FBB0265CBAB90010731F /* TransferAmountViewReactor.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2D2FBAE265CBAB90010731F /* TransferAmountViewReactor.swift */; };
+		F2D2FBB1265CBAB90010731F /* TransferAmountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2D2FBAF265CBAB90010731F /* TransferAmountViewController.swift */; };
+		F2D2FBB3265CC5DE0010731F /* AnimationLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2D2FBB2265CC5DE0010731F /* AnimationLabel.swift */; };
+		F2D2FBB5265DC7C40010731F /* UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2D2FBB4265DC7C40010731F /* UIView.swift */; };
 		F2E213472639404600B79C4E /* CGFloatLiteral.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2E213462639404600B79C4E /* CGFloatLiteral.swift */; };
 		F2E213502639420200B79C4E /* IntroViewReactor.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2E2134E2639420200B79C4E /* IntroViewReactor.swift */; };
 		F2E213512639420200B79C4E /* IntroViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2E2134F2639420200B79C4E /* IntroViewController.swift */; };
@@ -198,7 +202,7 @@
 		F2887FB7264954910021BDB8 /* AccountCellReactor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountCellReactor.swift; sourceTree = "<group>"; };
 		F2887FB92649579E0021BDB8 /* UIImageView+Kingfisher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+Kingfisher.swift"; sourceTree = "<group>"; };
 		F2887FBD264A58F80021BDB8 /* RefreshControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RefreshControl.swift; sourceTree = "<group>"; };
-		F2887FBF264BF0910021BDB8 /* Int.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Int.swift; sourceTree = "<group>"; };
+		F2887FBF264BF0910021BDB8 /* UIInt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIInt.swift; sourceTree = "<group>"; };
 		F2887FC1264CE5730021BDB8 /* UITableView+Rx.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableView+Rx.swift"; sourceTree = "<group>"; };
 		F2887FCA264CEC130021BDB8 /* TotalAccountViewReactor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TotalAccountViewReactor.swift; sourceTree = "<group>"; };
 		F2887FCB264CEC130021BDB8 /* TotalAccountViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TotalAccountViewController.swift; sourceTree = "<group>"; };
@@ -248,6 +252,10 @@
 		F2D2FBA7265C82770010731F /* BankListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BankListCell.swift; sourceTree = "<group>"; };
 		F2D2FBA9265C82940010731F /* BankListCellReactor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BankListCellReactor.swift; sourceTree = "<group>"; };
 		F2D2FBAB265C88910010731F /* BankListViewSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BankListViewSection.swift; sourceTree = "<group>"; };
+		F2D2FBAE265CBAB90010731F /* TransferAmountViewReactor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransferAmountViewReactor.swift; sourceTree = "<group>"; };
+		F2D2FBAF265CBAB90010731F /* TransferAmountViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransferAmountViewController.swift; sourceTree = "<group>"; };
+		F2D2FBB2265CC5DE0010731F /* AnimationLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimationLabel.swift; sourceTree = "<group>"; };
+		F2D2FBB4265DC7C40010731F /* UIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIView.swift; sourceTree = "<group>"; };
 		F2E213462639404600B79C4E /* CGFloatLiteral.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CGFloatLiteral.swift; sourceTree = "<group>"; };
 		F2E2134E2639420200B79C4E /* IntroViewReactor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntroViewReactor.swift; sourceTree = "<group>"; };
 		F2E2134F2639420200B79C4E /* IntroViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntroViewController.swift; sourceTree = "<group>"; };
@@ -485,6 +493,7 @@
 				F2887FC4264CEA710021BDB8 /* TotalAccount */,
 				F2887FC3264CEA6B0021BDB8 /* Account */,
 				F2D2FB85265B54D00010731F /* TransferDestination */,
+				F2D2FBAD265CBA710010731F /* TransferAmount */,
 				F2D2FB9D265BC87E0010731F /* BankList */,
 				F2887FD2264CEC6B0021BDB8 /* AddAccount */,
 				F2350B052636D1FD000C523B /* MyConsume */,
@@ -606,6 +615,7 @@
 				F2893D59263D745400801067 /* PassPlainButton.swift */,
 				F2B129EC263E8CF600C96453 /* SecureTextEntry.swift */,
 				F2D2FB96265B96500010731F /* KeyboardTopButton.swift */,
+				F2D2FBB2265CC5DE0010731F /* AnimationLabel.swift */,
 			);
 			path = Base;
 			sourceTree = "<group>";
@@ -682,8 +692,9 @@
 			children = (
 				F2685032263BE3B50047A5B0 /* String.swift */,
 				F2B129F526412CA900C96453 /* UIButton+Rx.swift */,
-				F2887FBF264BF0910021BDB8 /* Int.swift */,
+				F2887FBF264BF0910021BDB8 /* UIInt.swift */,
 				F2887FC1264CE5730021BDB8 /* UITableView+Rx.swift */,
+				F2D2FBB4265DC7C40010731F /* UIView.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -733,6 +744,15 @@
 				F2888003265B42FD0021BDB8 /* ProfileAvatarItemCellReactor.swift */,
 			);
 			path = TableView;
+			sourceTree = "<group>";
+		};
+		F2D2FBAD265CBA710010731F /* TransferAmount */ = {
+			isa = PBXGroup;
+			children = (
+				F2D2FBAE265CBAB90010731F /* TransferAmountViewReactor.swift */,
+				F2D2FBAF265CBAB90010731F /* TransferAmountViewController.swift */,
+			);
+			path = TransferAmount;
 			sourceTree = "<group>";
 		};
 		F2E4B9C3261AE28700632221 /* Plugin */ = {
@@ -1015,7 +1035,7 @@
 				F2893D5A263D745400801067 /* PassPlainButton.swift in Sources */,
 				F2887FCD264CEC130021BDB8 /* TotalAccountViewController.swift in Sources */,
 				F2887FBE264A58F80021BDB8 /* RefreshControl.swift in Sources */,
-				F2887FC0264BF0910021BDB8 /* Int.swift in Sources */,
+				F2887FC0264BF0910021BDB8 /* UIInt.swift in Sources */,
 				F2B129ED263E8CF600C96453 /* SecureTextEntry.swift in Sources */,
 				F2D2FB88265B552D0010731F /* TransferDestinationViewReactor.swift in Sources */,
 				F2887FD0264CEC1B0021BDB8 /* AccountViewReactor.swift in Sources */,
@@ -1026,6 +1046,7 @@
 				F292C31D263B84B600E318EE /* UIViewPreview.swift in Sources */,
 				F2893D58263D69F500801067 /* NumberButton.swift in Sources */,
 				F2888000265B37010021BDB8 /* ProfileItemCellReactor.swift in Sources */,
+				F2D2FBB5265DC7C40010731F /* UIView.swift in Sources */,
 				F2059A9226198A690016AE87 /* R.generated.swift in Sources */,
 				F2D2FBA1265BC88F0010731F /* BankListViewController.swift in Sources */,
 				F2796476261D780E00B77241 /* AuthService.swift in Sources */,
@@ -1057,6 +1078,7 @@
 				F2E4B9BF261AE12100632221 /* Network.swift in Sources */,
 				F2350AB426368BF8000C523B /* AuthAPI.swift in Sources */,
 				F2E4B9D2261AE66400632221 /* User.swift in Sources */,
+				F2D2FBB1265CBAB90010731F /* TransferAmountViewController.swift in Sources */,
 				F2685052263C23930047A5B0 /* LoginViewController.swift in Sources */,
 				F2350B302636D4DA000C523B /* RegisterViewReactor.swift in Sources */,
 				F2887F9A2648FE8D0021BDB8 /* BankAccount.swift in Sources */,
@@ -1071,6 +1093,7 @@
 				F2887FB2264923710021BDB8 /* HomeViewSection.swift in Sources */,
 				F2350B7926382803000C523B /* MyConsumeFlow.swift in Sources */,
 				F2893D51263D638E00801067 /* PasswordViewReactor.swift in Sources */,
+				F2D2FBB3265CC5DE0010731F /* AnimationLabel.swift in Sources */,
 				F2350B1B2636D263000C523B /* MyConsumeViewController.swift in Sources */,
 				F2350B312636D4DA000C523B /* RegisterViewController.swift in Sources */,
 				F2887FB8264954910021BDB8 /* AccountCellReactor.swift in Sources */,
@@ -1096,6 +1119,7 @@
 				F2E4B9D7261AE76D00632221 /* ModelType.swift in Sources */,
 				F2887FF226527FBE0021BDB8 /* AccountHistoryCell.swift in Sources */,
 				F2D2FBA6265C81880010731F /* BaseCollectionViewCell.swift in Sources */,
+				F2D2FBB0265CBAB90010731F /* TransferAmountViewReactor.swift in Sources */,
 				F2B129F32641233F00C96453 /* ValidationResult.swift in Sources */,
 				F25B016926042F9F00EBF7F0 /* BaseViewController.swift in Sources */,
 				F2887FFE265B36DB0021BDB8 /* ProfileItemCell.swift in Sources */,

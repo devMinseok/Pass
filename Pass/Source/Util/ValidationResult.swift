@@ -49,7 +49,7 @@ extension String {
     }
     
     var isAccountNumber: Bool {
-        let ACCOUNT_NUMBER_REGEX = "^[0-9]{8,16}$"
+        let ACCOUNT_NUMBER_REGEX = "^[0-9]{7,}$"
         return NSPredicate(format: "SELF MATCHES %@", ACCOUNT_NUMBER_REGEX).evaluate(with: self)
     }
 }

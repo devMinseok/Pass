@@ -79,6 +79,8 @@ final class BankListViewController: BaseViewController, View {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        self.view.backgroundColor = R.color.signatureColor()
+        
         self.view.addSubview(self.collectionView)
         self.view.addSubview(self.textLabel)
     }

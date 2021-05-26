@@ -29,8 +29,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         guard let window = self.window else { return false }
         
-//        DIContainer.shared.register()
-        
         coordinator.rx.willNavigate.subscribe(onNext: { (flow, step) in
             print("❇️ will navigate to flow=\(flow) and step=\(step)")
         }).disposed(by: self.disposeBag)

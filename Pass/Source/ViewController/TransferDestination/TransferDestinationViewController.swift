@@ -54,6 +54,7 @@ final class TransferDestinationViewController: BaseViewController, View {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        self.view.backgroundColor = R.color.signatureColor()
         self.view.addSubview(self.bankSelectField)
         self.view.addSubview(self.accountNumberField)
     }
@@ -77,6 +78,10 @@ final class TransferDestinationViewController: BaseViewController, View {
     // MARK: - Configuring
     func bind(reactor: Reactor) {
         // MARK: - input
+        self.rx.viewDidAppear
+            .map { _ in Reactor.Action.showBankList }
+            .bind(to: reactor.action)
+            .disposed(by: disposeBag)
         
         self.bankSelectField.rx.tapGesture()
             .when(.recognized)

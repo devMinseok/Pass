@@ -42,7 +42,10 @@ final class TransferFlow: Flow {
             return navigateToBankList()
             
         case let .transferAmountIsRequired(bank, accountNumber):
-            return navigateToTransferAmount()
+            return navigateToTransferAmount(bank, accountNumber)
+            
+        case let .transferCheckIsRequired(bank, accountNumber, amount):
+            return navigateToTransferCheck(bank, accountNumber, amount)
             
         case .dismiss:
             self.rootViewController.dismiss(animated: true, completion: nil)
@@ -55,9 +58,9 @@ final class TransferFlow: Flow {
 }
 
 extension TransferFlow {
-    
     private func navigateToTransferDestination() -> FlowContributors {
-        return .one(flowContributor: .contribute(withNextPresentable: rootViewController, withNextStepper: rootViewController.reactor as! Stepper))
+        guard let nextStepper = rootViewController.reactor else { return .none }
+        return .one(flowContributor: .contribute(withNextPresentable: rootViewController, withNextStepper: nextStepper))
     }
     
     private func navigateToBankList() -> FlowContributors {
@@ -68,8 +71,20 @@ extension TransferFlow {
         return .one(flowContributor: .contribute(withNextPresentable: viewController, withNextStepper: reactor))
     }
     
-    private func navigateToTransferAmount() -> FlowContributors {
+    private func navigateToTransferAmount(_ bank: Bank, _ accountNumber: String) -> FlowContributors {
+        let reactor = TransferAmountViewReactor(bank: bank, accountNumber: accountNumber)
+        let viewController = TransferAmountViewController(reactor: reactor)
         
+        self.rootViewController.navigationController?.pushViewController(viewController, animated: true)
+        return .one(flowContributor: .contribute(withNextPresentable: viewController, withNextStepper: reactor))
+    }
+    
+    private func navigateToTransferCheck(_ bank: Bank, _ accountNumber: String, _ amount: Int) -> FlowContributors {
+//        let reactor = TransferCheckViewReactor(bank, accountNumber, amount)
+//        let viewController = TransferCheckViewController(reactor: reactor)
+//
+//        self.rootViewController.navigationController?.pushViewController(viewController, animated: true)
+//        return .one(flowContributor: .contribute(withNextPresentable: viewController, withNextStepper: reactor))
         return .none
     }
 }
