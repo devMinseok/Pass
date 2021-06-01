@@ -71,6 +71,8 @@ final class LoginViewController: BaseViewController, View {
     }
     
     override func setupConstraints() {
+        super.setupConstraints()
+        
         self.titleLabel.snp.makeConstraints { make in
             make.top.equalTo(self.view.safeAreaLayoutGuide).offset(Metric.titleLabelTop)
             make.centerX.equalToSuperview()
@@ -117,6 +119,11 @@ final class LoginViewController: BaseViewController, View {
         reactor.state.map { $0.validationResult }
             .distinctUntilChanged()
             .bind(to: emailTextField.rx.error)
+            .disposed(by: disposeBag)
+        
+        reactor.state.map { $0.isLoading }
+            .distinctUntilChanged()
+            .bind(to: self.activityIndicatorView.rx.isAnimating)
             .disposed(by: disposeBag)
     }
 }

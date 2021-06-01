@@ -72,6 +72,8 @@ final class RegisterViewController: BaseViewController, View {
     }
     
     override func setupConstraints() {
+        super.setupConstraints()
+        
         self.titleLabel.snp.makeConstraints { make in
             make.top.equalTo(self.view.safeAreaLayoutGuide).offset(Metric.titleLabelTop)
             make.centerX.equalToSuperview()
@@ -162,5 +164,10 @@ final class RegisterViewController: BaseViewController, View {
         ) { $0 && $1 && $2 }
         .bind(to: nextButton.rx.isEnabled)
         .disposed(by: disposeBag)
+        
+        reactor.state.map { $0.isLoading }
+            .distinctUntilChanged()
+            .bind(to: self.activityIndicatorView.rx.isAnimating)
+            .disposed(by: disposeBag)
     }
 }

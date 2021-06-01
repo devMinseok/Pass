@@ -20,10 +20,12 @@ final class BankListViewReactor: Reactor, Stepper {
 
     enum Mutation {
         case setBankList([Bank])
+        case setLoading(Bool)
     }
 
     struct State {
         var sections: [BankListViewSection] = [.bankCell([])]
+        var isLoading: Bool = false
     }
 
     let initialState: State = State()
@@ -38,7 +40,11 @@ final class BankListViewReactor: Reactor, Stepper {
     func mutate(action: Action) -> Observable<Mutation> {
         switch action {
         case .refresh:
-            return self.accountService.getBankList().asObservable().map(Mutation.setBankList)
+            return Observable.concat([
+                Observable.just(Mutation.setLoading(true)),
+                self.accountService.getBankList().asObservable().map(Mutation.setBankList),
+                Observable.just(Mutation.setLoading(false))
+            ])
         }
     }
 
@@ -55,6 +61,9 @@ final class BankListViewReactor: Reactor, Stepper {
             state.sections = [
                 .bankCell(sectionItems)
             ]
+            
+        case let .setLoading(isLoading):
+            state.isLoading = isLoading
         }
 
         return state

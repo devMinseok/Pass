@@ -57,7 +57,7 @@ class BaseViewController: UIViewController {
     }
 
     func setupStyle() {
-        self.activityIndicatorView.color = .systemBackground
+        self.activityIndicatorView.color = R.color.textAccent()
         let backItem = UIBarButtonItem()
         backItem.title = ""
         backItem.tintColor = .systemGray

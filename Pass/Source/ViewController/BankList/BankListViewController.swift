@@ -86,6 +86,8 @@ final class BankListViewController: BaseViewController, View {
     }
     
     override func setupConstraints() {
+        super.setupConstraints()
+        
         self.textLabel.snp.makeConstraints { make in
             make.top.equalToSuperview().offset(Metric.textLabelPadding)
             make.left.equalToSuperview().offset(Metric.textLabelPadding)
@@ -111,6 +113,11 @@ final class BankListViewController: BaseViewController, View {
         // MARK: - output
         reactor.state.map { $0.sections }
             .bind(to: self.collectionView.rx.items(dataSource: self.dataSource))
+            .disposed(by: disposeBag)
+        
+        reactor.state.map { $0.isLoading }
+            .distinctUntilChanged()
+            .bind(to: self.activityIndicatorView.rx.isAnimating)
             .disposed(by: disposeBag)
         
         // MARK: - view
