@@ -165,6 +165,8 @@ class AnimationLabel: UIView {
                     self.changeMaxAmountButton.isHidden = false
                     self.currentNumberLabel.shake()
                     self.wonLabel.shake()
+                    
+                    HapticFeedback.notificationFeedback(type: .error)
                 } else {
                     self.currentNumberLabel.text = self.commaForNumber(number)
                     self.currentState.onNext(true)
