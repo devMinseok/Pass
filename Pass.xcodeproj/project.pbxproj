@@ -425,30 +425,13 @@
 				F2350B472636E27D000C523B /* PassStep.swift */,
 				F2350B4F2636E289000C523B /* AppFlow.swift */,
 				F2350B59263798F3000C523B /* IntroFlow.swift */,
-				F2888005265B4FC10021BDB8 /* TransferFlow.swift */,
-				F2350B5826379892000C523B /* TabBar */,
-			);
-			path = Flow;
-			sourceTree = "<group>";
-		};
-		F2350B5826379892000C523B /* TabBar */ = {
-			isa = PBXGroup;
-			children = (
-				F2350B8226382CFB000C523B /* TabBarViewController.swift */,
 				F2350B6A2637A1E7000C523B /* TabBarFlow.swift */,
-				F2350B6F263827D6000C523B /* Tabs */,
-			);
-			path = TabBar;
-			sourceTree = "<group>";
-		};
-		F2350B6F263827D6000C523B /* Tabs */ = {
-			isa = PBXGroup;
-			children = (
 				F2350B70263827F7000C523B /* HomeFlow.swift */,
+				F2888005265B4FC10021BDB8 /* TransferFlow.swift */,
 				F2350B7826382803000C523B /* MyConsumeFlow.swift */,
 				F2350B7D2638280D000C523B /* SettingsFlow.swift */,
 			);
-			path = Tabs;
+			path = Flow;
 			sourceTree = "<group>";
 		};
 		F25B014D260429E700EBF7F0 /* Resource */ = {
@@ -486,6 +469,7 @@
 		F25B015B26042E0800EBF7F0 /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
+				F2350B8226382CFB000C523B /* TabBarViewController.swift */,
 				F25B016826042F9F00EBF7F0 /* BaseViewController.swift */,
 				F25B017D260430CB00EBF7F0 /* Splash */,
 				F2350B222636D3E7000C523B /* Intro */,
