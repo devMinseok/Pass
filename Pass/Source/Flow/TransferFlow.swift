@@ -51,6 +51,10 @@ final class TransferFlow: Flow {
             self.rootViewController.dismiss(animated: true, completion: nil)
             return .none
             
+        case .popViewController:
+            self.rootViewController.navigationController?.popToRootViewController(animated: true)
+            return .none
+            
         default:
             return .none
         }
@@ -80,11 +84,14 @@ extension TransferFlow {
     }
     
     private func navigateToTransferCheck(_ bank: Bank, _ accountNumber: String, _ amount: Int) -> FlowContributors {
-//        let reactor = TransferCheckViewReactor(bank, accountNumber, amount)
-//        let viewController = TransferCheckViewController(reactor: reactor)
-//
-//        self.rootViewController.navigationController?.pushViewController(viewController, animated: true)
-//        return .one(flowContributor: .contribute(withNextPresentable: viewController, withNextStepper: reactor))
-        return .none
+        let reactor = TransferCheckViewReactor(bank: bank,
+                                               accountNumber: accountNumber,
+                                               amount: amount,
+                                               bankAccount: self.bankAccount,
+                                               accountService: services.accountService)
+        let viewController = TransferCheckViewController(reactor: reactor)
+
+        self.rootViewController.navigationController?.pushViewController(viewController, animated: true)
+        return .one(flowContributor: .contribute(withNextPresentable: viewController, withNextStepper: reactor))
     }
 }

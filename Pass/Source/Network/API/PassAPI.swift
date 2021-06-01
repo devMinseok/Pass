@@ -15,6 +15,8 @@ enum PassAPI {
     case getMyAccounts
     case getAccountHistory(_ idx: Int)
     case getBankList
+    
+    case transfer(_ depositAccountNumber: String, _ withdrawalAccountNumber: String, _ amount: Int) // 입금계좌번호, 출금계좌번호, 송금금액
 }
 
 extension PassAPI: BaseAPI {
@@ -34,13 +36,15 @@ extension PassAPI: BaseAPI {
             
         case .getBankList:
             return "/account/bankList"
+        case .transfer:
+            return "/account/transfer"
         }
     }
     
     var method: Moya.Method {
         switch self {
-//        case :
-//            return .post
+        case .transfer:
+            return .post
             
         case .getMyInfo, .getMyAccounts, .getAccountHistory, .getBankList:
             return .get
@@ -61,6 +65,13 @@ extension PassAPI: BaseAPI {
                 "name": name,
                 "phone": phone,
                 "email": email
+            ]
+            
+        case let .transfer(depositAccountNumber, withdrawalAccountNumber, amount):
+            return [
+                "deposit": depositAccountNumber,
+                "withdrawal": withdrawalAccountNumber,
+                "amount": amount
             ]
             
         default:
