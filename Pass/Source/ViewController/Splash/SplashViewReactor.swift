@@ -6,47 +6,57 @@
 //
 
 import ReactorKit
-import RxSwift
 import RxCocoa
+import RxSwift
+import RxFlow
+import SwiftMessages
 
-class SplashViewReactor: Reactor {
+final class SplashViewReactor: Reactor, Stepper {
+    
+    var steps = PublishRelay<Step>()
+    
     enum Action {
-        case checkIfAuthenticated
+        case branchView
     }
     
     enum Mutation {
-        case setAuthenticated(Bool)
+        
     }
     
     struct State {
-        var isAuthenticated: Bool?
+        
     }
     
-    let initialState = State()
-    
+    let initialState: State = State()
+    fileprivate let authService: AuthServiceType
     fileprivate let userService: UserServiceType
     
-    init(userService: UserServiceType) {
+    let errorRelay = PublishRelay<Error>()
+    
+    init(
+        authService: AuthServiceType,
+        userService: UserServiceType
+    ) {
+        self.authService = authService
         self.userService = userService
     }
     
     func mutate(action: Action) -> Observable<Mutation> {
         switch action {
-        case .checkIfAuthenticated:
-            return self.userService.fetchMe()
+        case .branchView:
+            if self.authService.currentToken == nil {
+                self.steps.accept(PassStep.introIsRequired)
+                return Observable.empty()
+            }
+            
+            return self.userService.fetchUser()
                 .asObservable()
-                .map { true }
-                .catchErrorJustReturn(false)
-                .map(Mutation.setAuthenticated)
-        }
-    }
-    
-    func reduce(state: State, mutation: Mutation) -> State {
-        var state = state
-        switch mutation {
-        case let .setAuthenticated(isAuthenticated):
-            state.isAuthenticated = isAuthenticated
-            return state
+                .do { _ in
+                    self.steps.accept(PassStep.mainTabBarIsRequired)
+                } onError: { error in
+                    self.steps.accept(PassStep.introIsRequired)
+                    SwiftMessages.show(config: Message.passConfig, view: Message.faildView("토큰이 만료되었습니다. 다시로그인해주세요"))
+                }.flatMap { _ in Observable.empty() }
         }
     }
 }
