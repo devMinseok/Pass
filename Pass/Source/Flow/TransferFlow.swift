@@ -48,7 +48,7 @@ final class TransferFlow: Flow {
             return navigateToTransferCheck(bank, accountNumber, amount)
             
         case .dismiss:
-            self.rootViewController.dismiss(animated: true, completion: nil)
+            self.rootViewController.dismiss(animated: true)
             return .none
             
         case .popViewController:

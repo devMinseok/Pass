@@ -40,9 +40,17 @@ final class AddAccountFlow: Flow {
         case let .inputAccountNumberIsRequired(bank):
             return navigateToInputAccountNumber(bank)
             
+        case .passwordIsRequired:
+            return navigateToPassword()
+            
         case .popViewController:
             self.rootViewController.navigationController?.popToRootViewController(animated: true)
             return .none
+            
+        case .dismiss:
+            self.rootViewController.dismiss(animated: true)
+            return .none
+            
         default:
             return .none
         }
@@ -56,7 +64,18 @@ extension AddAccountFlow {
     }
     
     private func navigateToInputAccountNumber(_ bank: Bank) -> FlowContributors {
+        let reactor = InputAccountNumberViewReactor(accountService: services.accountService, bank: bank)
+        let viewController = InputAccountNumberViewController(reactor: reactor)
         
-        return .none
+        self.rootViewController.navigationController?.pushViewController(viewController, animated: true)
+        return .one(flowContributor: .contribute(withNextPresentable: viewController, withNextStepper: reactor))
+    }
+    
+    private func navigateToPassword() -> FlowContributors {
+        let reactor = PasswordViewReactor()
+        let viewController = PasswordViewController(reactor: reactor)
+        
+        self.rootViewController.present(viewController, animated: true)
+        return .one(flowContributor: .contribute(withNextPresentable: viewController, withNextStepper: reactor))
     }
 }

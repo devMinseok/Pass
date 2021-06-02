@@ -73,6 +73,8 @@ final class TransferCheckViewController: BaseViewController, View {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        self.view.backgroundColor = R.color.signatureColor()
+        
         self.view.addSubview(self.bankImageView)
         self.view.addSubview(self.sendLabel)
         self.view.addSubview(self.accountInfoLabel)
@@ -81,6 +83,8 @@ final class TransferCheckViewController: BaseViewController, View {
     }
 
     override func setupConstraints() {
+        super.setupConstraints()
+        
         self.bankImageView.snp.makeConstraints { make in
             make.top.equalTo(self.view.safeAreaLayoutGuide).offset(Metric.bankImageViewTop)
             make.centerX.equalToSuperview()
@@ -130,6 +134,11 @@ final class TransferCheckViewController: BaseViewController, View {
                 self.sendLabel.text = "\(state.accountNumber) 계좌로\n\(state.amount)원을 보냅니다"
                 self.accountInfoLabel.text = "\(state.bank.bankName) \(state.accountNumber)"
             })
+            .disposed(by: disposeBag)
+        
+        reactor.state.map { $0.isLoading }
+            .distinctUntilChanged()
+            .bind(to: self.activityIndicatorView.rx.isAnimating)
             .disposed(by: disposeBag)
     }
 }

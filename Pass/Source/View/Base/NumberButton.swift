@@ -50,9 +50,11 @@ class NumberButton: UIButton {
         case let .number(number):
             self.setTitle("\(number)", for: .normal)
             self.titleLabel?.font = Font.buttonTitle
+            
         case .backspace:
             self.setImage(R.image.leftArrow(), for: .normal)
             self.tintColor = R.color.textAccent()
+            
         case .clear:
             self.setTitle("취소", for: .normal)
             self.titleLabel?.font = Font.cancelTitle

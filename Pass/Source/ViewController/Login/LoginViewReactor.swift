@@ -43,7 +43,7 @@ final class LoginViewReactor: Reactor, Stepper {
         self.userService = userService
     }
     
-    // global sate 처리
+    // PasswordViewController 비밀번호 입력 완료 이벤트 처리
     func transform(action: Observable<Action>) -> Observable<Action> {
         return Observable.merge(action, inputPassword.map(Action.login))
     }

@@ -113,6 +113,8 @@
 		F2D2FBE22665FB9E0010731F /* TransferCheckViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2D2FBE02665FB9E0010731F /* TransferCheckViewController.swift */; };
 		F2D2FBE52667003E0010731F /* AddAccountFlow.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2D2FBE42667003E0010731F /* AddAccountFlow.swift */; };
 		F2D2FBE7266701F80010731F /* BankCheckListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2D2FBE6266701F80010731F /* BankCheckListViewController.swift */; };
+		F2D2FBEB26670B550010731F /* InputAccountNumberViewReactor.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2D2FBE926670B550010731F /* InputAccountNumberViewReactor.swift */; };
+		F2D2FBEC26670B550010731F /* InputAccountNumberViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2D2FBEA26670B550010731F /* InputAccountNumberViewController.swift */; };
 		F2E213472639404600B79C4E /* CGFloatLiteral.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2E213462639404600B79C4E /* CGFloatLiteral.swift */; };
 		F2E213502639420200B79C4E /* IntroViewReactor.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2E2134E2639420200B79C4E /* IntroViewReactor.swift */; };
 		F2E213512639420200B79C4E /* IntroViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2E2134F2639420200B79C4E /* IntroViewController.swift */; };
@@ -264,6 +266,8 @@
 		F2D2FBE02665FB9E0010731F /* TransferCheckViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransferCheckViewController.swift; sourceTree = "<group>"; };
 		F2D2FBE42667003E0010731F /* AddAccountFlow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddAccountFlow.swift; sourceTree = "<group>"; };
 		F2D2FBE6266701F80010731F /* BankCheckListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BankCheckListViewController.swift; sourceTree = "<group>"; };
+		F2D2FBE926670B550010731F /* InputAccountNumberViewReactor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputAccountNumberViewReactor.swift; sourceTree = "<group>"; };
+		F2D2FBEA26670B550010731F /* InputAccountNumberViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputAccountNumberViewController.swift; sourceTree = "<group>"; };
 		F2E213462639404600B79C4E /* CGFloatLiteral.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CGFloatLiteral.swift; sourceTree = "<group>"; };
 		F2E2134E2639420200B79C4E /* IntroViewReactor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntroViewReactor.swift; sourceTree = "<group>"; };
 		F2E2134F2639420200B79C4E /* IntroViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntroViewController.swift; sourceTree = "<group>"; };
@@ -489,6 +493,7 @@
 				F2D2FBAD265CBA710010731F /* TransferAmount */,
 				F2D2FBDE2665FB690010731F /* TransferCheck */,
 				F2D2FB9D265BC87E0010731F /* BankList */,
+				F2D2FBE826670B250010731F /* InputAccountNumber */,
 				F2887FD2264CEC6B0021BDB8 /* AddAccount */,
 				F2350B052636D1FD000C523B /* MyConsume */,
 				F2350B062636D205000C523B /* Settings */,
@@ -757,6 +762,15 @@
 				F2D2FBE02665FB9E0010731F /* TransferCheckViewController.swift */,
 			);
 			path = TransferCheck;
+			sourceTree = "<group>";
+		};
+		F2D2FBE826670B250010731F /* InputAccountNumber */ = {
+			isa = PBXGroup;
+			children = (
+				F2D2FBE926670B550010731F /* InputAccountNumberViewReactor.swift */,
+				F2D2FBEA26670B550010731F /* InputAccountNumberViewController.swift */,
+			);
+			path = InputAccountNumber;
 			sourceTree = "<group>";
 		};
 		F2E4B9C3261AE28700632221 /* Plugin */ = {
@@ -1054,6 +1068,7 @@
 				F2059A9226198A690016AE87 /* R.generated.swift in Sources */,
 				F2D2FBA1265BC88F0010731F /* BankListViewController.swift in Sources */,
 				F2796476261D780E00B77241 /* AuthService.swift in Sources */,
+				F2D2FBEB26670B550010731F /* InputAccountNumberViewReactor.swift in Sources */,
 				F2D2FBE22665FB9E0010731F /* TransferCheckViewController.swift in Sources */,
 				F2E4B9C5261AE2EA00632221 /* RequestLoggingPlugin.swift in Sources */,
 				F2887FF026524D120021BDB8 /* AccountHistory.swift in Sources */,
@@ -1061,6 +1076,7 @@
 				F2E213512639420200B79C4E /* IntroViewController.swift in Sources */,
 				F2685033263BE3B50047A5B0 /* String.swift in Sources */,
 				F2E213472639404600B79C4E /* CGFloatLiteral.swift in Sources */,
+				F2D2FBEC26670B550010731F /* InputAccountNumberViewController.swift in Sources */,
 				F2887FDE264D26750021BDB8 /* ProfileHeaderViewReactor.swift in Sources */,
 				F2887FFA265378D60021BDB8 /* AccountViewHeaderReactor.swift in Sources */,
 				F2887FE6264E96400021BDB8 /* TotalAccountViewSection.swift in Sources */,
