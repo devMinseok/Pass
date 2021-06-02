@@ -33,6 +33,9 @@ final class TabBarFlow: Flow {
         case .mainTabBarIsRequired:
             return navigateToTabBar()
             
+        case .introIsRequired:
+            return .end(forwardToParentFlowWithStep: PassStep.introIsRequired)
+            
         default:
             return .none
         }

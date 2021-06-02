@@ -35,6 +35,8 @@ enum PassStep: Step {
     
     // MARK: - 설정
     case settingsIsRequired
+    case githubIsRequired
+    case versionIsRequired
     
     // MARK: - 송금
     case transferIsRequired(BankAccount?) // 출금계좌

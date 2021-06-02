@@ -6,6 +6,7 @@
 //
 
 import RxFlow
+import SafariServices
 
 final class SettingsFlow: Flow {
     
@@ -13,10 +14,17 @@ final class SettingsFlow: Flow {
         return self.rootViewController
     }
     
-    let rootViewController: UINavigationController
+    private lazy var rootViewController = UINavigationController().then {
+        let navigationBarAppearance = UINavigationBarAppearance()
+        navigationBarAppearance.backgroundColor = R.color.signatureColor()
+        navigationBarAppearance.shadowColor = nil
+        $0.navigationBar.standardAppearance = navigationBarAppearance
+    }
+    
+    private let services: AppServices
     
     init(_ services: AppServices) {
-        self.rootViewController = UINavigationController()
+        self.services = services
     }
     
     deinit {
@@ -29,6 +37,19 @@ final class SettingsFlow: Flow {
         switch step {
         case .settingsIsRequired:
             return self.navigateToSettings()
+            
+        case .profileIsRequried:
+            return self.navigateToProfile()
+            
+        case .versionIsRequired:
+            return self.navigateToVersion()
+            
+        case .githubIsRequired:
+            return self.navigateToGithub()
+            
+        case .introIsRequired:
+            return .end(forwardToParentFlowWithStep: PassStep.introIsRequired)
+            
         default:
             return .none
         }
@@ -37,6 +58,36 @@ final class SettingsFlow: Flow {
 
 extension SettingsFlow {
     private func navigateToSettings() -> FlowContributors {
+        let reactor = SettingsViewReactor(authService: services.authService)
+        let viewController = SettingsViewController(reactor: reactor)
+        
+        self.rootViewController.pushViewController(viewController, animated: false)
+        return .one(flowContributor: .contribute(withNextPresentable: viewController, withNextStepper: reactor))
+    }
+    
+    private func navigateToVersion() -> FlowContributors {
+        let reactor = VersionViewReactor()
+        let viewController = VersionViewController(reactor: reactor)
+        
+        viewController.hidesBottomBarWhenPushed = true
+        self.rootViewController.pushViewController(viewController, animated: true)
+        return .none
+    }
+    
+    private func navigateToGithub() -> FlowContributors {
+        guard let url = URL(string: "https://github.com/devMinseok/Pass") else { return .none }
+        let viewController = SFSafariViewController(url: url)
+        
+        self.rootViewController.present(viewController, animated: true)
+        return .none
+    }
+    
+    private func navigateToProfile() -> FlowContributors {
+        let reactor = ProfileViewReactor(userService: services.userService)
+        let viewController = ProfileViewController(reactor: reactor)
+        
+        viewController.hidesBottomBarWhenPushed = true
+        self.rootViewController.pushViewController(viewController, animated: true)
         return .none
     }
 }
