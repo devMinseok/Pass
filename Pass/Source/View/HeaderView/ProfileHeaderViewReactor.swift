@@ -45,7 +45,7 @@ final class ProfileHeaderViewReactor: Reactor {
                 .map(Mutation.userData)
             
         case .transfer:
-            self.steps?.accept(PassStep.transferIsRequired())
+            self.steps?.accept(PassStep.transferIsRequired(nil))
             return .empty()
         }
     }

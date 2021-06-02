@@ -10,6 +10,10 @@ import RxSwift
 protocol AccountServiceType {
     func getAccounts() -> Single<[BankAccount]>
     func getAccountHistory(_ accountIdx: Int) -> Single<[AccountHistory]>
+    func getBankList() -> Single<[Bank]>
+    
+    func transfer(_ depositAccountNumber: String, withdrawalAccountNumber: String, amount: Int) -> Single<Void>
+    func addAccount(_ bankIdx: Int, _ accountNumber: String, _ accountPassword: String) -> Single<Void>
 }
 
 final class AccountService: AccountServiceType {
@@ -25,5 +29,17 @@ final class AccountService: AccountServiceType {
     
     func getAccountHistory(_ accountIdx: Int) -> Single<[AccountHistory]> {
         return self.network.requestArray(.getAccountHistory(accountIdx), type: AccountHistory.self)
+    }
+    
+    func getBankList() -> Single<[Bank]> {
+        return self.network.requestArray(.getBankList, type: Bank.self)
+    }
+    
+    func transfer(_ depositAccountNumber: String, withdrawalAccountNumber: String, amount: Int) -> Single<Void> {
+        return self.network.requestWithoutMapping(.transfer(depositAccountNumber, withdrawalAccountNumber, amount))
+    }
+    
+    func addAccount(_ bankIdx: Int, _ accountNumber: String, _ accountPassword: String) -> Single<Void> {
+        return self.network.requestWithoutMapping(.addAccount(bankIdx, accountNumber, accountPassword))
     }
 }

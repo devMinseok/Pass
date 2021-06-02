@@ -138,10 +138,10 @@ final class HomeViewController: BaseViewController, ReactorKit.View {
             .disposed(by: disposeBag)
         
         self.tableView.rx.itemSelected(dataSource: self.dataSource)
-            .subscribe(onNext: { [weak self] sectoinItem in
+            .subscribe(onNext: { [weak self] sectionItem in
                 guard let self = self else { return }
                 
-                switch sectoinItem {
+                switch sectionItem {
                 case let .totalAccount(reactor):
                     let bankAccounts = reactor.currentState.bankAccounts
                     self.reactor?.steps.accept(PassStep.totalAccountsIsRequired(bankAccounts))

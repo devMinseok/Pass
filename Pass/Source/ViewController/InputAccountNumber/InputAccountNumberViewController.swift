@@ -1,17 +1,17 @@
 //
-//  LoginViewController.swift
+//  InputAccountNumberViewController.swift
 //  Pass
 //
-//  Created by 강민석 on 2021/04/30.
+//  Created by 강민석 on 2021/06/02.
 //
 
 import UIKit
 
 import ReactorKit
 
-final class LoginViewController: BaseViewController, View {
+final class InputAccountNumberViewController: BaseViewController, View {
     
-    typealias Reactor = LoginViewReactor
+    typealias Reactor = InputAccountNumberViewReactor
     
     // MARK: Constants
     struct Metric {
@@ -21,10 +21,6 @@ final class LoginViewController: BaseViewController, View {
         static let textFieldLeftRight = 20.f
         static let textFieldTop = 70.f
         static let textFieldHeight = 65.f
-        
-        static let checkButtonLeftRight = 20.f
-        static let checkButtonBottom = 10.f
-        static let checkButtonHeight = 55.f
     }
     
     struct Font {
@@ -33,20 +29,17 @@ final class LoginViewController: BaseViewController, View {
     
     // MARK: - UI
     let titleLabel = UILabel().then {
-        $0.text = "이메일을 입력해주세요."
         $0.font = Font.titleLabel
         $0.numberOfLines = 0
         $0.textAlignment = .left
     }
     
-    let nextButton = PassPlainButton().then {
-        $0.setTitle("확인", for: .normal)
-    }
+    let doneButton = KeyboardTopButton()
     
-    let emailTextField = PassTextField().then {
-        $0.textField.keyboardType = .emailAddress
-        $0.titleLabel.text = "이메일 주소"
-        $0.textField.placeholder = "이메일 주소"
+    lazy var accountNumberTextField = PassTextField().then {
+        $0.textField.keyboardType = .numberPad
+        $0.textField.placeholder = "계좌 번호"
+        $0.textField.inputAccessoryView = doneButton
     }
     
     // MARK: - Initializing
@@ -65,9 +58,10 @@ final class LoginViewController: BaseViewController, View {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        self.view.backgroundColor = R.color.signatureColor()
+        
         self.view.addSubview(self.titleLabel)
-        self.view.addSubview(self.nextButton)
-        self.view.addSubview(self.emailTextField)
+        self.view.addSubview(self.accountNumberTextField)
     }
     
     override func setupConstraints() {
@@ -80,19 +74,11 @@ final class LoginViewController: BaseViewController, View {
             make.right.equalTo(-Metric.titleLabelLeftRight)
         }
         
-        self.emailTextField.snp.makeConstraints { make in
+        self.accountNumberTextField.snp.makeConstraints { make in
             make.top.equalTo(self.titleLabel.snp.bottom).offset(Metric.textFieldTop)
             make.left.equalTo(self.view.snp.left).offset(Metric.textFieldLeftRight)
             make.right.equalTo(self.view.snp.right).offset(-Metric.textFieldLeftRight)
             make.height.equalTo(Metric.textFieldHeight)
-        }
-        
-        self.nextButton.snp.makeConstraints { make in
-            make.bottom.equalTo(self.view.safeAreaLayoutGuide).offset(-Metric.checkButtonBottom)
-            make.centerX.equalToSuperview()
-            make.left.equalTo(Metric.checkButtonLeftRight)
-            make.right.equalTo(-Metric.checkButtonLeftRight)
-            make.height.equalTo(Metric.checkButtonHeight)
         }
     }
     
@@ -100,30 +86,36 @@ final class LoginViewController: BaseViewController, View {
     func bind(reactor: Reactor) {
         
         // MARK: - input
-        self.emailTextField.textField.rx.text.orEmpty
-            .map { Reactor.Action.setEmail($0) }
+        self.accountNumberTextField.textField.rx.text.orEmpty
+            .map(Reactor.Action.setAccountNumber)
             .bind(to: reactor.action)
             .disposed(by: disposeBag)
         
-        self.nextButton.rx.tap
+        self.doneButton.rx.tap
             .map { Reactor.Action.next }
             .bind(to: reactor.action)
             .disposed(by: disposeBag)
         
         // MARK: - output
-        reactor.state.map { $0.validationResult }
+        reactor.state.map { $0.accountNumberValidation }
             .distinctUntilChanged()
-            .bind(to: self.nextButton.rx.error)
+            .bind(to: self.doneButton.rx.error)
             .disposed(by: disposeBag)
         
-        reactor.state.map { $0.validationResult }
+        reactor.state.map { $0.accountNumberValidation }
             .distinctUntilChanged()
-            .bind(to: emailTextField.rx.error)
+            .bind(to: accountNumberTextField.rx.error)
             .disposed(by: disposeBag)
         
         reactor.state.map { $0.isLoading }
             .distinctUntilChanged()
             .bind(to: self.activityIndicatorView.rx.isAnimating)
+            .disposed(by: disposeBag)
+        
+        reactor.state.map { $0.bank }
+            .subscribe(onNext: { [weak self] bank in
+                self?.titleLabel.text = "\(bank.bankName) 계좌번호를\n입력해주세요"
+            })
             .disposed(by: disposeBag)
     }
 }

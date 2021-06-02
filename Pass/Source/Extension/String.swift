@@ -19,4 +19,32 @@ extension String {
         
         return attributedString
     }
+    
+    func attributing(_ ranges: [String], font: UIFont?) -> NSMutableAttributedString? {
+        guard let font = font else { return nil }
+        
+        let attributedString = NSMutableAttributedString(string: self)
+        
+        ranges.forEach { range in
+            attributedString.addAttribute(.font, value: font, range: (self as NSString).range(of: range))
+        }
+        
+        return attributedString
+    }
+    
+    func attributing(_ ranges: [String], color: UIColor?, font: UIFont?) -> NSMutableAttributedString? {
+        guard
+            let color = color,
+            let font = font
+        else { return nil }
+        
+        let attributedString = NSMutableAttributedString(string: self)
+        
+        ranges.forEach { range in
+            attributedString.addAttribute(.font, value: font, range: (self as NSString).range(of: range))
+            attributedString.addAttribute(.foregroundColor, value: color, range: (self as NSString).range(of: range))
+        }
+        
+        return attributedString
+    }
 }

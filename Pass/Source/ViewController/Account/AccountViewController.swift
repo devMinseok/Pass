@@ -29,6 +29,7 @@ final class AccountViewController: BaseViewController, View {
     ).then {
         $0.backgroundColor = .clear
         $0.separatorStyle = .none
+        $0.allowsSelection = false
         $0.register(Reusable.historyCell)
     }
     

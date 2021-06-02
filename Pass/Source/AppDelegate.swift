@@ -29,8 +29,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         guard let window = self.window else { return false }
         
-//        DIContainer.shared.register()
-        
         coordinator.rx.willNavigate.subscribe(onNext: { (flow, step) in
             print("❇️ will navigate to flow=\(flow) and step=\(step)")
         }).disposed(by: self.disposeBag)
@@ -41,8 +39,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         let appFlow = AppFlow(window: window, services: appServices)
         
-        self.coordinator.coordinate(flow: appFlow, with: AppStepper(appServices.userService))
-//        self.coordinator.coordinate(flow: appFlow, with: OneStepper.init(withSingleStep: PassStep.mainTabBarIsRequired))
+        let appStepper = OneStepper(withSingleStep: PassStep.mainTabBarIsRequired)
+//        let appStepper = OneStepper(withSingleStep: PassStep.splashIsRequired)
+        self.coordinator.coordinate(flow: appFlow, with: appStepper)
         
         return true
     }

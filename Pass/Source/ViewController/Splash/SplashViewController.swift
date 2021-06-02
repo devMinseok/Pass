@@ -53,6 +53,10 @@ final class SplashViewController: BaseViewController, View {
     
     // MARK: - Configuring
     func bind(reactor: Reactor) {
-        
+        // MARK: - input
+        Observable.just(Reactor.Action.branchView)
+            .delay(.seconds(1), scheduler: MainScheduler.instance)
+            .bind(to: reactor.action)
+            .disposed(by: disposeBag)
     }
 }

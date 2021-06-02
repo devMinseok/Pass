@@ -29,6 +29,10 @@ extension String {
         return self.isName ? ValidationResult.ok : ValidationResult.no("유효하지 않은 이름")
     }
     
+    var validAccountNumber: ValidationResult {
+        return self.isAccountNumber ? ValidationResult.ok : ValidationResult.no("유효하지 않은 계좌번호")
+    }
+    
     var isEmail: Bool {
         let EMAIL_REGEX = "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,64}"
         return NSPredicate(format: "SELF MATCHES %@", EMAIL_REGEX).evaluate(with: self)
@@ -42,5 +46,10 @@ extension String {
     var isName: Bool {
         let NAME_REGEX = "[가-힣A-Za-z0-9]{2,7}"
         return NSPredicate(format: "SELF MATCHES %@", NAME_REGEX).evaluate(with: self)
+    }
+    
+    var isAccountNumber: Bool {
+        let ACCOUNT_NUMBER_REGEX = "^[0-9]{7,}$"
+        return NSPredicate(format: "SELF MATCHES %@", ACCOUNT_NUMBER_REGEX).evaluate(with: self)
     }
 }

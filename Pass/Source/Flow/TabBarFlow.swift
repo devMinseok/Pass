@@ -41,22 +41,19 @@ final class TabBarFlow: Flow {
 
 extension TabBarFlow {
     private func navigateToTabBar() -> FlowContributors {
-        let homeFlow = HomeFlow(services)
-        let myConsumeFlow = MyConsumeFlow(services)
-        let settingsFlow = SettingsFlow(services)
+        let homeFlow = HomeFlow(self.services)
+        let myConsumeFlow = MyConsumeFlow(self.services)
+        let settingsFlow = SettingsFlow(self.services)
         
         Flows.use(homeFlow, myConsumeFlow, settingsFlow, when: .created) { [unowned self] (root1, root2, root3: UINavigationController) in
             let tabBarItem1 = UITabBarItem(title: "홈", image: R.image.home(), selectedImage: nil)
             root1.tabBarItem = tabBarItem1
-//            root1.title = "홈"
             
             let tabBarItem2 = UITabBarItem(title: "내 소비", image: R.image.calendar(), selectedImage: nil)
             root2.tabBarItem = tabBarItem2
-//            root2.title = "내 소비"
             
             let tabBarItem3 = UITabBarItem(title: "설정", image: R.image.bar(), selectedImage: nil)
             root3.tabBarItem = tabBarItem3
-//            root3.title = "설정"
             
             self.rootViewController.setViewControllers([root1, root2, root3], animated: false)
         }

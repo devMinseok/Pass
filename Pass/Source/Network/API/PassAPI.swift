@@ -11,8 +11,13 @@ import Moya
 enum PassAPI {
     case getMyInfo
     case editMyInfo(_ name: String, _ phone: String, _ email: String)
+    
     case getMyAccounts
     case getAccountHistory(_ idx: Int)
+    case getBankList
+    
+    case transfer(_ depositAccountNumber: String, _ withdrawalAccountNumber: String, _ amount: Int) // 입금계좌번호, 출금계좌번호, 송금금액
+    case addAccount(_ bankIdx: Int, _ accountNumber: String, _ accountPassword: String)
 }
 
 extension PassAPI: BaseAPI {
@@ -20,21 +25,31 @@ extension PassAPI: BaseAPI {
         switch self {
         case .getMyInfo:
             return "/user/getMyInfo"
+            
         case .editMyInfo:
             return "/user/editMyInfo"
+            
         case .getMyAccounts:
             return "/account/getMyAccounts"
+            
         case let .getAccountHistory(idx):
             return "/account/getAccountHistory/\(idx)"
+            
+        case .getBankList:
+            return "/account/bankList"
+        case .transfer:
+            return "/account/transfer"
+        case .addAccount:
+            return "/account/addAccount"
         }
     }
     
     var method: Moya.Method {
         switch self {
-//        case :
-//            return .post
+        case .transfer, .addAccount:
+            return .post
             
-        case .getMyInfo, .getMyAccounts, .getAccountHistory:
+        case .getMyInfo, .getMyAccounts, .getAccountHistory, .getBankList:
             return .get
             
         case .editMyInfo:
@@ -43,15 +58,8 @@ extension PassAPI: BaseAPI {
     }
     
     var headers: [String: String]? {
-        return ["Accept": "application/json"]
+        return ["Content-Type": "application/json"]
     }
-    
-//    var task: Task {
-//        switch self {
-//        case :
-//
-//        }
-//    }
     
     var parameters: [String: Any]? {
         switch self {
@@ -62,8 +70,39 @@ extension PassAPI: BaseAPI {
                 "email": email
             ]
             
+        case let .transfer(depositAccountNumber, withdrawalAccountNumber, amount):
+            return [
+                "deposit": depositAccountNumber,
+                "withdrawal": withdrawalAccountNumber,
+                "amount": amount
+            ]
+            
+        case let .addAccount(bankIdx, accountNumber, accountPassword):
+            return [
+                "bankIdx": bankIdx,
+                "accountNumber": accountNumber,
+                "accountPassword": accountPassword
+            ]
+            
         default:
             return nil
+        }
+    }
+    
+    public var parameterEncoding: ParameterEncoding {
+        switch self {
+        default:
+            return JSONEncoding.default
+        }
+    }
+    
+    var task: Task {
+        switch self {
+        default:
+            if let parameters = parameters {
+                return .requestParameters(parameters: parameters, encoding: parameterEncoding)
+            }
+            return .requestPlain
         }
     }
 }

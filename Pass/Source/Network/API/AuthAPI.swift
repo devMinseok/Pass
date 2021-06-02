@@ -31,15 +31,8 @@ extension AuthAPI: BaseAPI {
     }
     
     var headers: [String: String]? {
-        return ["Accept": "application/json"]
+        return ["Content-Type": "application/json"]
     }
-    
-//    var task: Task {
-//        switch self {
-//        case :
-//
-//        }
-//    }
     
     var parameters: [String: Any]? {
         switch self {
@@ -56,6 +49,23 @@ extension AuthAPI: BaseAPI {
                 "email": email,
                 "phone": phone
             ]
+        }
+    }
+    
+    public var parameterEncoding: ParameterEncoding {
+        switch self {
+        default:
+            return JSONEncoding.default
+        }
+    }
+    
+    var task: Task {
+        switch self {
+        default:
+            if let parameters = parameters {
+                return .requestParameters(parameters: parameters, encoding: parameterEncoding)
+            }
+            return .requestPlain
         }
     }
 }
