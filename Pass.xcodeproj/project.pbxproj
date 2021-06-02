@@ -111,6 +111,8 @@
 		F2D2FBB5265DC7C40010731F /* UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2D2FBB4265DC7C40010731F /* UIView.swift */; };
 		F2D2FBE12665FB9E0010731F /* TransferCheckViewReactor.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2D2FBDF2665FB9E0010731F /* TransferCheckViewReactor.swift */; };
 		F2D2FBE22665FB9E0010731F /* TransferCheckViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2D2FBE02665FB9E0010731F /* TransferCheckViewController.swift */; };
+		F2D2FBE52667003E0010731F /* AddAccountFlow.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2D2FBE42667003E0010731F /* AddAccountFlow.swift */; };
+		F2D2FBE7266701F80010731F /* BankCheckListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2D2FBE6266701F80010731F /* BankCheckListViewController.swift */; };
 		F2E213472639404600B79C4E /* CGFloatLiteral.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2E213462639404600B79C4E /* CGFloatLiteral.swift */; };
 		F2E213502639420200B79C4E /* IntroViewReactor.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2E2134E2639420200B79C4E /* IntroViewReactor.swift */; };
 		F2E213512639420200B79C4E /* IntroViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2E2134F2639420200B79C4E /* IntroViewController.swift */; };
@@ -260,6 +262,8 @@
 		F2D2FBB4265DC7C40010731F /* UIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIView.swift; sourceTree = "<group>"; };
 		F2D2FBDF2665FB9E0010731F /* TransferCheckViewReactor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransferCheckViewReactor.swift; sourceTree = "<group>"; };
 		F2D2FBE02665FB9E0010731F /* TransferCheckViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransferCheckViewController.swift; sourceTree = "<group>"; };
+		F2D2FBE42667003E0010731F /* AddAccountFlow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddAccountFlow.swift; sourceTree = "<group>"; };
+		F2D2FBE6266701F80010731F /* BankCheckListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BankCheckListViewController.swift; sourceTree = "<group>"; };
 		F2E213462639404600B79C4E /* CGFloatLiteral.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CGFloatLiteral.swift; sourceTree = "<group>"; };
 		F2E2134E2639420200B79C4E /* IntroViewReactor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntroViewReactor.swift; sourceTree = "<group>"; };
 		F2E2134F2639420200B79C4E /* IntroViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntroViewController.swift; sourceTree = "<group>"; };
@@ -428,6 +432,7 @@
 				F2350B6A2637A1E7000C523B /* TabBarFlow.swift */,
 				F2350B70263827F7000C523B /* HomeFlow.swift */,
 				F2888005265B4FC10021BDB8 /* TransferFlow.swift */,
+				F2D2FBE42667003E0010731F /* AddAccountFlow.swift */,
 				F2350B7826382803000C523B /* MyConsumeFlow.swift */,
 				F2350B7D2638280D000C523B /* SettingsFlow.swift */,
 			);
@@ -702,6 +707,7 @@
 			children = (
 				F2D2FB9E265BC88F0010731F /* BankListViewReactor.swift */,
 				F2D2FB9F265BC88F0010731F /* BankListViewController.swift */,
+				F2D2FBE6266701F80010731F /* BankCheckListViewController.swift */,
 			);
 			path = BankList;
 			sourceTree = "<group>";
@@ -1065,6 +1071,7 @@
 				F2887FAD26490E8F0021BDB8 /* AddAccountCell.swift in Sources */,
 				F2887F9C2648FF2A0021BDB8 /* Bank.swift in Sources */,
 				F2D2FBE12665FB9E0010731F /* TransferCheckViewReactor.swift in Sources */,
+				F2D2FBE52667003E0010731F /* AddAccountFlow.swift in Sources */,
 				F22B238925FF2F3B003AAD9D /* AppDelegate.swift in Sources */,
 				F2893D56263D68C600801067 /* PassNumberPad.swift in Sources */,
 				F2350B1A2636D263000C523B /* MyConsumeViewReactor.swift in Sources */,
@@ -1120,6 +1127,7 @@
 				F2887FF226527FBE0021BDB8 /* AccountHistoryCell.swift in Sources */,
 				F2D2FBA6265C81880010731F /* BaseCollectionViewCell.swift in Sources */,
 				F2D2FBB0265CBAB90010731F /* TransferAmountViewReactor.swift in Sources */,
+				F2D2FBE7266701F80010731F /* BankCheckListViewController.swift in Sources */,
 				F2B129F32641233F00C96453 /* ValidationResult.swift in Sources */,
 				F25B016926042F9F00EBF7F0 /* BaseViewController.swift in Sources */,
 				F2887FFE265B36DB0021BDB8 /* ProfileItemCell.swift in Sources */,

@@ -100,11 +100,16 @@ extension HomeFlow {
     }
     
     private func navigateToAddAccount() -> FlowContributors {
-        // 계좌 추가 Flow를 만들어야함
-        let reactor = AddAccountViewReactor()
-        let viewController = AddAccountViewController(reactor: reactor)
+        // 계좌 추가 Flow
+        let addAccountFlow = AddAccountFlow(self.services)
         
-        return .none
+        Flows.use(addAccountFlow, when: .created) { root in
+            root.hidesBottomBarWhenPushed = true
+            self.rootViewController.pushViewController(root, animated: true)
+        }
+        
+        let nextStep = OneStepper(withSingleStep: PassStep.bankCheckListIsRequired)
+        return .one(flowContributor: .contribute(withNextPresentable: addAccountFlow, withNextStepper: nextStep))
     }
     
     private func navigateToTransfer(_ withdrawal: BankAccount?) -> FlowContributors {

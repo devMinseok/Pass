@@ -21,14 +21,14 @@ enum PassStep: Step {
     case loginIsRequired
     case registerIsRequired
     
+    // MARK: - 비밀번호
     case passwordIsRequired
     
     // MARK: - 홈
     case homeIsRequired
     case totalAccountsIsRequired([BankAccount]) // 계좌들
     case accountIsRequired(BankAccount) // 계좌
-    case addAccountIsRequired
-    case profileIsRequried
+    case profileIsRequried // 프로필
     
     // MARK: - 내 소비
     case myConsumeIsRequired
@@ -36,12 +36,15 @@ enum PassStep: Step {
     // MARK: - 설정
     case settingsIsRequired
     
-    // MARK: - 은행 리스트
-    case bankListIsRequired
-    
     // MARK: - 송금
     case transferIsRequired(BankAccount?) // 출금계좌
     case transferDestinationIsRequired
+    case bankListIsRequired
     case transferAmountIsRequired(Bank, String) // 받는 사람 은행, 계좌번호
     case transferCheckIsRequired(Bank, String, Int) // 받는 사람 은행, 계좌번호, 금액
+    
+    // MARK: - 계좌추가
+    case addAccountIsRequired
+    case bankCheckListIsRequired
+    case inputAccountNumberIsRequired(Bank)
 }
