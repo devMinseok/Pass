@@ -49,7 +49,7 @@ final class HomeViewController: BaseViewController, ReactorKit.View {
         reactor: Reactor
     ) {
         defer { self.reactor = reactor }
-        self.dataSource = type(of: self).dataSourceFactory()
+        self.dataSource = Self.dataSourceFactory()
         super.init()
     }
     
