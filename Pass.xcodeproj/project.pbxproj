@@ -21,8 +21,6 @@
 		F2350ABC26368C21000C523B /* AuthPlugin.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2350ABB26368C21000C523B /* AuthPlugin.swift */; };
 		F2350B132636D259000C523B /* SettingsViewReactor.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2350B112636D259000C523B /* SettingsViewReactor.swift */; };
 		F2350B142636D259000C523B /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2350B122636D259000C523B /* SettingsViewController.swift */; };
-		F2350B1A2636D263000C523B /* MyConsumeViewReactor.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2350B182636D263000C523B /* MyConsumeViewReactor.swift */; };
-		F2350B1B2636D263000C523B /* MyConsumeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2350B192636D263000C523B /* MyConsumeViewController.swift */; };
 		F2350B302636D4DA000C523B /* RegisterViewReactor.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2350B2E2636D4DA000C523B /* RegisterViewReactor.swift */; };
 		F2350B312636D4DA000C523B /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2350B2F2636D4DA000C523B /* RegisterViewController.swift */; };
 		F2350B482636E27D000C523B /* PassStep.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2350B472636E27D000C523B /* PassStep.swift */; };
@@ -30,7 +28,6 @@
 		F2350B5A263798F3000C523B /* IntroFlow.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2350B59263798F3000C523B /* IntroFlow.swift */; };
 		F2350B6B2637A1E7000C523B /* TabBarFlow.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2350B6A2637A1E7000C523B /* TabBarFlow.swift */; };
 		F2350B71263827F7000C523B /* HomeFlow.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2350B70263827F7000C523B /* HomeFlow.swift */; };
-		F2350B7926382803000C523B /* MyConsumeFlow.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2350B7826382803000C523B /* MyConsumeFlow.swift */; };
 		F2350B7E2638280D000C523B /* SettingsFlow.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2350B7D2638280D000C523B /* SettingsFlow.swift */; };
 		F2350B8326382CFB000C523B /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2350B8226382CFB000C523B /* TabBarViewController.swift */; };
 		F25B016126042E9000EBF7F0 /* Preview.swift in Sources */ = {isa = PBXBuildFile; fileRef = F25B016026042E9000EBF7F0 /* Preview.swift */; };
@@ -177,8 +174,6 @@
 		F2350ABB26368C21000C523B /* AuthPlugin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthPlugin.swift; sourceTree = "<group>"; };
 		F2350B112636D259000C523B /* SettingsViewReactor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewReactor.swift; sourceTree = "<group>"; };
 		F2350B122636D259000C523B /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
-		F2350B182636D263000C523B /* MyConsumeViewReactor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyConsumeViewReactor.swift; sourceTree = "<group>"; };
-		F2350B192636D263000C523B /* MyConsumeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyConsumeViewController.swift; sourceTree = "<group>"; };
 		F2350B2E2636D4DA000C523B /* RegisterViewReactor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewReactor.swift; sourceTree = "<group>"; };
 		F2350B2F2636D4DA000C523B /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		F2350B472636E27D000C523B /* PassStep.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PassStep.swift; sourceTree = "<group>"; };
@@ -186,7 +181,6 @@
 		F2350B59263798F3000C523B /* IntroFlow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntroFlow.swift; sourceTree = "<group>"; };
 		F2350B6A2637A1E7000C523B /* TabBarFlow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarFlow.swift; sourceTree = "<group>"; };
 		F2350B70263827F7000C523B /* HomeFlow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeFlow.swift; sourceTree = "<group>"; };
-		F2350B7826382803000C523B /* MyConsumeFlow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyConsumeFlow.swift; sourceTree = "<group>"; };
 		F2350B7D2638280D000C523B /* SettingsFlow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsFlow.swift; sourceTree = "<group>"; };
 		F2350B8226382CFB000C523B /* TabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarViewController.swift; sourceTree = "<group>"; };
 		F25B016026042E9000EBF7F0 /* Preview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Preview.swift; sourceTree = "<group>"; };
@@ -400,15 +394,6 @@
 			path = API;
 			sourceTree = "<group>";
 		};
-		F2350B052636D1FD000C523B /* MyConsume */ = {
-			isa = PBXGroup;
-			children = (
-				F2350B182636D263000C523B /* MyConsumeViewReactor.swift */,
-				F2350B192636D263000C523B /* MyConsumeViewController.swift */,
-			);
-			path = MyConsume;
-			sourceTree = "<group>";
-		};
 		F2350B062636D205000C523B /* Settings */ = {
 			isa = PBXGroup;
 			children = (
@@ -446,7 +431,6 @@
 				F2350B70263827F7000C523B /* HomeFlow.swift */,
 				F2888005265B4FC10021BDB8 /* TransferFlow.swift */,
 				F2D2FBE42667003E0010731F /* AddAccountFlow.swift */,
-				F2350B7826382803000C523B /* MyConsumeFlow.swift */,
 				F2350B7D2638280D000C523B /* SettingsFlow.swift */,
 			);
 			path = Flow;
@@ -504,7 +488,6 @@
 				F2D2FB9D265BC87E0010731F /* BankList */,
 				F2D2FBE826670B250010731F /* InputAccountNumber */,
 				F2887FD2264CEC6B0021BDB8 /* AddAccount */,
-				F2350B052636D1FD000C523B /* MyConsume */,
 				F2350B062636D205000C523B /* Settings */,
 				F2D2FBF3266730560010731F /* Version */,
 			);
@@ -1127,7 +1110,7 @@
 			outputFileListPaths = (
 			);
 			outputPaths = (
-				"$SRCROOT/R.generated.swift",
+				$SRCROOT/R.generated.swift,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -1194,7 +1177,6 @@
 				F2D2FBE52667003E0010731F /* AddAccountFlow.swift in Sources */,
 				F22B238925FF2F3B003AAD9D /* AppDelegate.swift in Sources */,
 				F2893D56263D68C600801067 /* PassNumberPad.swift in Sources */,
-				F2350B1A2636D263000C523B /* MyConsumeViewReactor.swift in Sources */,
 				F2887FF52653523D0021BDB8 /* AccountHistoryCellReactor.swift in Sources */,
 				F2893D52263D638E00801067 /* PasswordViewController.swift in Sources */,
 				F2887FF8265378140021BDB8 /* AccountViewHeader.swift in Sources */,
@@ -1218,10 +1200,8 @@
 				F2350B71263827F7000C523B /* HomeFlow.swift in Sources */,
 				F2887FD5264CEC7E0021BDB8 /* AddAccountViewReactor.swift in Sources */,
 				F2887FB2264923710021BDB8 /* HomeViewSection.swift in Sources */,
-				F2350B7926382803000C523B /* MyConsumeFlow.swift in Sources */,
 				F2893D51263D638E00801067 /* PasswordViewReactor.swift in Sources */,
 				F2D2FBB3265CC5DE0010731F /* AnimationLabel.swift in Sources */,
-				F2350B1B2636D263000C523B /* MyConsumeViewController.swift in Sources */,
 				F2350B312636D4DA000C523B /* RegisterViewController.swift in Sources */,
 				F2887FB8264954910021BDB8 /* AccountCellReactor.swift in Sources */,
 				F2E4BA15261B2AEC00632221 /* UserService.swift in Sources */,
