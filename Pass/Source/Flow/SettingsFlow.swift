@@ -7,6 +7,7 @@
 
 import RxFlow
 import SafariServices
+import Carte
 
 final class SettingsFlow: Flow {
     
@@ -66,8 +67,10 @@ extension SettingsFlow {
     }
     
     private func navigateToVersion() -> FlowContributors {
-        let reactor = VersionViewReactor()
-        let viewController = VersionViewController(reactor: reactor)
+//        let reactor = VersionViewReactor()
+//        let viewController = VersionViewController(reactor: reactor)
+        
+        let viewController = CarteViewController()
         
         viewController.hidesBottomBarWhenPushed = true
         self.rootViewController.pushViewController(viewController, animated: true)

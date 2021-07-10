@@ -15,11 +15,11 @@ final class RegisterViewController: BaseViewController, View {
     
     // MARK: - Properties
     struct Metric {
-        static let titleLabelTop = 90.f
+        static let titleLabelTop = 50.f
         static let titleLabelLeftRight = 35.f
         
         static let textFieldLeftRight = 20.f
-        static let textFieldTop = 70.f
+        static let textFieldTop = 50.f
         static let textFieldHeight = 65.f
         
         static let checkButtonLeftRight = 20.f
@@ -63,6 +63,8 @@ final class RegisterViewController: BaseViewController, View {
     // MARK: - View Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        self.view.backgroundColor = R.color.signatureColor()
         
         self.view.addSubview(self.titleLabel)
         self.view.addSubview(self.phoneTextField)

@@ -41,7 +41,7 @@ final class SettingsViewReactor: Reactor, Stepper {
         let settingSection = SettingsViewSection.setting([
             .myInfo(SettingItemCellReactor(text: "내 정보", detailText: nil)),
             .github(SettingItemCellReactor(text: "Pass Github", detailText: "devMinseok/Pass")),
-            .version(SettingItemCellReactor(text: "버전 정보", detailText: nil)),
+            .version(SettingItemCellReactor(text: "오픈소스", detailText: nil)),
             .logout(SettingItemCellReactor(text: "로그아웃", detailText: "개인 정보와 설정이 모두 삭제됩니다."))
         ])
         
