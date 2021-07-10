@@ -79,6 +79,8 @@ final class IntroViewController: BaseViewController, View {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        self.view.backgroundColor = R.color.signatureColor()
+        
         self.view.addSubview(self.titleLabel)
         self.view.addSubview(self.subTitleLabel)
         self.view.addSubview(self.registerButton)

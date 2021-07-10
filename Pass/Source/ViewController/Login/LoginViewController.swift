@@ -65,6 +65,8 @@ final class LoginViewController: BaseViewController, View {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        self.view.backgroundColor = R.color.signatureColor()
+        
         self.view.addSubview(self.titleLabel)
         self.view.addSubview(self.nextButton)
         self.view.addSubview(self.emailTextField)

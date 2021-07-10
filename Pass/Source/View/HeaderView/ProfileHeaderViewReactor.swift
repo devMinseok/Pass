@@ -45,7 +45,12 @@ final class ProfileHeaderViewReactor: Reactor {
                 .map(Mutation.userData)
             
         case .transfer:
-            self.steps?.accept(PassStep.transferIsRequired(nil))
+            self.steps?.accept(PassStep.transferIsRequired(BankAccount(idx: 1,
+                                                                       ownerIdx: 2,
+                                                                       bank: Bank(idx: 1, bankName: "농협", logoURL: URL(string: "https://image.shinhan.com/rib2017/images/any/img_mobile_logo.png?dt=1621247227131")!),
+                                                                       balance: 4000,
+                                                                       accountNumber: "3120194627011",
+                                                                       accountNickname: "NH")))
             return .empty()
         }
     }
